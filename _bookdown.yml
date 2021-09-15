@@ -12,8 +12,8 @@ rmd_files: [
   "finch-project.Rmd",
   "finch-analysis.Rmd",
   
-  "bluestem-variation.Rmd",
-  "bluestem-assignment.Rmd",
+  "intraspecif-var-introd.Rmd",
+  "intraspecif-var-assign.Rmd",
   
   "artificial-selection.Rmd",
   
