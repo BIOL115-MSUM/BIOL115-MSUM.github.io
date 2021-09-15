@@ -62,14 +62,13 @@ If you are feeling saavy, use "find and replace" (the magnifying glass on the So
 
 To get you moving along, here are some suggestions:
 
-- replace `finches` with `grass`
-- replace `beak_length` with `plant_height`
-- replace `outcome` with `site`
-- replace `died` with `A` and replace `survived` with `B` (capitalization is important here)
-- change the x- and y-axis labels on the histogram
-- change the x- and y-axis labels on the bar chart
-- change the name of the file you save the histogram as
-- change the name of the file you save the bar chart as
+- replace `finches` with `grass` throughout
+- replace `beak_length` with `plant_height` throughout
+- replace `outcome` with `site` throughout
+- for the histogram and bar chart
+    - change the x- and y-axis labels (in `labs()`)
+    - put your name in the caption so we know who made the figure (in `labs()`)
+    - change the name of the file you save the histogram as (in `ggsave()`)
 
 Now save the `plant_height.R` script. If you see any red x's pop up on the left side of your script, those indicate potential errors. Hover your mouse over them to see the error message and try to solve the problem before you run the code. Your instructor or a friend will come in handy with solving any errors.
 
