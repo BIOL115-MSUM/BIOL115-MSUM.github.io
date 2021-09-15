@@ -30,11 +30,11 @@ ggplot(
   facet_wrap(~ outcome, ncol = 1) +   # outcome is the grouping variable
   guides(fill = "none") +             # don't show a legend for fill color
   labs(
-    title = "Figure 1.",              # title
-    x = "Beak Length (mm)",           # x-axis label
-    y = "Number of Birds"             # y-axis label
-  ) +
-  theme(plot.title = element_text(size = rel(.8)))  # make title smaller
+    title = "Figure 1.",                # change number if necessary
+    x = "Beak Length (mm)",             # human-readable x-axis label
+    y = "Number of Birds",              # human-readable y-axis label
+    caption = "Author: YOUR NAME HERE"  # your name so we know who made it
+  )
 
 # save your most recent plot
 ggsave("beak_length_histogram.png",   # you choose a name for the file
@@ -62,7 +62,7 @@ beak_length_grouped_summary <-
 
 # bar chart of mean beak lengths
 ggplot(
-  data = beak_length_grouped_summary,   # dont use the original finches dataset
+  data = beak_length_grouped_summary,   # use summary data, not "finches"
   mapping = aes(x = outcome,            # survival on the x axis
                 y = mean,               # mean beak length on the y axis
                 fill = outcome)         # make died/survived different colors
@@ -73,13 +73,13 @@ ggplot(
                   ymax = upper_conf_limit),    #   upper 95% confidence limit
     width = .3                                 #   width of horizontal bars
   ) +
-  guides(fill = "none") +                      # don't show fill color legend
+  guides(fill = "none") +               # don't show fill color legend
   labs(
-    title = "Figure 2.",                       # title
-    x = "Outcome",                             # x-axis label
-    y = "Beak Length (mm)"                     # y-axis label
-  ) +
-  theme(plot.title = element_text(size = rel(.8)))  # make title smaller
+    title = "Figure 2.",                # change number if necessary
+    x = "Outcome",                      # human-readable x-axis label
+    y = "Beak Length (mm)",             # human-readable y-axis label
+    caption = "Author: YOUR NAME HERE"  # your name so we know who made it
+  )
 
 # save the beak length bar chart
 # note that the dimensions are different from the histograms above

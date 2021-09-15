@@ -103,9 +103,9 @@ ggplot(
   facet_wrap(~ outcome, ncol = 1) +   # put each outcome in its own panel
   labs(
     title = "Distribution of beak lengths",
-    subtitle = "Grouped by sex and outcome",
     x = "Beak Length (mm)",
-    y = "Number of Birds"
+    y = "Number of Birds",
+    caption = "Author: Org Bio Instructors"
   )
 ```
 
@@ -115,7 +115,7 @@ For your current assignment, put each generation of plants on its own panel, and
 
 Remove the line `guides(fill = "none") +` to show the fill color legend.
 
-In *your* figures, do not use subtitles and set your titles to say `"Figure 1."` and `"Figure 2."`.
+In *your* figures, the titles should be `"Figure 1."` and `"Figure 2."`.
 
 For example:
 

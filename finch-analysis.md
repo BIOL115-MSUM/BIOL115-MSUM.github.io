@@ -225,11 +225,11 @@ ggplot(
   facet_wrap(~ outcome, ncol = 1) +   # outcome is the grouping variable
   guides(fill = "none") +             # don't show a legend for fill color
   labs(
-    title = "Figure 1.",              # title
-    x = "Beak Length (mm)",           # x-axis label
-    y = "Number of Birds"             # y-axis label
-  ) +
-  theme(plot.title = element_text(size = rel(.8)))  # make title smaller
+    title = "Figure 1.",                      # this is the first figure
+    x = "Beak Length (mm)",                   # human-readable x-axis label
+    y = "Number of Birds",                    # human-readable y-axis label
+    caption = "Author: Org Bio Instructors"   # so we know who made it
+  )
 ```
 
 <img src="finch-analysis_files/figure-html/grouped-histogram-labels-1.png" width="70%" style="display: block; margin: auto;" />
@@ -310,24 +310,24 @@ To plot these means and confidence intervals, you can use a bar chart with the `
 
 # bar chart of mean beak lengths
 ggplot(
-  data = beak_length_grouped_summary,   # dont use the original finches dataset
+  data = beak_length_grouped_summary,   # use summary data, not "finches"
   mapping = aes(x = outcome,            # survival on the x axis
                 y = mean,               # mean beak length on the y axis
                 fill = outcome)         # make died/survived different colors
 ) +
-  geom_col() +                                 # add columns
-  geom_errorbar(                               # add error bars
-    mapping = aes(ymin = lower_conf_limit,     #   lower 95% confidence limit
-                  ymax = upper_conf_limit),    #   upper 95% confidence limit
-    width = .3                                 #   width of horizontal bars
+  geom_col() +                                # add columns
+  geom_errorbar(                              # add error bars
+    mapping = aes(ymin = lower_conf_limit,    #   lower 95% confidence limit
+                  ymax = upper_conf_limit),   #   upper 95% confidence limit
+    width = .3                                #   width of horizontal bars
   ) +
-  guides(fill = "none") +                      # don't show fill color legend
+  guides(fill = "none") +                     # don't show fill color legend
   labs(
-    title = "Figure 2.",                       # title
-    x = "Outcome",                             # x-axis label
-    y = "Beak Length (mm)"                     # y-axis label
-  ) +
-  theme(plot.title = element_text(size = rel(.8)))  # make title smaller
+    title = "Figure 2.",                      # this is the second figure
+    x = "Outcome",                            # human-readable x-axis label
+    y = "Beak Length (mm)",                   # human-readable y-axis label
+    caption = "Author: Org Bio Instructors"   # so we know who made it
+  )
 ```
 
 <img src="finch-analysis_files/figure-html/bar-chart-1.png" width="70%" style="display: block; margin: auto;" />

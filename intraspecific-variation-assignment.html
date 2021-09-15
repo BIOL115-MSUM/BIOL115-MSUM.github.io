@@ -135,17 +135,16 @@
 <p>If you are feeling saavy, use “find and replace” (the magnifying glass on the Source tab toolbar) to modify the script. Be careful, though! With great power comes great responsibility. It’s easy to accidentally replace something you didn’t mean to. And triple check your spelling before you Replace All. Remember that R is case sensitive and don’t mistake any underscores for spaces.</p>
 <p>To get you moving along, here are some suggestions:</p>
 <ul>
-<li>replace <code>finches</code> with <code>grass</code>
+<li>replace <code>finches</code> with <code>grass</code> throughout</li>
+<li>replace <code>beak_length</code> with <code>plant_height</code> throughout</li>
+<li>replace <code>outcome</code> with <code>site</code> throughout</li>
+<li>for the histogram and bar chart
+<ul>
+<li>change the x- and y-axis labels (in <code>labs()</code>)</li>
+<li>put your name in the caption so we know who made the figure (in <code>labs()</code>)</li>
+<li>change the name of the file you save the histogram as (in <code>ggsave()</code>)</li>
+</ul>
 </li>
-<li>replace <code>beak_length</code> with <code>plant_height</code>
-</li>
-<li>replace <code>outcome</code> with <code>site</code>
-</li>
-<li>replace <code>died</code> with <code>A</code> and replace <code>survived</code> with <code>B</code> (capitalization is important here)</li>
-<li>change the x- and y-axis labels on the histogram</li>
-<li>change the x- and y-axis labels on the bar chart</li>
-<li>change the name of the file you save the histogram as</li>
-<li>change the name of the file you save the bar chart as</li>
 </ul>
 <p>Now save the <code>plant_height.R</code> script. If you see any red x’s pop up on the left side of your script, those indicate potential errors. Hover your mouse over them to see the error message and try to solve the problem before you run the code. Your instructor or a friend will come in handy with solving any errors.</p>
 <p>Finally, run the <code>plant_height.R</code> script, one line at a time, watching for errors and looking closely at any figures you generate. If you get an error or notice a mistake, fix it and start running the code again from the top.</p>
