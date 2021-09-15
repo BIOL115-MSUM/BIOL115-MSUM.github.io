@@ -199,11 +199,11 @@ A good figure legend for this histogram would be:
 
 ### Export your figure
 
-You will only be turning in Assignment #2 Bluestem Analysis, so **YOU DO NOT NEED TO EXPORT THESE FINCH FIGURES** for your lab today. However, if you ever want to save figures from R and put them in a Microsoft Word document, here are directions for doing that:
+Often when you complete a data analysis, you want to incorporate the figures you create into a report or manuscript. While **YOU DO NOT NEED TO DO ANYTHING WITH THE FINCH FIGURES** as part of your assignment today, it will be useful to know how to do it when you reach the Intraspecific Variation analysis later in the lab.
 
-To put your figure in a Microsoft Word document (your assignment in part 4), you must first save it as an image file on your computer. You can do this with `ggsave()`, which saves the most recent ggplot displayed.
+To put your figure in a Microsoft Word document, you must first save it as an image file on your computer. You can do this with `ggsave()`, which saves the most recent ggplot displayed.
 
-You choose a file name, the dimensions of the output file (think about how big you want this to be when you paste it into a word document), and the units of the dimensions (e.g `"in"` for inches). For example, this code saves your histogram as a 3.5" x 3.5" PNG file:
+In your finch script, paste this code below the code you used to create your histogram:
 
 ```{r save-histogram, eval=FALSE}
 # save your most recent plot
@@ -212,7 +212,9 @@ ggsave("beak_length_histogram.png",   # you choose a name for the file
        units = "in")                  # units for the dimensions DO NOT CHANGE
 ```
 
-Look in Files tab in RStudio and you'll see a file named **beak_length_histogram.png** now. You can click it to open the file in your computer's default image viewer.
+Be sure to put the name of the image file you will create inside quotation marks as above. It should end with ".png", to indicate you want a PNG file. Here we have chosen a good width and height in inches (3.5" x 3.5") so that the fonts are sized appropriately on the image.
+
+After you run this code, look in Files tab in RStudio and you'll see a file named **beak_length_histogram.png** now. You can click it to open the file in your computer's default image viewer.
 
 ## Summarize the data
 

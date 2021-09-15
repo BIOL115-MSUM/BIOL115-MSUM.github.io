@@ -4,7 +4,7 @@
 
 ## Introduction
 
-In this activity you will apply what you learned in the Finch Example and the Bluestem Variation activities to analyze a new dataset.
+In this activity you will apply what you learned in the Finch Selection Example and the Intraspecific Variation activities to analyze a new dataset.
 
 Students at Minnesota State University Moorhead conducted an experiment to determine the effect of artificial selection in Wisconsin Fast Plants (*Brassica rapa*). The students grew plants for 10 days and then counted the number of trichomes (hairlike structures) on the edge of the first true leaf of each plant. The 75% of plants with the fewest trichomes were removed from the population. The remaining plants were allowed to flower, were fertilized with each other, and produced seeds. Those seeds were planted, and the offspring generation were allowed to grow for 10 days. At that point the students counted the trichomes on the offspring genertation.
 
@@ -75,7 +75,7 @@ To answer the question, you should:
 4. Create a bar chart showing the mean trichome count in each generation (with confidence intervals)
 5. Conduct a t-test to test if the difference in means is statistically significant
 
-For a reminder on how to perform the analysis and writing steps, see the Bluestem Variation activity.
+For a reminder on how to perform the analysis and writing steps, see the Intraspecific Variation activity.
 
 When you are finished:
 
@@ -83,7 +83,7 @@ When you are finished:
 
 ### A new variation
 
-In the finch and bluestem analyses, you created a histogram for each group and also colored the histograms differently for each group.
+In the Finch Selection Example and Intraspecific Variation Analysis, you created a histogram for each group and also colored the histograms differently for each group.
 
 In theory, there is no reason you can't use a different variable to color the histograms.
 
