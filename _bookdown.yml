@@ -1,0 +1,25 @@
+delete_merged_file: true
+new_session: yes
+
+rmd_files: [
+  "index.Rmd",
+  
+  "getting-started.Rmd",
+  "create-project.Rmd",
+  "calculator.Rmd",
+  
+  "finch-example.Rmd",
+  "finch-project.Rmd",
+  "finch-analysis.Rmd",
+  
+  "bluestem-variation.Rmd",
+  "bluestem-assignment.Rmd",
+  
+  "artificial-selection.Rmd",
+  
+  "beak-length-script.Rmd",
+  
+]
+
+
+before_chapter_script: "_common.R"

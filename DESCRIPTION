@@ -1,0 +1,17 @@
+Package: placeholder
+Type: Book
+Title: Comparing Populations.
+Version: 0.0.1
+Imports: readxl, tidyverse
+Suggests:
+    bookdown,
+    bslib,
+    downlit,
+    jsonlite,
+    htmltools,
+    png,
+    xml2
+Remotes: 
+    rstudio/bookdown,
+    rstudio/bslib,
+    rstudio/htmltools
