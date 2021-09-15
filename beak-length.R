@@ -50,17 +50,12 @@ beak_length_grouped_summary <-
   group_by(outcome) %>% 
   summarize(
     mean = mean(beak_length),
-    sd = sd(beak_length),
-    n = n()
+    sample_size = n(),
+    standard_error = sd(beak_length) / sqrt(sample_size),
+    upper_conf_limit = mean + 1.96 * standard_error,
+    lower_conf_limit = mean - 1.96 * standard_error
   ) %>% 
-  mutate(
-    sem = sd / sqrt(n),
-    upper = mean + 1.96 * sem,
-    lower = mean - 1.96 * sem
-  )
-
-# print the results in the console
-beak_length_grouped_summary
+  print()                             # print the results in the console
 
 
 # bar chart ---------------------------------------------------------------
