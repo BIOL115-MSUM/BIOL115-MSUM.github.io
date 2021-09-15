@@ -28,7 +28,7 @@ ggplot(
 ) +
   geom_histogram(bins = 14) +         # add the histogram, use 14 bins
   facet_wrap(~ outcome, ncol = 1) +   # outcome is the grouping variable
-  guides(fill = FALSE) +              # don't show a legend for fill color
+  guides(fill = "none") +             # don't show a legend for fill color
   labs(
     title = "Figure 1.",              # title
     x = "Beak Length (mm)",           # x-axis label
@@ -78,7 +78,7 @@ ggplot(
                   ymax = upper),        #   upper 95% confidence limit
     width = .3                          #   width of horizontal part of bars
   ) +
-  guides(fill = FALSE) +                # don't show a legend for fill color
+  guides(fill = "none") +               # don't show a legend for fill color
   labs(
     title = "Figure 2.",                # title
     x = "Outcome",                      # x-axis label

@@ -69,7 +69,7 @@ To answer the question, you should:
 1. Modify remaining code for use with the fast plant data
 2. Plot a histogram with facets for each generation (F0 and F1)
     - Instead of setting the fill color to vary by generation, set it to vary by whether or not the plants were **selected** for breeding. This is the only place you will use the **selected** variable
-    - Remove the line `guides(fill = FALSE) +` to show the fill color legend
+    - Remove the line `guides(fill = "none") +` to show the fill color legend
     - For help, see [A new variation] below
 3. Summarize trichome count by generation
 4. Create a bar chart showing the mean trichome count in each generation (with confidence intervals)
@@ -114,7 +114,7 @@ ggplot(
 
 For your current assignment, put each generation of plants on its own panel, and set the fill color of the columns by whether the plants were **selected** for breeding or not.
 
-Remove the line `guides(fill = FALSE) +` to show the fill color legend.
+Remove the line `guides(fill = "none") +` to show the fill color legend.
 
 In *your* figures, do not use subtitles and set your titles to say `"Figure 1."` and `"Figure 2."`.
 
