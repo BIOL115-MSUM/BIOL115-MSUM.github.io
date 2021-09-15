@@ -1,6 +1,6 @@
 --- 
 knit: "bookdown::render_book"
-title: "Comparing Populations: Introduction to Data Analysis in R"
+title: "Organismal Biology: Companion Website to BIOL 115 @ MSUM"
 author: "Chris Merkord and Alison Wallace"
 date: "`r Sys.Date()`"
 github-repo: BIOL115-MSUM/BIOL115-MSUM.github.io
@@ -11,13 +11,13 @@ documentclass: book
 
 # Welcome {-}
 
-Welcome to the website for *Comparing Populations: Introduction to Data Analysis in R*. The site serves as a beginners guide to data analysis in R. In this activity students learn to use R and RStudio to comparing phenotypic variation in biological populations.
+Welcome to the companion website for *BIOL 115 Organismal Biology* at Minnesota State University Moorhead. The site serves primarily as a beginners guide to data analysis in R. In this activity students learn to use R and RStudio to compare phenotypic variation in biological populations.
 
 <div class="mx-auto" style="width: 320px;">
   <iframe width="320" height="446" src="https://macaulaylibrary.org/asset/83940941/embed/320" frameborder="0" allowfullscreen style="width:320px;"></iframe>
 </div>
 
-This activity was developed for the course BIOL 115L Organismal Biology Lab at Minnesota State University by Chris Merkord and Alison Wallace, with contributions from Katie Olson and others.
+These activities were developed by Chris Merkord and Alison Wallace, with contributions from Katie Olson and others.
 
 In this lab you will learn how to view, summarize, and graph data.
 

@@ -1,5 +1,5 @@
-# Comparing Populations: Introduction to Data Analysis in R
+# BIOL 115 Organismal Biology @ MSUM Companion Website
 
-Welcome to the GitHub site for Comparing Populations: Introduction to Data Analysis in R. 
+Welcome to the GitHub site for *Organismal Biology*, the companion website to BIOL 115 at Minnesota State University Moorhead.
 
-This activity was developed for the course BIOL 115L Organismal Biology Lab at Minnesota State University by Chris Merkord and Alison Wallace, with contributions from Katie Olson and others.
+These activities were developed by Chris Merkord and Alison Wallace, with contributions from Katie Olson and others.

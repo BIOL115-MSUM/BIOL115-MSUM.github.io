@@ -8,7 +8,7 @@ bookdown::gitbook:
     toc:
       collapse: section
       before: |
-        <li><strong><a href="./">Comparing Populations: Introduction to Data Analysis in R</a></strong></li>
+        <li><strong><a href="./">Organismal Biology: Companion Website to BIOL 115 @ MSUM</a></strong></li>
     sharing: no
   css: style.css
 
