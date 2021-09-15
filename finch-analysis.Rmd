@@ -259,17 +259,17 @@ ggplot(
                 y = mean,               # mean beak length on the y axis
                 fill = outcome)         # make died/survived different colors
 ) +
-  geom_col() +                          # add columns
-  geom_errorbar(                        # add error bars
-    mapping = aes(ymin = lower,         #   lower 95% confidence limit
-                  ymax = upper),        #   upper 95% confidence limit
-    width = .3                          #   width of horizontal part of bars
+  geom_col() +                                 # add columns
+  geom_errorbar(                               # add error bars
+    mapping = aes(ymin = lower_conf_limit,     #   lower 95% confidence limit
+                  ymax = upper_conf_limit),    #   upper 95% confidence limit
+    width = .3                                 #   width of horizontal bars
   ) +
-  guides(fill = "none") +               # don't show a legend for fill color
+  guides(fill = "none") +                      # don't show fill color legend
   labs(
-    title = "Figure 2.",                # title
-    x = "Outcome",                      # x-axis label
-    y = "Beak Length (mm)"              # y-axis label
+    title = "Figure 2.",                       # title
+    x = "Outcome",                             # x-axis label
+    y = "Beak Length (mm)"                     # y-axis label
   ) +
   theme(plot.title = element_text(size = rel(.8)))  # make title smaller
 ```
