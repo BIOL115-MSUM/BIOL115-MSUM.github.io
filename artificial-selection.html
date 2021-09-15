@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>9 Artificial Selection | Comparing Populations: Introduction to Data Analysis in R</title>
+<meta name="author" content="Chris Merkord and Alison Wallace">
+<meta name="description" content="9.1 Introduction In this activity you will apply what you learned in the Finch Example and the Bluestem Variation activities to analyze a new dataset. Students at Minnesota State University...">
+<meta name="generator" content="bookdown 0.24.1 with bs4_book()">
+<meta property="og:title" content="9 Artificial Selection | Comparing Populations: Introduction to Data Analysis in R">
+<meta property="og:type" content="book">
+<meta property="og:description" content="9.1 Introduction In this activity you will apply what you learned in the Finch Example and the Bluestem Variation activities to analyze a new dataset. Students at Minnesota State University...">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="9 Artificial Selection | Comparing Populations: Introduction to Data Analysis in R">
+<meta name="twitter:description" content="9.1 Introduction In this activity you will apply what you learned in the Finch Example and the Bluestem Variation activities to analyze a new dataset. Students at Minnesota State University...">
+<!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/header-attrs-2.11/header-attrs.js"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
+<script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.3.0.9000/transition.js"></script><script src="libs/bs3compat-0.3.0.9000/tabs.js"></script><script src="libs/bs3compat-0.3.0.9000/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
+<script src="libs/bs4_book-1.0.0/bs4_book.js"></script><script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- CSS -->
+</head>
+<body data-spy="scroll" data-target="#toc">
+
+<div class="container-fluid">
+<div class="row">
+  <header class="col-sm-12 col-lg-3 sidebar sidebar-book"><a class="sr-only sr-only-focusable" href="#content">Skip to main content</a>
+
+    <div class="d-flex align-items-start justify-content-between">
+      <h1>
+        <a href="index.html" title="">Comparing Populations: Introduction to Data Analysis in R</a>
+      </h1>
+      <button class="btn btn-outline-primary d-lg-none ml-2 mt-1" type="button" data-toggle="collapse" data-target="#main-nav" aria-expanded="true" aria-controls="main-nav"><i class="fas fa-bars"></i><span class="sr-only">Show table of contents</span></button>
+    </div>
+
+    <div id="main-nav" class="collapse-lg">
+      <form role="search">
+        <input id="search" class="form-control" type="search" placeholder="Search" aria-label="Search">
+</form>
+
+      <nav aria-label="Table of contents"><h2>Table of contents</h2>
+        <ul class="book-toc list-unstyled">
+<li><a class="" href="index.html">Welcome</a></li>
+<li class="book-part">Getting Started</li>
+<li><a class="" href="get-rstudio.html"><span class="header-section-number">1</span> Get RStudio</a></li>
+<li><a class="" href="create-a-project.html"><span class="header-section-number">2</span> Create A Project</a></li>
+<li><a class="" href="r-as-a-calculator.html"><span class="header-section-number">3</span> R as a Calculator</a></li>
+<li class="book-part">Finch Selection</li>
+<li><a class="" href="introduction.html"><span class="header-section-number">4</span> Introduction</a></li>
+<li><a class="" href="finch-project.html"><span class="header-section-number">5</span> Finch Project</a></li>
+<li><a class="" href="finch-analysis.html"><span class="header-section-number">6</span> Finch Analysis</a></li>
+<li class="book-part">Bluestem Variation</li>
+<li><a class="" href="bluestem-variation.html"><span class="header-section-number">7</span> Bluestem Variation</a></li>
+<li><a class="" href="bluestem-assignment.html"><span class="header-section-number">8</span> Bluestem Assignment</a></li>
+<li class="book-part">Artificial Selection</li>
+<li><a class="active" href="artificial-selection.html"><span class="header-section-number">9</span> Artificial Selection</a></li>
+<li class="book-part">Appendices</li>
+<li><a class="" href="beak-length-script.html"><span class="header-section-number">10</span> Beak Length Script</a></li>
+</ul>
+
+        <div class="book-extra">
+          <p><a id="book-repo" href="https://github.com/BIOL115-MSUM/BIOL115-MSUM.github.io">View book source <i class="fab fa-github"></i></a></p>
+        </div>
+      </nav>
+</div>
+  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="artificial-selection" class="section level1" number="9">
+<h1>
+<span class="header-section-number">9</span> Artificial Selection<a class="anchor" aria-label="anchor" href="#artificial-selection"><i class="fas fa-link"></i></a>
+</h1>
+<div id="introduction-2" class="section level2" number="9.1">
+<h2>
+<span class="header-section-number">9.1</span> Introduction<a class="anchor" aria-label="anchor" href="#introduction-2"><i class="fas fa-link"></i></a>
+</h2>
+<p>In this activity you will apply what you learned in the Finch Example and the Bluestem Variation activities to analyze a new dataset.</p>
+<p>Students at Minnesota State University Moorhead conducted an experiment to determine the effect of artificial selection in Wisconsin Fast Plants (<em>Brassica rapa</em>). The students grew plants for 10 days and then counted the number of trichomes (hairlike structures) on the edge of the first true leaf of each plant. The 75% of plants with the fewest trichomes were removed from the population. The remaining plants were allowed to flower, were fertilized with each other, and produced seeds. Those seeds were planted, and the offspring generation were allowed to grow for 10 days. At that point the students counted the trichomes on the offspring genertation.</p>
+<p>Presumably, if the number of trichomes is a heritable trait, the mean number of trichomes should have shifted from the parent generation to the offspring generation. If so, this would be an example of <strong>artificial selection</strong>.</p>
+</div>
+<div id="the-question-1" class="section level2" number="9.2">
+<h2>
+<span class="header-section-number">9.2</span> The Question<a class="anchor" aria-label="anchor" href="#the-question-1"><i class="fas fa-link"></i></a>
+</h2>
+<p>The question you are trying to answer in this activity is:</p>
+<blockquote class="text-success">
+Does the number of trichomes on Fast Plants (<i>Brassica rapa</i>) plants vary between the F0 (parent) and F1 (offspring) generations.
+</blockquote>
+</div>
+<div id="create-project-1" class="section level2" number="9.3">
+<h2>
+<span class="header-section-number">9.3</span> Create Project<a class="anchor" aria-label="anchor" href="#create-project-1"><i class="fas fa-link"></i></a>
+</h2>
+<p>Follow these directions to get started:</p>
+<ol style="list-style-type: decimal">
+<li>Go to <a href="https://rstudio.cloud/">RStudio Cloud</a> and sign in.</li>
+<li>On the left, under Spaces, click on <strong>Course Workspace</strong>
+</li>
+<li>Click the <strong>Start</strong> button on the <strong>Artificial Selection Project</strong> assignment.</li>
+</ol>
+</div>
+<div id="find-the-data-1" class="section level2" number="9.4">
+<h2>
+<span class="header-section-number">9.4</span> Find the data<a class="anchor" aria-label="anchor" href="#find-the-data-1"><i class="fas fa-link"></i></a>
+</h2>
+<p>When your project starts, look at the <strong>Files</strong> tab in the lower right pane.</p>
+<p>There are two files you should take note of:
+- <a href="fastplant_data.xlsx">fastplant_data.xlsx</a> - this is the data file you will use. If it’s not in your project folder, download it here and upload to the folder.
+- beak-length.R - this is a copy of the <a href="beak-length-script.html">Beak Length R Script</a> from the Finch Analysis.</p>
+</div>
+<div id="create-a-new-script" class="section level2" number="9.5">
+<h2>
+<span class="header-section-number">9.5</span> Create a new script<a class="anchor" aria-label="anchor" href="#create-a-new-script"><i class="fas fa-link"></i></a>
+</h2>
+<p>We suggest you start your assignment by creating a new script and copying the code from beak_length.R into it. Alternatively you can open <strong>beak-length.R</strong> and go to File &gt; Save As… to save a copy of the script. A good name might be something like <strong>fastplant.R</strong>.</p>
+</div>
+<div id="look-at-the-fast-plant-data" class="section level2" number="9.6">
+<h2>
+<span class="header-section-number">9.6</span> Look at the fast plant data<a class="anchor" aria-label="anchor" href="#look-at-the-fast-plant-data"><i class="fas fa-link"></i></a>
+</h2>
+<p>In your new script, adjust the code so that it reads the fastplant_data.xlsx instead of finches_data.xlsx. Run the code and note the data object which appeared in your Environment tab. Click on the blue table icon to the right of the object name to open the data viewer window.</p>
+<p>Inspect the data.</p>
+<p>Each row in the dataset represents an individual plant.</p>
+<p>The variables in the dataset are:</p>
+<ul>
+<li>
+<strong>generation</strong>. The generation the plant belonged to? (values include <code>"F0"</code> or <code>"F1"</code>)</li>
+<li>
+<strong>trichome_count</strong>. The number of trichomes the plant had. (values are numeric integers)</li>
+<li>
+<strong>selected</strong>. For the F0 generation, was the individual plant selected for breeding? (values include, <code>"yes"</code>, <code>"no"</code>, or <code>"NA"</code> if the plant was from the F1 generation)</li>
+</ul>
+<p>Ask yourself:</p>
+<ul>
+<li>Which variable contains the numeric variable that was measured or counted? This is the response variable, which you will summarize by calculating the mean.</li>
+<li>Which variable would you use to group the plants? Remember you are trying to compare the response variable at two points in time. Which variable groups plants into two points in time?</li>
+</ul>
+</div>
+<div id="your-assignment-1" class="section level2" number="9.7">
+<h2>
+<span class="header-section-number">9.7</span> Your assignment<a class="anchor" aria-label="anchor" href="#your-assignment-1"><i class="fas fa-link"></i></a>
+</h2>
+<p>Your objective in this lab is to generate the results that will answer the question above, specifically by producing the following:</p>
+<ul>
+<li>One histogram showing how the distribution of numbers of trichomes varied between generations. It should also show which plants in the F0 generation were selected for breeding and which were not.</li>
+<li>One bar chart showing how the mean number of trichomes varied between generations. Include a 95% confidence interval around the means.</li>
+<li>Two figure legends describing these figures.</li>
+<li>One paragraph describing the results of the analysis, including the results of a <em>t</em>-test to test for a difference between the means.</li>
+</ul>
+<p>To answer the question, you should:</p>
+<ol style="list-style-type: decimal">
+<li>Modify remaining code for use with the fast plant data</li>
+<li>Plot a histogram with facets for each generation (F0 and F1)
+<ul>
+<li>Instead of setting the fill color to vary by generation, set it to vary by whether or not the plants were <strong>selected</strong> for breeding. This is the only place you will use the <strong>selected</strong> variable</li>
+<li>Remove the line <code>guides(fill = FALSE) +</code> to show the fill color legend</li>
+<li>For help, see <a href="artificial-selection.html#a-new-variation">A new variation</a> below</li>
+</ul>
+</li>
+<li>Summarize trichome count by generation</li>
+<li>Create a bar chart showing the mean trichome count in each generation (with confidence intervals)</li>
+<li>Conduct a t-test to test if the difference in means is statistically significant</li>
+</ol>
+<p>For a reminder on how to perform the analysis and writing steps, see the Bluestem Variation activity.</p>
+<p>When you are finished:</p>
+<ul>
+<li>Paste your two (2) figures into a Word document, add figure legends and a RESULTS paragraph, and upload it to your <em>lab</em> D2L page under Assessments &gt; Assignments &gt; Data Lab 2.</li>
+</ul>
+<div id="a-new-variation" class="section level3" number="9.7.1">
+<h3>
+<span class="header-section-number">9.7.1</span> A new variation<a class="anchor" aria-label="anchor" href="#a-new-variation"><i class="fas fa-link"></i></a>
+</h3>
+<p>In the finch and bluestem analyses, you created a histogram for each group and also colored the histograms differently for each group.</p>
+<p>In theory, there is no reason you can’t use a different variable to color the histograms.</p>
+<p>For example, here is the finch data colored by <code>sex</code>:</p>
+<div class="sourceCode" id="cb33"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="co"># histogram of beak length, grouped by survival, colored by sex</span>
+<span class="fu">ggplot</span><span class="op">(</span>
+  data <span class="op">=</span> <span class="va">finches</span>,
+  mapping <span class="op">=</span> <span class="fu">aes</span><span class="op">(</span>x <span class="op">=</span> <span class="va">beak_length</span>,
+                fill <span class="op">=</span> <span class="va">sex</span><span class="op">)</span>           <span class="co"># color the boxes by gender</span>
+<span class="op">)</span> <span class="op">+</span>
+  <span class="fu">geom_histogram</span><span class="op">(</span>bins <span class="op">=</span> <span class="fl">14</span><span class="op">)</span> <span class="op">+</span>
+  <span class="fu">facet_wrap</span><span class="op">(</span><span class="op">~</span> <span class="va">outcome</span>, ncol <span class="op">=</span> <span class="fl">1</span><span class="op">)</span> <span class="op">+</span>   <span class="co"># put each outcome in its own panel</span>
+  <span class="fu">labs</span><span class="op">(</span>
+    title <span class="op">=</span> <span class="st">"Distribution of beak lengths"</span>,
+    subtitle <span class="op">=</span> <span class="st">"Grouped by sex and outcome"</span>,
+    x <span class="op">=</span> <span class="st">"Beak Length (mm)"</span>,
+    y <span class="op">=</span> <span class="st">"Number of Birds"</span>
+  <span class="op">)</span></code></pre></div>
+<div class="inline-figure"><img src="artificial-selection_files/figure-html/finch-sex-histogram-1.png" width="70%" style="display: block; margin: auto;"></div>
+<p>For your current assignment, put each generation of plants on its own panel, and set the fill color of the columns by whether the plants were <strong>selected</strong> for breeding or not.</p>
+<p>Remove the line <code>guides(fill = FALSE) +</code> to show the fill color legend.</p>
+<p>In <em>your</em> figures, do not use subtitles and set your titles to say <code>"Figure 1."</code> and <code>"Figure 2."</code>.</p>
+<p>For example:</p>
+<div class="inline-figure"><img src="artificial-selection_files/figure-html/fast-plant-histogram-1.png" width="70%" style="display: block; margin: auto;"></div>
+
+</div>
+</div>
+</div>
+
+
+
+  <div class="chapter-nav">
+<div class="prev"><a href="bluestem-assignment.html"><span class="header-section-number">8</span> Bluestem Assignment</a></div>
+<div class="next"><a href="beak-length-script.html"><span class="header-section-number">10</span> Beak Length Script</a></div>
+</div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
+    <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
+      <ul class="nav navbar-nav">
+<li><a class="nav-link" href="#artificial-selection"><span class="header-section-number">9</span> Artificial Selection</a></li>
+<li><a class="nav-link" href="#introduction-2"><span class="header-section-number">9.1</span> Introduction</a></li>
+<li><a class="nav-link" href="#the-question-1"><span class="header-section-number">9.2</span> The Question</a></li>
+<li><a class="nav-link" href="#create-project-1"><span class="header-section-number">9.3</span> Create Project</a></li>
+<li><a class="nav-link" href="#find-the-data-1"><span class="header-section-number">9.4</span> Find the data</a></li>
+<li><a class="nav-link" href="#create-a-new-script"><span class="header-section-number">9.5</span> Create a new script</a></li>
+<li><a class="nav-link" href="#look-at-the-fast-plant-data"><span class="header-section-number">9.6</span> Look at the fast plant data</a></li>
+<li>
+<a class="nav-link" href="#your-assignment-1"><span class="header-section-number">9.7</span> Your assignment</a><ul class="nav navbar-nav"><li><a class="nav-link" href="#a-new-variation"><span class="header-section-number">9.7.1</span> A new variation</a></li></ul>
+</li>
+</ul>
+
+      <div class="book-extra">
+        <ul class="list-unstyled">
+<li><a id="book-source" href="https://github.com/BIOL115-MSUM/BIOL115-MSUM.github.io/blob/master/artificial-selection.Rmd">View source <i class="fab fa-github"></i></a></li>
+          <li><a id="book-edit" href="https://github.com/BIOL115-MSUM/BIOL115-MSUM.github.io/edit/master/artificial-selection.Rmd">Edit this page <i class="fab fa-github"></i></a></li>
+        </ul>
+</div>
+    </nav>
+</div>
+
+</div>
+</div> <!-- .container -->
+
+<footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>"<strong>Comparing Populations: Introduction to Data Analysis in R</strong>" was written by Chris Merkord and Alison Wallace. It was last built on 2021-09-15.</p>
+  </div>
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>This book was built by the <a class="text-light" href="https://bookdown.org">bookdown</a> R package.</p>
+  </div>
+
+</div></div>
+</footer>
+</body>
+</html>

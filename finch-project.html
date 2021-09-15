@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>5 Finch Project | Comparing Populations: Introduction to Data Analysis in R</title>
+<meta name="author" content="Chris Merkord and Alison Wallace">
+<meta name="description" content="5.1 Select Workspace If your instructor has set up a course workspace on RStudio Cloud, they will disseminate a link which will give you access to the workspace on RStudio Cloud. Open the link in...">
+<meta name="generator" content="bookdown 0.24.1 with bs4_book()">
+<meta property="og:title" content="5 Finch Project | Comparing Populations: Introduction to Data Analysis in R">
+<meta property="og:type" content="book">
+<meta property="og:description" content="5.1 Select Workspace If your instructor has set up a course workspace on RStudio Cloud, they will disseminate a link which will give you access to the workspace on RStudio Cloud. Open the link in...">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="5 Finch Project | Comparing Populations: Introduction to Data Analysis in R">
+<meta name="twitter:description" content="5.1 Select Workspace If your instructor has set up a course workspace on RStudio Cloud, they will disseminate a link which will give you access to the workspace on RStudio Cloud. Open the link in...">
+<!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/header-attrs-2.11/header-attrs.js"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
+<script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.3.0.9000/transition.js"></script><script src="libs/bs3compat-0.3.0.9000/tabs.js"></script><script src="libs/bs3compat-0.3.0.9000/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
+<script src="libs/bs4_book-1.0.0/bs4_book.js"></script><script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- CSS -->
+</head>
+<body data-spy="scroll" data-target="#toc">
+
+<div class="container-fluid">
+<div class="row">
+  <header class="col-sm-12 col-lg-3 sidebar sidebar-book"><a class="sr-only sr-only-focusable" href="#content">Skip to main content</a>
+
+    <div class="d-flex align-items-start justify-content-between">
+      <h1>
+        <a href="index.html" title="">Comparing Populations: Introduction to Data Analysis in R</a>
+      </h1>
+      <button class="btn btn-outline-primary d-lg-none ml-2 mt-1" type="button" data-toggle="collapse" data-target="#main-nav" aria-expanded="true" aria-controls="main-nav"><i class="fas fa-bars"></i><span class="sr-only">Show table of contents</span></button>
+    </div>
+
+    <div id="main-nav" class="collapse-lg">
+      <form role="search">
+        <input id="search" class="form-control" type="search" placeholder="Search" aria-label="Search">
+</form>
+
+      <nav aria-label="Table of contents"><h2>Table of contents</h2>
+        <ul class="book-toc list-unstyled">
+<li><a class="" href="index.html">Welcome</a></li>
+<li class="book-part">Getting Started</li>
+<li><a class="" href="get-rstudio.html"><span class="header-section-number">1</span> Get RStudio</a></li>
+<li><a class="" href="create-a-project.html"><span class="header-section-number">2</span> Create A Project</a></li>
+<li><a class="" href="r-as-a-calculator.html"><span class="header-section-number">3</span> R as a Calculator</a></li>
+<li class="book-part">Finch Selection</li>
+<li><a class="" href="introduction.html"><span class="header-section-number">4</span> Introduction</a></li>
+<li><a class="active" href="finch-project.html"><span class="header-section-number">5</span> Finch Project</a></li>
+<li><a class="" href="finch-analysis.html"><span class="header-section-number">6</span> Finch Analysis</a></li>
+<li class="book-part">Bluestem Variation</li>
+<li><a class="" href="bluestem-variation.html"><span class="header-section-number">7</span> Bluestem Variation</a></li>
+<li><a class="" href="bluestem-assignment.html"><span class="header-section-number">8</span> Bluestem Assignment</a></li>
+<li class="book-part">Artificial Selection</li>
+<li><a class="" href="artificial-selection.html"><span class="header-section-number">9</span> Artificial Selection</a></li>
+<li class="book-part">Appendices</li>
+<li><a class="" href="beak-length-script.html"><span class="header-section-number">10</span> Beak Length Script</a></li>
+</ul>
+
+        <div class="book-extra">
+          <p><a id="book-repo" href="https://github.com/BIOL115-MSUM/BIOL115-MSUM.github.io">View book source <i class="fab fa-github"></i></a></p>
+        </div>
+      </nav>
+</div>
+  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="finch-project" class="section level1" number="5">
+<h1>
+<span class="header-section-number">5</span> Finch Project<a class="anchor" aria-label="anchor" href="#finch-project"><i class="fas fa-link"></i></a>
+</h1>
+<div id="select-workspace" class="section level2" number="5.1">
+<h2>
+<span class="header-section-number">5.1</span> Select Workspace<a class="anchor" aria-label="anchor" href="#select-workspace"><i class="fas fa-link"></i></a>
+</h2>
+<p>If your instructor has set up a course workspace on RStudio Cloud, they will disseminate a link which will give you access to the workspace on RStudio Cloud. Open the link in a web browser, sign in to RStudio Cloud, and click to join the workspace.</p>
+<p>Once you have joined, you will see two spaces listed under Spaces in the Navigation panel on the left. The first is <strong>Your Workspace</strong>, the second is the course workspace, for example <strong>Course Workspace</strong>. Select Course Workspace.</p>
+<p>If your instructor has not set up a course workspace, you can just use Your Workspace.</p>
+</div>
+<div id="start-project" class="section level2" number="5.2">
+<h2>
+<span class="header-section-number">5.2</span> Start Project<a class="anchor" aria-label="anchor" href="#start-project"><i class="fas fa-link"></i></a>
+</h2>
+<p>In your Course Workspace, you will see a list of projects:</p>
+<ul>
+<li>Finch Example Project</li>
+<li>Bluestem Variation Project</li>
+<li>Artificial Selection Project</li>
+</ul>
+<p>Click the “Start” button to open the <strong>Finch Example Project</strong> project. This will create your own copy of the project that can be accessed by both you and the instructor.</p>
+<p>Click the name of the project, <strong>Finch Example Project</strong>, to open the project.</p>
+<p>If your instructor has not set up a course workspace, you can just create a new project by clicking the <strong>New Project</strong> button. Name it <strong>Finch Example Project</strong>.</p>
+</div>
+<div id="find-data-file" class="section level2" number="5.3">
+<h2>
+<span class="header-section-number">5.3</span> Find data file<a class="anchor" aria-label="anchor" href="#find-data-file"><i class="fas fa-link"></i></a>
+</h2>
+<p>In the bottom right pane, click the <strong>Files</strong> tab.</p>
+<p>You should see several files, including one that says <strong>finches_data.xlsx</strong>. This is an Excel file containing the finch data.</p>
+<div class="inline-figure"><img src="screenshots/files_tab_finches_data.png" width="75%" style="display: block; margin: auto;"></div>
+<p>If your instructor has not set up a course workspace, you can download the Excel file from <a href="https://www.biointeractive.org/classroom-resources/effects-natural-selection-finch-beak-size">hhmi Biointeractive</a>. Be sure to open the file, delete the first row, and save, so that the code shown later in this activity will work correctly.</p>
+<p>If you want, you can click on the file name to download and open it with Microsoft Excel.</p>
+</div>
+<div id="inspect-data-file" class="section level2" number="5.4">
+<h2>
+<span class="header-section-number">5.4</span> Inspect data file<a class="anchor" aria-label="anchor" href="#inspect-data-file"><i class="fas fa-link"></i></a>
+</h2>
+<p>Test your understanding by answering the following questions with your lab partner. You do not have to turn this in.</p>
+<ul>
+<li><strong>How many observations (rows) are there?</strong></li>
+<li><strong>What does each row represent?</strong></li>
+<li><strong>How many variables (columns) are there?</strong></li>
+<li>
+<strong>What are the names of the variables?</strong> (The first row contains the variable names) Note that the names are not capitalized and use underscores (<code>_</code>) instead of spaces. This is important when writing R code.</li>
+</ul>
+<p>Close the Excel file and switch back to RStudio Cloud.</p>
+
+</div>
+</div>
+  <div class="chapter-nav">
+<div class="prev"><a href="introduction.html"><span class="header-section-number">4</span> Introduction</a></div>
+<div class="next"><a href="finch-analysis.html"><span class="header-section-number">6</span> Finch Analysis</a></div>
+</div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
+    <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
+      <ul class="nav navbar-nav">
+<li><a class="nav-link" href="#finch-project"><span class="header-section-number">5</span> Finch Project</a></li>
+<li><a class="nav-link" href="#select-workspace"><span class="header-section-number">5.1</span> Select Workspace</a></li>
+<li><a class="nav-link" href="#start-project"><span class="header-section-number">5.2</span> Start Project</a></li>
+<li><a class="nav-link" href="#find-data-file"><span class="header-section-number">5.3</span> Find data file</a></li>
+<li><a class="nav-link" href="#inspect-data-file"><span class="header-section-number">5.4</span> Inspect data file</a></li>
+</ul>
+
+      <div class="book-extra">
+        <ul class="list-unstyled">
+<li><a id="book-source" href="https://github.com/BIOL115-MSUM/BIOL115-MSUM.github.io/blob/master/finch-project.Rmd">View source <i class="fab fa-github"></i></a></li>
+          <li><a id="book-edit" href="https://github.com/BIOL115-MSUM/BIOL115-MSUM.github.io/edit/master/finch-project.Rmd">Edit this page <i class="fab fa-github"></i></a></li>
+        </ul>
+</div>
+    </nav>
+</div>
+
+</div>
+</div> <!-- .container -->
+
+<footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>"<strong>Comparing Populations: Introduction to Data Analysis in R</strong>" was written by Chris Merkord and Alison Wallace. It was last built on 2021-09-15.</p>
+  </div>
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>This book was built by the <a class="text-light" href="https://bookdown.org">bookdown</a> R package.</p>
+  </div>
+
+</div></div>
+</footer>
+</body>
+</html>

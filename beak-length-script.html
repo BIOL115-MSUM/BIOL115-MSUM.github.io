@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>10 Beak Length Script | Comparing Populations: Introduction to Data Analysis in R</title>
+<meta name="author" content="Chris Merkord and Alison Wallace">
+<meta name="description" content="Here is the code you used to analyze the beak length in the finches dataset. You can either copy the code below and paste it into a new R script, e.g. plant_height.R, or download it as an R...">
+<meta name="generator" content="bookdown 0.24.1 with bs4_book()">
+<meta property="og:title" content="10 Beak Length Script | Comparing Populations: Introduction to Data Analysis in R">
+<meta property="og:type" content="book">
+<meta property="og:description" content="Here is the code you used to analyze the beak length in the finches dataset. You can either copy the code below and paste it into a new R script, e.g. plant_height.R, or download it as an R...">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="10 Beak Length Script | Comparing Populations: Introduction to Data Analysis in R">
+<meta name="twitter:description" content="Here is the code you used to analyze the beak length in the finches dataset. You can either copy the code below and paste it into a new R script, e.g. plant_height.R, or download it as an R...">
+<!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/header-attrs-2.11/header-attrs.js"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
+<script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.3.0.9000/transition.js"></script><script src="libs/bs3compat-0.3.0.9000/tabs.js"></script><script src="libs/bs3compat-0.3.0.9000/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
+<script src="libs/bs4_book-1.0.0/bs4_book.js"></script><script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- CSS -->
+</head>
+<body data-spy="scroll" data-target="#toc">
+
+<div class="container-fluid">
+<div class="row">
+  <header class="col-sm-12 col-lg-3 sidebar sidebar-book"><a class="sr-only sr-only-focusable" href="#content">Skip to main content</a>
+
+    <div class="d-flex align-items-start justify-content-between">
+      <h1>
+        <a href="index.html" title="">Comparing Populations: Introduction to Data Analysis in R</a>
+      </h1>
+      <button class="btn btn-outline-primary d-lg-none ml-2 mt-1" type="button" data-toggle="collapse" data-target="#main-nav" aria-expanded="true" aria-controls="main-nav"><i class="fas fa-bars"></i><span class="sr-only">Show table of contents</span></button>
+    </div>
+
+    <div id="main-nav" class="collapse-lg">
+      <form role="search">
+        <input id="search" class="form-control" type="search" placeholder="Search" aria-label="Search">
+</form>
+
+      <nav aria-label="Table of contents"><h2>Table of contents</h2>
+        <ul class="book-toc list-unstyled">
+<li><a class="" href="index.html">Welcome</a></li>
+<li class="book-part">Getting Started</li>
+<li><a class="" href="get-rstudio.html"><span class="header-section-number">1</span> Get RStudio</a></li>
+<li><a class="" href="create-a-project.html"><span class="header-section-number">2</span> Create A Project</a></li>
+<li><a class="" href="r-as-a-calculator.html"><span class="header-section-number">3</span> R as a Calculator</a></li>
+<li class="book-part">Finch Selection</li>
+<li><a class="" href="introduction.html"><span class="header-section-number">4</span> Introduction</a></li>
+<li><a class="" href="finch-project.html"><span class="header-section-number">5</span> Finch Project</a></li>
+<li><a class="" href="finch-analysis.html"><span class="header-section-number">6</span> Finch Analysis</a></li>
+<li class="book-part">Bluestem Variation</li>
+<li><a class="" href="bluestem-variation.html"><span class="header-section-number">7</span> Bluestem Variation</a></li>
+<li><a class="" href="bluestem-assignment.html"><span class="header-section-number">8</span> Bluestem Assignment</a></li>
+<li class="book-part">Artificial Selection</li>
+<li><a class="" href="artificial-selection.html"><span class="header-section-number">9</span> Artificial Selection</a></li>
+<li class="book-part">Appendices</li>
+<li><a class="active" href="beak-length-script.html"><span class="header-section-number">10</span> Beak Length Script</a></li>
+</ul>
+
+        <div class="book-extra">
+          <p><a id="book-repo" href="https://github.com/BIOL115-MSUM/BIOL115-MSUM.github.io">View book source <i class="fab fa-github"></i></a></p>
+        </div>
+      </nav>
+</div>
+  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="beak-length-script" class="section level1" number="10">
+<h1>
+<span class="header-section-number">10</span> Beak Length Script<a class="anchor" aria-label="anchor" href="#beak-length-script"><i class="fas fa-link"></i></a>
+</h1>
+<p>Here is the code you used to analyze the beak length in the finches dataset.</p>
+<p>You can either copy the code below and paste it into a new R script, e.g. <code>plant_height.R</code>, or <a href="beak-length.R">download</a> it as an R script, copy, and paste from there.</p>
+<p>Once you’ve copied the code, you can work through changing file paths, object names, column names, and axis labels as needed to perform your bluestem analysis.</p>
+<div class="sourceCode" id="cb34"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="co"># load packages -----------------------------------------------------------</span>
+
+<span class="co"># run every time you restart RStudio</span>
+<span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://readxl.tidyverse.org">readxl</a></span><span class="op">)</span>     <span class="co"># load readxl, for reading Excel files</span>
+<span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://tidyverse.tidyverse.org">tidyverse</a></span><span class="op">)</span>  <span class="co"># load tidyverse, for working with datasets</span>
+
+
+<span class="co"># read data ---------------------------------------------------------------</span>
+
+<span class="co"># read the finches data</span>
+<span class="va">finches</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://readxl.tidyverse.org/reference/read_excel.html">read_excel</a></span><span class="op">(</span><span class="st">"finches_data.xlsx"</span><span class="op">)</span>
+
+<span class="co"># print the finches tibble in the console</span>
+<span class="va">finches</span>
+
+<span class="co"># take a quick look at all the variables in the dataset</span>
+<span class="fu">glimpse</span><span class="op">(</span><span class="va">finches</span><span class="op">)</span>
+
+
+<span class="co"># histogram ---------------------------------------------------------------</span>
+
+<span class="co"># histogram of beak length, grouped by survival, with labels</span>
+<span class="fu">ggplot</span><span class="op">(</span>
+  data <span class="op">=</span> <span class="va">finches</span>,                     <span class="co"># use the finches dataset</span>
+  mapping <span class="op">=</span> <span class="fu">aes</span><span class="op">(</span>x <span class="op">=</span> <span class="va">beak_length</span>,      <span class="co"># put beak length on the x axis</span>
+                fill <span class="op">=</span> <span class="va">outcome</span><span class="op">)</span>       <span class="co"># fill sets the color of the boxes</span>
+<span class="op">)</span> <span class="op">+</span>
+  <span class="fu">geom_histogram</span><span class="op">(</span>bins <span class="op">=</span> <span class="fl">14</span><span class="op">)</span> <span class="op">+</span>         <span class="co"># add the histogram, use 14 bins</span>
+  <span class="fu">facet_wrap</span><span class="op">(</span><span class="op">~</span> <span class="va">outcome</span>, ncol <span class="op">=</span> <span class="fl">1</span><span class="op">)</span> <span class="op">+</span>   <span class="co"># outcome is the grouping variable</span>
+  <span class="fu">guides</span><span class="op">(</span>fill <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span> <span class="op">+</span>              <span class="co"># don't show a legend for fill color</span>
+  <span class="fu">labs</span><span class="op">(</span>
+    title <span class="op">=</span> <span class="st">"Figure 1."</span>,              <span class="co"># title</span>
+    x <span class="op">=</span> <span class="st">"Beak Length (mm)"</span>,           <span class="co"># x-axis label</span>
+    y <span class="op">=</span> <span class="st">"Number of Birds"</span>             <span class="co"># y-axis label</span>
+  <span class="op">)</span> <span class="op">+</span>
+  <span class="fu">theme</span><span class="op">(</span>plot.title <span class="op">=</span> <span class="fu">element_text</span><span class="op">(</span>size <span class="op">=</span> <span class="fu">rel</span><span class="op">(</span><span class="fl">.8</span><span class="op">)</span><span class="op">)</span><span class="op">)</span>  <span class="co"># make title smaller</span>
+
+<span class="co"># save your most recent plot</span>
+<span class="fu">ggsave</span><span class="op">(</span><span class="st">"Beak Length Histogram.png"</span>,   <span class="co"># you choose a name for the file</span>
+       width <span class="op">=</span> <span class="fl">3.5</span>, height <span class="op">=</span> <span class="fl">3.5</span>,     <span class="co"># dimensions of saved file</span>
+       units <span class="op">=</span> <span class="st">"in"</span><span class="op">)</span>                  <span class="co"># units for the dimensions</span>
+
+
+<span class="co"># summarize ---------------------------------------------------------------</span>
+
+<span class="co"># summarize the dataset by outcome (survived vs. died)</span>
+<span class="va">beak_length_grouped_summary</span> <span class="op">&lt;-</span> 
+  <span class="va">finches</span> <span class="op">%&gt;%</span> 
+  <span class="fu">group_by</span><span class="op">(</span><span class="va">outcome</span><span class="op">)</span> <span class="op">%&gt;%</span> 
+  <span class="fu">summarize</span><span class="op">(</span>mean <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">beak_length</span><span class="op">)</span>,
+            sd <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/sd.html">sd</a></span><span class="op">(</span><span class="va">beak_length</span><span class="op">)</span>,
+            n <span class="op">=</span> <span class="fu">n</span><span class="op">(</span><span class="op">)</span><span class="op">)</span> <span class="op">%&gt;%</span> 
+  <span class="fu">mutate</span><span class="op">(</span>sem <span class="op">=</span> <span class="va">sd</span> <span class="op">/</span> <span class="fu"><a href="https://rdrr.io/r/base/MathFun.html">sqrt</a></span><span class="op">(</span><span class="va">n</span><span class="op">)</span>,
+         upper <span class="op">=</span> <span class="va">mean</span> <span class="op">+</span> <span class="fl">1.96</span> <span class="op">*</span> <span class="va">sem</span>,
+         lower <span class="op">=</span> <span class="va">mean</span> <span class="op">-</span> <span class="fl">1.96</span> <span class="op">*</span> <span class="va">sem</span><span class="op">)</span>
+
+<span class="co"># print the results in the console</span>
+<span class="va">beak_length_grouped_summary</span>
+
+
+<span class="co"># bar chart ---------------------------------------------------------------</span>
+
+<span class="co"># bar chart of mean beak lengths</span>
+<span class="fu">ggplot</span><span class="op">(</span>
+  data <span class="op">=</span> <span class="va">beak_length_grouped_summary</span>,   <span class="co"># dont use the original finches dataset</span>
+  mapping <span class="op">=</span> <span class="fu">aes</span><span class="op">(</span>x <span class="op">=</span> <span class="va">outcome</span>,            <span class="co"># survival on the x axis</span>
+                y <span class="op">=</span> <span class="va">mean</span>,               <span class="co"># mean beak length on the y axis</span>
+                fill <span class="op">=</span> <span class="va">outcome</span><span class="op">)</span>         <span class="co"># make died/survived different colors</span>
+<span class="op">)</span> <span class="op">+</span>
+  <span class="fu">geom_col</span><span class="op">(</span><span class="op">)</span> <span class="op">+</span>                          <span class="co"># add columns</span>
+  <span class="fu">geom_errorbar</span><span class="op">(</span>                        <span class="co"># add error bars</span>
+    mapping <span class="op">=</span> <span class="fu">aes</span><span class="op">(</span>ymin <span class="op">=</span> <span class="va">lower</span>,         <span class="co">#   lower 95% confidence limit</span>
+                  ymax <span class="op">=</span> <span class="va">upper</span><span class="op">)</span>,        <span class="co">#   upper 95% confidence limit</span>
+    width <span class="op">=</span> <span class="fl">.3</span>                          <span class="co">#   width of horizontal part of bars</span>
+  <span class="op">)</span> <span class="op">+</span>
+  <span class="fu">guides</span><span class="op">(</span>fill <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span> <span class="op">+</span>                <span class="co"># don't show a legend for fill color</span>
+  <span class="fu">labs</span><span class="op">(</span>
+    title <span class="op">=</span> <span class="st">"Figure 2."</span>,                <span class="co"># title</span>
+    x <span class="op">=</span> <span class="st">"Outcome"</span>,                      <span class="co"># x-axis label</span>
+    y <span class="op">=</span> <span class="st">"Beak Length (mm)"</span>              <span class="co"># y-axis label</span>
+  <span class="op">)</span> <span class="op">+</span>
+  <span class="fu">theme</span><span class="op">(</span>plot.title <span class="op">=</span> <span class="fu">element_text</span><span class="op">(</span>size <span class="op">=</span> <span class="fu">rel</span><span class="op">(</span><span class="fl">.8</span><span class="op">)</span><span class="op">)</span><span class="op">)</span>  <span class="co"># make title smaller</span>
+
+<span class="co"># save the beak length bar chart</span>
+<span class="co"># note that the dimensions are different from the histograms above</span>
+<span class="fu">ggsave</span><span class="op">(</span><span class="st">"Beak Length Bar Chart.png"</span>, 
+       width <span class="op">=</span> <span class="fl">2.5</span>, height <span class="op">=</span> <span class="fl">3.5</span>, units <span class="op">=</span> <span class="st">"in"</span><span class="op">)</span>
+
+
+<span class="co"># t-test ------------------------------------------------------------------</span>
+
+<span class="co"># get a vector of beak lengths for birds that died</span>
+<span class="va">beak_length_died</span> <span class="op">&lt;-</span>
+  <span class="va">finches</span> <span class="op">%&gt;%</span>                     <span class="co"># start with finches dataset</span>
+  <span class="fu"><a href="https://rdrr.io/r/stats/filter.html">filter</a></span><span class="op">(</span><span class="va">outcome</span> <span class="op">==</span> <span class="st">"died"</span><span class="op">)</span> <span class="op">%&gt;%</span>   <span class="co"># only include rows w/ outcome=died</span>
+  <span class="fu">pull</span><span class="op">(</span><span class="va">beak_length</span><span class="op">)</span>               <span class="co"># extract the beak_length column</span>
+
+<span class="co"># print the new object in the console... it is a vector</span>
+<span class="va">beak_length_died</span>
+
+<span class="co"># get a vector of beak lengths for birds that survived</span>
+<span class="va">beak_length_survived</span> <span class="op">&lt;-</span>
+  <span class="va">finches</span> <span class="op">%&gt;%</span> 
+  <span class="fu"><a href="https://rdrr.io/r/stats/filter.html">filter</a></span><span class="op">(</span><span class="va">outcome</span> <span class="op">==</span> <span class="st">"survived"</span><span class="op">)</span> <span class="op">%&gt;%</span> 
+  <span class="fu">pull</span><span class="op">(</span><span class="va">beak_length</span><span class="op">)</span>
+
+<span class="co"># print the results in the console</span>
+<span class="va">beak_length_survived</span>
+
+<span class="co"># perform a two-sample t-test assuming unequal variances</span>
+<span class="fu"><a href="https://rdrr.io/r/stats/t.test.html">t.test</a></span><span class="op">(</span><span class="va">beak_length_died</span>, <span class="va">beak_length_survived</span><span class="op">)</span></code></pre></div>
+
+</div>
+  <div class="chapter-nav">
+<div class="prev"><a href="artificial-selection.html"><span class="header-section-number">9</span> Artificial Selection</a></div>
+<div class="empty"></div>
+</div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
+    <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
+      <ul class="nav navbar-nav"><li><a class="nav-link" href="#beak-length-script"><span class="header-section-number">10</span> Beak Length Script</a></li></ul>
+
+      <div class="book-extra">
+        <ul class="list-unstyled">
+<li><a id="book-source" href="https://github.com/BIOL115-MSUM/BIOL115-MSUM.github.io/blob/master/beak-length-script.Rmd">View source <i class="fab fa-github"></i></a></li>
+          <li><a id="book-edit" href="https://github.com/BIOL115-MSUM/BIOL115-MSUM.github.io/edit/master/beak-length-script.Rmd">Edit this page <i class="fab fa-github"></i></a></li>
+        </ul>
+</div>
+    </nav>
+</div>
+
+</div>
+</div> <!-- .container -->
+
+<footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>"<strong>Comparing Populations: Introduction to Data Analysis in R</strong>" was written by Chris Merkord and Alison Wallace. It was last built on 2021-09-15.</p>
+  </div>
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>This book was built by the <a class="text-light" href="https://bookdown.org">bookdown</a> R package.</p>
+  </div>
+
+</div></div>
+</footer>
+</body>
+</html>
