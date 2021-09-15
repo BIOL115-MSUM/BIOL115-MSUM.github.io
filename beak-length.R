@@ -37,7 +37,7 @@ ggplot(
   theme(plot.title = element_text(size = rel(.8)))  # make title smaller
 
 # save your most recent plot
-ggsave("Beak Length Histogram.png",   # you choose a name for the file
+ggsave("beak_length_histogram.png",   # you choose a name for the file
        width = 3.5, height = 3.5,     # dimensions of saved file
        units = "in")                  # units for the dimensions
 
@@ -48,12 +48,16 @@ ggsave("Beak Length Histogram.png",   # you choose a name for the file
 beak_length_grouped_summary <- 
   finches %>% 
   group_by(outcome) %>% 
-  summarize(mean = mean(beak_length),
-            sd = sd(beak_length),
-            n = n()) %>% 
-  mutate(sem = sd / sqrt(n),
-         upper = mean + 1.96 * sem,
-         lower = mean - 1.96 * sem)
+  summarize(
+    mean = mean(beak_length),
+    sd = sd(beak_length),
+    n = n()
+  ) %>% 
+  mutate(
+    sem = sd / sqrt(n),
+    upper = mean + 1.96 * sem,
+    lower = mean - 1.96 * sem
+  )
 
 # print the results in the console
 beak_length_grouped_summary
@@ -84,7 +88,7 @@ ggplot(
 
 # save the beak length bar chart
 # note that the dimensions are different from the histograms above
-ggsave("Beak Length Bar Chart.png", 
+ggsave("beak_length_bar_chart.png", 
        width = 2.5, height = 3.5, units = "in")
 
 

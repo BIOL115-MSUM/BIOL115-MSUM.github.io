@@ -72,7 +72,7 @@ Put your cursor on the first line and press Cmd+Return to run it. The cursor aut
 
 You will see a warning and some messages in the Console tab, but those can be safely ignored.
 
-You must run the `library()` each time you start RStudio. That's why it's nice to keep that code at the very top of your script.
+You must run the `library()` commands each time you start RStudio. That's why it's nice to keep that code at the very top of your script.
 
 ## Read the data
 
@@ -199,7 +199,7 @@ A good figure legend for this histogram would be:
 
 ### Export your figure
 
-You will only be turning in Assignment #2 Bluestem Analysis, so **YOU DO NOT NEED TO EXPORT THESE FIGURES** for your lab today. However, if you did want to save your figures and put them in a Microsoft Word document, here are directions for doing that:
+You will only be turning in Assignment #2 Bluestem Analysis, so **YOU DO NOT NEED TO EXPORT THESE FINCH FIGURES** for your lab today. However, if you ever want to save figures from R and put them in a Microsoft Word document, here are directions for doing that:
 
 To put your figure in a Microsoft Word document (your assignment in part 4), you must first save it as an image file on your computer. You can do this with `ggsave()`, which saves the most recent ggplot displayed.
 
@@ -207,12 +207,12 @@ You choose a file name, the dimensions of the output file (think about how big y
 
 ```{r save-histogram, eval=FALSE}
 # save your most recent plot
-ggsave("Beak Length Histogram.png",   # you choose a name for the file
+ggsave("beak_length_histogram.png",   # you choose a name for the file
        width = 3.5, height = 3.5,     # dimensions of saved file DO NOT CHANGE
        units = "in")                  # units for the dimensions DO NOT CHANGE
 ```
 
-Look in Files tab in RStudio and you'll see a file named **Beak Length Histogram.png** now. You can click it to open the file in your computer's default image viewer.
+Look in Files tab in RStudio and you'll see a file named **beak_length_histogram.png** now. You can click it to open the file in your computer's default image viewer.
 
 ## Summarize the data
 
@@ -231,16 +231,22 @@ The `group_by(outcome)` function tells R to give us separate summaries for each 
 beak_length_grouped_summary <- 
   finches %>% 
   group_by(outcome) %>% 
-  summarize(mean = mean(beak_length),
-            sd = sd(beak_length),
-            n = n()) %>% 
-  mutate(sem = sd / sqrt(n),
-         upper = mean + 1.96 * sem,
-         lower = mean - 1.96 * sem)
+  summarize(
+    mean = mean(beak_length),
+    sd = sd(beak_length),
+    n = n()
+  ) %>% 
+  mutate(
+    sem = sd / sqrt(n),
+    upper = mean + 1.96 * sem,
+    lower = mean - 1.96 * sem
+  )
 
 # print the results in the console
 beak_length_grouped_summary
 ```
+
+The number **1.96** in the code above is derived from statistical theory. You will not need to change it for any of the analyses you do later.
 
 ### Plot summarized data
 
@@ -280,7 +286,7 @@ Export your figure:
 ```{r save-barchart, eval=FALSE}
 # save the beak length bar chart
 # note that the dimensions are different from the histograms above
-ggsave("Beak Length Bar Chart.png", 
+ggsave("beak_length_bar_chart.png", 
        width = 2.5, height = 3.5, units = "in")  # DO NOT CHANGE
 ```
 

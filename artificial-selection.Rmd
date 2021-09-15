@@ -91,8 +91,8 @@ For example, here is the finch data colored by `sex`:
 
 ```{r read-finch-data, echo=FALSE, message=FALSE, warning=FALSE, results='hide'}
 source("beak-length.R")
-file.remove("Beak Length Histogram.png")
-file.remove("Beak Length Bar Chart.png")
+file.remove("beak_length_histogram.png")
+file.remove("beak_length_bar_chart.png")
 ```
 
 ```{r finch-sex-histogram, fig.width=6, fig.height=3.5, fig.align='center'}
