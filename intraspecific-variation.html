@@ -4,16 +4,16 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<title>2 Create A Project | Organismal Biology: Companion Website to BIOL 115 @ MSUM</title>
+<title>7 Intraspecific Variation | Organismal Biology: Companion Website to BIOL 115 @ MSUM</title>
 <meta name="author" content="Chris Merkord and Alison Wallace">
-<meta name="description" content="2.1 What are Projects? RStudio projects make it straightforward to divide your work into multiple contexts, each with their own working directory, workspace, history, and source documents...">
+<meta name="description" content="7.1 Introduction In this activity you will apply what you have learned in Finch Selection Example to the plant growth data you collected in the field during your Organismal Biology lab. On your...">
 <meta name="generator" content="bookdown 0.24.1 with bs4_book()">
-<meta property="og:title" content="2 Create A Project | Organismal Biology: Companion Website to BIOL 115 @ MSUM">
+<meta property="og:title" content="7 Intraspecific Variation | Organismal Biology: Companion Website to BIOL 115 @ MSUM">
 <meta property="og:type" content="book">
-<meta property="og:description" content="2.1 What are Projects? RStudio projects make it straightforward to divide your work into multiple contexts, each with their own working directory, workspace, history, and source documents...">
+<meta property="og:description" content="7.1 Introduction In this activity you will apply what you have learned in Finch Selection Example to the plant growth data you collected in the field during your Organismal Biology lab. On your...">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="2 Create A Project | Organismal Biology: Companion Website to BIOL 115 @ MSUM">
-<meta name="twitter:description" content="2.1 What are Projects? RStudio projects make it straightforward to divide your work into multiple contexts, each with their own working directory, workspace, history, and source documents...">
+<meta name="twitter:title" content="7 Intraspecific Variation | Organismal Biology: Companion Website to BIOL 115 @ MSUM">
+<meta name="twitter:description" content="7.1 Introduction In this activity you will apply what you have learned in Finch Selection Example to the plant growth data you collected in the field during your Organismal Biology lab. On your...">
 <!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/header-attrs-2.11/header-attrs.js"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
 <script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.3.0.9000/transition.js"></script><script src="libs/bs3compat-0.3.0.9000/tabs.js"></script><script src="libs/bs3compat-0.3.0.9000/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
@@ -42,14 +42,14 @@
 <li><a class="" href="index.html">Welcome</a></li>
 <li class="book-part">Getting Started</li>
 <li><a class="" href="get-rstudio.html"><span class="header-section-number">1</span> Get RStudio</a></li>
-<li><a class="active" href="create-a-project.html"><span class="header-section-number">2</span> Create A Project</a></li>
+<li><a class="" href="create-a-project.html"><span class="header-section-number">2</span> Create A Project</a></li>
 <li><a class="" href="r-as-a-calculator.html"><span class="header-section-number">3</span> R as a Calculator</a></li>
 <li class="book-part">Finch Selection</li>
 <li><a class="" href="introduction.html"><span class="header-section-number">4</span> Introduction</a></li>
 <li><a class="" href="finch-project.html"><span class="header-section-number">5</span> Finch Project</a></li>
 <li><a class="" href="finch-analysis.html"><span class="header-section-number">6</span> Finch Analysis</a></li>
 <li class="book-part">Intraspecific Variation</li>
-<li><a class="" href="intraspecific-variation.html"><span class="header-section-number">7</span> Intraspecific Variation</a></li>
+<li><a class="active" href="intraspecific-variation.html"><span class="header-section-number">7</span> Intraspecific Variation</a></li>
 <li><a class="" href="intraspecific-variation-assignment.html"><span class="header-section-number">8</span> Intraspecific Variation Assignment</a></li>
 <li class="book-part">Artificial Selection</li>
 <li><a class="" href="artificial-selection.html"><span class="header-section-number">9</span> Artificial Selection</a></li>
@@ -62,48 +62,60 @@
         </div>
       </nav>
 </div>
-  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="create-a-project" class="section level1" number="2">
+  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="intraspecific-variation" class="section level1" number="7">
 <h1>
-<span class="header-section-number">2</span> Create A Project<a class="anchor" aria-label="anchor" href="#create-a-project"><i class="fas fa-link"></i></a>
+<span class="header-section-number">7</span> Intraspecific Variation<a class="anchor" aria-label="anchor" href="#intraspecific-variation"><i class="fas fa-link"></i></a>
 </h1>
-<div id="what-are-projects" class="section level2" number="2.1">
+<div id="introduction-1" class="section level2" number="7.1">
 <h2>
-<span class="header-section-number">2.1</span> What are Projects?<a class="anchor" aria-label="anchor" href="#what-are-projects"><i class="fas fa-link"></i></a>
+<span class="header-section-number">7.1</span> Introduction<a class="anchor" aria-label="anchor" href="#introduction-1"><i class="fas fa-link"></i></a>
 </h2>
-<p>RStudio projects make it straightforward to divide your work into multiple contexts, each with their own working directory, workspace, history, and source documents (scripts), and data files.</p>
-</div>
-<div id="create-a-project-in-rstudio-cloud" class="section level2" number="2.2">
-<h2>
-<span class="header-section-number">2.2</span> Create a Project in RStudio Cloud<a class="anchor" aria-label="anchor" href="#create-a-project-in-rstudio-cloud"><i class="fas fa-link"></i></a>
-</h2>
-<p>Go to <a href="https://rstudio.cloud/">Rstudio Cloud</a> and sign in.</p>
-<p>To create a new project:</p>
+<p>In this activity you will apply what you have learned in Finch Selection Example to the plant growth data you collected in the field during your Organismal Biology lab.</p>
+<p>On your field trip to the MSUM Regional Science Center, you collected data to compare how Indiangrass (<em>Sorghastrum nutans</em>) plants allocate energy towards growth and reproduction.</p>
+<p>You measured the plant height as a proxy for growth and panicle length as a proxy for reproduction.</p>
+<p>You sampled plants at two sites:</p>
 <ol style="list-style-type: decimal">
-<li>Go to Your Workspace</li>
-<li>Go to the Projects area</li>
-<li>Click the button to start a New Project</li>
+<li>
+<strong>Site A</strong> was characterized by mesic (moist) soil with a high clay content. Other species present included <em>Equisetum</em> (horsetail) and <em>Salix</em> (willow) shrubs. This may have been called a “lowland” site by your instructor. It was restored to grassland about 6 years ago.</li>
+<li>
+<strong>Site B</strong> was characterized by more xeric (drier) soil with a higher sand content. This may have been called an “upland” site by your instructor. It was restored to grassland about 30 years ago.</li>
 </ol>
-<div class="inline-figure"><img src="screenshots/rstudio_cloud_new_project.png" width="75%" style="display: block; margin: auto;"></div>
-<p>Wait a moment while your new project is deployed.</p>
-<p>When the screen refreshes you will have a new, empty project and you can move on to the next step.</p>
+<p>You will compare the plant heights and panicle lengths of plants in these two sites, using the same steps you used to compare finches that died vs. survived in the Finch Selection Example.</p>
+</div>
+<div id="the-question" class="section level2" number="7.2">
+<h2>
+<span class="header-section-number">7.2</span> The question<a class="anchor" aria-label="anchor" href="#the-question"><i class="fas fa-link"></i></a>
+</h2>
+<p>The goal of the activity is to answer the following question:</p>
+<blockquote class="text-success">
+Do plant height or panicle length of Indiangrass (<i>Sorghastrum nutans</i>) plants vary between site A and site B?
+</blockquote>
+</div>
+<div id="your-assignment" class="section level2" number="7.3">
+<h2>
+<span class="header-section-number">7.3</span> Your assignment<a class="anchor" aria-label="anchor" href="#your-assignment"><i class="fas fa-link"></i></a>
+</h2>
+<p>In this activity, you will create a new R script, read the grass data into R, plot histograms of plant height and panicle length, estimate the means of those variables, plot them on bar charts, and compare the means using a <em>t</em>-test.</p>
+<p>Then create a new Microsoft Word document, copy your figures into it, and write figure legends for them, and write a Results paragraph that cites the figures and the results from the <em>t</em>-test. Submit this document to your instructor.</p>
 
 </div>
 </div>
   <div class="chapter-nav">
-<div class="prev"><a href="get-rstudio.html"><span class="header-section-number">1</span> Get RStudio</a></div>
-<div class="next"><a href="r-as-a-calculator.html"><span class="header-section-number">3</span> R as a Calculator</a></div>
+<div class="prev"><a href="finch-analysis.html"><span class="header-section-number">6</span> Finch Analysis</a></div>
+<div class="next"><a href="intraspecific-variation-assignment.html"><span class="header-section-number">8</span> Intraspecific Variation Assignment</a></div>
 </div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
     <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
       <ul class="nav navbar-nav">
-<li><a class="nav-link" href="#create-a-project"><span class="header-section-number">2</span> Create A Project</a></li>
-<li><a class="nav-link" href="#what-are-projects"><span class="header-section-number">2.1</span> What are Projects?</a></li>
-<li><a class="nav-link" href="#create-a-project-in-rstudio-cloud"><span class="header-section-number">2.2</span> Create a Project in RStudio Cloud</a></li>
+<li><a class="nav-link" href="#intraspecific-variation"><span class="header-section-number">7</span> Intraspecific Variation</a></li>
+<li><a class="nav-link" href="#introduction-1"><span class="header-section-number">7.1</span> Introduction</a></li>
+<li><a class="nav-link" href="#the-question"><span class="header-section-number">7.2</span> The question</a></li>
+<li><a class="nav-link" href="#your-assignment"><span class="header-section-number">7.3</span> Your assignment</a></li>
 </ul>
 
       <div class="book-extra">
         <ul class="list-unstyled">
-<li><a id="book-source" href="https://github.com/BIOL115-MSUM/BIOL115-MSUM.github.io/blob/master/create-project.Rmd">View source <i class="fab fa-github"></i></a></li>
-          <li><a id="book-edit" href="https://github.com/BIOL115-MSUM/BIOL115-MSUM.github.io/edit/master/create-project.Rmd">Edit this page <i class="fab fa-github"></i></a></li>
+<li><a id="book-source" href="https://github.com/BIOL115-MSUM/BIOL115-MSUM.github.io/blob/master/bluestem-variation.Rmd">View source <i class="fab fa-github"></i></a></li>
+          <li><a id="book-edit" href="https://github.com/BIOL115-MSUM/BIOL115-MSUM.github.io/edit/master/bluestem-variation.Rmd">Edit this page <i class="fab fa-github"></i></a></li>
         </ul>
 </div>
     </nav>

@@ -1,15 +1,15 @@
-# Bluestem Assignment
+# Intraspecific Variation Assignment
 
 In this assignment, you will create a document containing the following:
 
 - A histogram of plant heights
 - A bar chart of plant heights
-- A histogram of rame lengths
-- A bar chart of rame lengths
+- A histogram of panicle lengths
+- A bar chart of panicle lengths
 - Four figure legends, one for each of the figures listed above.
 - A section titled **RESULTS** which includes:
-    - A paragraph describing the difference in plant heights between lowland and upland areas, citing the first two figures and giving the results of the plant height *t*-test.
-    - A paragraph describing the difference in rame lengths between lowland and upland areas, citing the last two figures and giving the results of the rame length *t*-test.
+    - A paragraph describing the difference in plant heights between the two sites, citing the first two figures and giving the results of the plant height *t*-test.
+    - A paragraph describing the difference in panicle lengths between the two sites, citing the last two figures and giving the results of the panicle length *t*-test.
 
 When you're done, submit the document to your instructor.
 
@@ -19,14 +19,14 @@ Follow these directions to get started:
 
 1. Go to [RStudio Cloud](https://rstudio.cloud/) and sign in. 
 2. On the left, under Spaces, click on **Course Workspace**
-3. Click the **Start** button on the **Bluestem Variation Project** assignment.
+3. Click the **Start** button on the **Intraspecific Variation Project** assignment.
 
 ## Find the data
 
 When your project starts, look at the **Files** tab in the lower right pane.
 
 There are two files you should take note of:
-- [bluestem_data.xlsx](bluestem_data.xlsx) - this is the data file you will use. If it's not in your project folder, download it here and upload to the folder.
+- [grass_data.xlsx](grass_data.xlsx) - this is the data file you will use. It should already be in your project folder.
 
 ## Create script
 
@@ -36,9 +36,9 @@ For this assignment, you can use the code you just created to analyze **beak len
 
 Create a new R script, save it as `plant_height.R`. Then go to the [Beak Length Script](beak-length-script.html), copy the code, and paste it into your new plant height script.
 
-## Look at the blustem data
+## Look at the grass data
 
-In your new script, adjust the code so that it reads the bluestem_data.xlsx instead of finches_data.xlsx. Also be sure to change the name you give the data after your read it in.
+In your new script, adjust the code so that it reads the grass_data.xlsx instead of finches_data.xlsx. Also be sure to change the name you give the data after your read it in.
 
 
 
@@ -48,24 +48,24 @@ Each row in the dataset represents an individual plant.
 
 The variables in the dataset are:
 
-- **location** ("lowland" vs. "upland")
+- **site** ("A" vs. "B"; note the letters are capitalized)
 - **plant_height** (plant height measured in cm)
-- **rame_length** (rame length measured in mm)
+- **panicle_length** (panicle length measured in mm)
 
 ## Modify script
 
 Go through the script looking for code that refers to finches or variables in the finches dataset.
 
-Replace each instance with the analogous word or variable name for the bluestem dataset.
+Replace each instance with the analogous word or variable name for the grass dataset.
 
 If you are feeling saavy, use "find and replace" (the magnifying glass on the Source tab toolbar) to modify the script. Be careful, though! With great power comes great responsibility. It's easy to accidentally replace something you didn't mean to. And triple check your spelling before you Replace All. Remember that R is case sensitive and don't mistake any underscores for spaces.
 
 To get you moving along, here are some suggestions:
 
-- replace `finches` with `bluestem`
+- replace `finches` with `grass`
 - replace `beak_length` with `plant_height`
-- replace `outcome` with `location`
-- replace `died` with `lowland` and replace `survived` with `upland`
+- replace `outcome` with `site`
+- replace `died` with `A` and replace `survived` with `B` (capitalization is important here)
 - change the x- and y-axis labels on the histogram
 - change the x- and y-axis labels on the bar chart
 - change the name of the file you save the histogram as
@@ -75,12 +75,12 @@ Now save the `plant_height.R` script. If you see any red x's pop up on the left 
 
 Finally, run the `plant_height.R` script, one line at a time, watching for errors and looking closely at any figures you generate. If you get an error or notice a mistake, fix it and start running the code again from the top.
 
-## Repeat for rame length
+## Repeat for panicle length
 
-Now you can repeat the same process for rame length.
+Now you can repeat the same process for panicle length.
 
-1. With your plant height script `plant_height.R` open go to **File > Save As** and save the new script as `rame_length.R`
-4. Use Find and Replace to change `plant_height` to `rame_length` throughout.
+1. With your plant height script `plant_height.R` open go to **File > Save As** and save the new script as `panicle_length.R`
+4. Use Find and Replace to change `plant_height` to `panicle_length` throughout.
 4. Change the axis labels
 3. Change the file names for saving
 4. Change the figure titles (e.g. **Figure 1** becomes **Figure 3**, and **2** becomes **4**)
@@ -94,7 +94,7 @@ For reference, here are the figure legends for the finch beak length analysis ag
 
 <blockquote class="text-info">Figure 1. <strong>Distribution of beak lengths among medium ground finches (<i>Geospiza fortis</i>) grouped by outcome during the 1977 drought on Daphne Major, Galapagos archipelago.</strong> Each sample consisted of 50 individuals. Birds were banded and measured during 1975-1977 and resighted in 1978.</blockquote>
 
-<blockquote class="text-info">Figure 2. <strong>Mean beak length varied between medium ground finches (<i>Geospiza fortis</i>) that survived or died during the 1977 drought on Daphne Major, Galapagos archipelago.</strong> Each sample consisted of 50 individuals. Birds were banded and measured during 1975-1977 and resighted in 1978. Error bars represent 95% confidence intervals.</blockquote>
+<blockquote class="text-info">Figure 2. <strong>Mean beak length of medium ground finches (<i>Geospiza fortis</i>) that survived or died during the 1977 drought on Daphne Major, Galapagos archipelago.</strong> Each sample consisted of 50 individuals. Birds were banded and measured during 1975-1977 and resighted in 1978. Error bars represent 95% confidence intervals.</blockquote>
 
 For tips on how to write a good figure legend, see [Writing an Effective Figure Legend](https://www.aje.com/en/arc/writing-effective-figure-legend/). In general, a figure legend should provide the following parts:
 
@@ -107,8 +107,8 @@ For tips on how to write a good figure legend, see [Writing an Effective Figure 
 
 Write a RESULTS section as you might for a report or peer-reviewed article. This section should include:
 
-- A paragraph describing the difference in plant heights between lowland and upland areas, citing the first two figures and giving the results of the plant height *t*-test.
-- A paragraph describing the difference in rame lengths between lowland and upland areas, citing the last two figures and giving the results of the rame length *t*-test.
+- A paragraph describing the difference in plant heights between the two sites, citing the first two figures and giving the results of the plant height *t*-test.
+- A paragraph describing the difference in panicle lengths between the two sites, citing the last two figures and giving the results of the panicle length *t*-test.
 
 For reference, here is the paragraph we wrote for the beak length analysis:
 

@@ -48,9 +48,9 @@
 <li><a class="" href="introduction.html"><span class="header-section-number">4</span> Introduction</a></li>
 <li><a class="" href="finch-project.html"><span class="header-section-number">5</span> Finch Project</a></li>
 <li><a class="" href="finch-analysis.html"><span class="header-section-number">6</span> Finch Analysis</a></li>
-<li class="book-part">Bluestem Variation</li>
-<li><a class="" href="bluestem-variation.html"><span class="header-section-number">7</span> Bluestem Variation</a></li>
-<li><a class="" href="bluestem-assignment.html"><span class="header-section-number">8</span> Bluestem Assignment</a></li>
+<li class="book-part">Intraspecific Variation</li>
+<li><a class="" href="intraspecific-variation.html"><span class="header-section-number">7</span> Intraspecific Variation</a></li>
+<li><a class="" href="intraspecific-variation-assignment.html"><span class="header-section-number">8</span> Intraspecific Variation Assignment</a></li>
 <li class="book-part">Artificial Selection</li>
 <li><a class="" href="artificial-selection.html"><span class="header-section-number">9</span> Artificial Selection</a></li>
 <li class="book-part">Appendices</li>
@@ -68,8 +68,8 @@
 </h1>
 <p>Here is the code you used to analyze the beak length in the finches dataset.</p>
 <p>You can either copy the code below and paste it into a new R script, e.g. <code>plant_height.R</code>, or <a href="beak-length.R">download</a> it as an R script, copy, and paste from there.</p>
-<p>Once you’ve copied the code, you can work through changing file paths, object names, column names, and axis labels as needed to perform your bluestem analysis.</p>
-<div class="sourceCode" id="cb72"><pre class="downlit sourceCode r">
+<p>Once you’ve copied the code, you can work through changing file paths, object names, column names, and axis labels as needed to perform your Intraspecific Variation Analysis.</p>
+<div class="sourceCode" id="cb69"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co"># load packages -----------------------------------------------------------</span>
 
 <span class="co"># run every time you restart RStudio</span>
@@ -99,7 +99,7 @@
 <span class="op">)</span> <span class="op">+</span>
   <span class="fu">geom_histogram</span><span class="op">(</span>bins <span class="op">=</span> <span class="fl">14</span><span class="op">)</span> <span class="op">+</span>         <span class="co"># add the histogram, use 14 bins</span>
   <span class="fu">facet_wrap</span><span class="op">(</span><span class="op">~</span> <span class="va">outcome</span>, ncol <span class="op">=</span> <span class="fl">1</span><span class="op">)</span> <span class="op">+</span>   <span class="co"># outcome is the grouping variable</span>
-  <span class="fu">guides</span><span class="op">(</span>fill <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span> <span class="op">+</span>              <span class="co"># don't show a legend for fill color</span>
+  <span class="fu">guides</span><span class="op">(</span>fill <span class="op">=</span> <span class="st">"none"</span><span class="op">)</span> <span class="op">+</span>             <span class="co"># don't show a legend for fill color</span>
   <span class="fu">labs</span><span class="op">(</span>
     title <span class="op">=</span> <span class="st">"Figure 1."</span>,              <span class="co"># title</span>
     x <span class="op">=</span> <span class="st">"Beak Length (mm)"</span>,           <span class="co"># x-axis label</span>
@@ -108,7 +108,7 @@
   <span class="fu">theme</span><span class="op">(</span>plot.title <span class="op">=</span> <span class="fu">element_text</span><span class="op">(</span>size <span class="op">=</span> <span class="fu">rel</span><span class="op">(</span><span class="fl">.8</span><span class="op">)</span><span class="op">)</span><span class="op">)</span>  <span class="co"># make title smaller</span>
 
 <span class="co"># save your most recent plot</span>
-<span class="fu">ggsave</span><span class="op">(</span><span class="st">"Beak Length Histogram.png"</span>,   <span class="co"># you choose a name for the file</span>
+<span class="fu">ggsave</span><span class="op">(</span><span class="st">"beak_length_histogram.png"</span>,   <span class="co"># you choose a name for the file</span>
        width <span class="op">=</span> <span class="fl">3.5</span>, height <span class="op">=</span> <span class="fl">3.5</span>,     <span class="co"># dimensions of saved file</span>
        units <span class="op">=</span> <span class="st">"in"</span><span class="op">)</span>                  <span class="co"># units for the dimensions</span>
 
@@ -119,15 +119,14 @@
 <span class="va">beak_length_grouped_summary</span> <span class="op">&lt;-</span> 
   <span class="va">finches</span> <span class="op">%&gt;%</span> 
   <span class="fu">group_by</span><span class="op">(</span><span class="va">outcome</span><span class="op">)</span> <span class="op">%&gt;%</span> 
-  <span class="fu">summarize</span><span class="op">(</span>mean <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">beak_length</span><span class="op">)</span>,
-            sd <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/sd.html">sd</a></span><span class="op">(</span><span class="va">beak_length</span><span class="op">)</span>,
-            n <span class="op">=</span> <span class="fu">n</span><span class="op">(</span><span class="op">)</span><span class="op">)</span> <span class="op">%&gt;%</span> 
-  <span class="fu">mutate</span><span class="op">(</span>sem <span class="op">=</span> <span class="va">sd</span> <span class="op">/</span> <span class="fu"><a href="https://rdrr.io/r/base/MathFun.html">sqrt</a></span><span class="op">(</span><span class="va">n</span><span class="op">)</span>,
-         upper <span class="op">=</span> <span class="va">mean</span> <span class="op">+</span> <span class="fl">1.96</span> <span class="op">*</span> <span class="va">sem</span>,
-         lower <span class="op">=</span> <span class="va">mean</span> <span class="op">-</span> <span class="fl">1.96</span> <span class="op">*</span> <span class="va">sem</span><span class="op">)</span>
-
-<span class="co"># print the results in the console</span>
-<span class="va">beak_length_grouped_summary</span>
+  <span class="fu">summarize</span><span class="op">(</span>
+    mean <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">beak_length</span><span class="op">)</span>,
+    sample_size <span class="op">=</span> <span class="fu">n</span><span class="op">(</span><span class="op">)</span>,
+    standard_error <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/sd.html">sd</a></span><span class="op">(</span><span class="va">beak_length</span><span class="op">)</span> <span class="op">/</span> <span class="fu"><a href="https://rdrr.io/r/base/MathFun.html">sqrt</a></span><span class="op">(</span><span class="va">sample_size</span><span class="op">)</span>,
+    upper_conf_limit <span class="op">=</span> <span class="va">mean</span> <span class="op">+</span> <span class="fl">1.96</span> <span class="op">*</span> <span class="va">standard_error</span>,
+    lower_conf_limit <span class="op">=</span> <span class="va">mean</span> <span class="op">-</span> <span class="fl">1.96</span> <span class="op">*</span> <span class="va">standard_error</span>
+  <span class="op">)</span> <span class="op">%&gt;%</span> 
+  <span class="fu"><a href="https://rdrr.io/r/base/print.html">print</a></span><span class="op">(</span><span class="op">)</span>                             <span class="co"># print the results in the console</span>
 
 
 <span class="co"># bar chart ---------------------------------------------------------------</span>
@@ -139,23 +138,23 @@
                 y <span class="op">=</span> <span class="va">mean</span>,               <span class="co"># mean beak length on the y axis</span>
                 fill <span class="op">=</span> <span class="va">outcome</span><span class="op">)</span>         <span class="co"># make died/survived different colors</span>
 <span class="op">)</span> <span class="op">+</span>
-  <span class="fu">geom_col</span><span class="op">(</span><span class="op">)</span> <span class="op">+</span>                          <span class="co"># add columns</span>
-  <span class="fu">geom_errorbar</span><span class="op">(</span>                        <span class="co"># add error bars</span>
-    mapping <span class="op">=</span> <span class="fu">aes</span><span class="op">(</span>ymin <span class="op">=</span> <span class="va">lower</span>,         <span class="co">#   lower 95% confidence limit</span>
-                  ymax <span class="op">=</span> <span class="va">upper</span><span class="op">)</span>,        <span class="co">#   upper 95% confidence limit</span>
-    width <span class="op">=</span> <span class="fl">.3</span>                          <span class="co">#   width of horizontal part of bars</span>
+  <span class="fu">geom_col</span><span class="op">(</span><span class="op">)</span> <span class="op">+</span>                                 <span class="co"># add columns</span>
+  <span class="fu">geom_errorbar</span><span class="op">(</span>                               <span class="co"># add error bars</span>
+    mapping <span class="op">=</span> <span class="fu">aes</span><span class="op">(</span>ymin <span class="op">=</span> <span class="va">lower_conf_limit</span>,     <span class="co">#   lower 95% confidence limit</span>
+                  ymax <span class="op">=</span> <span class="va">upper_conf_limit</span><span class="op">)</span>,    <span class="co">#   upper 95% confidence limit</span>
+    width <span class="op">=</span> <span class="fl">.3</span>                                 <span class="co">#   width of horizontal bars</span>
   <span class="op">)</span> <span class="op">+</span>
-  <span class="fu">guides</span><span class="op">(</span>fill <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span> <span class="op">+</span>                <span class="co"># don't show a legend for fill color</span>
+  <span class="fu">guides</span><span class="op">(</span>fill <span class="op">=</span> <span class="st">"none"</span><span class="op">)</span> <span class="op">+</span>                      <span class="co"># don't show fill color legend</span>
   <span class="fu">labs</span><span class="op">(</span>
-    title <span class="op">=</span> <span class="st">"Figure 2."</span>,                <span class="co"># title</span>
-    x <span class="op">=</span> <span class="st">"Outcome"</span>,                      <span class="co"># x-axis label</span>
-    y <span class="op">=</span> <span class="st">"Beak Length (mm)"</span>              <span class="co"># y-axis label</span>
+    title <span class="op">=</span> <span class="st">"Figure 2."</span>,                       <span class="co"># title</span>
+    x <span class="op">=</span> <span class="st">"Outcome"</span>,                             <span class="co"># x-axis label</span>
+    y <span class="op">=</span> <span class="st">"Beak Length (mm)"</span>                     <span class="co"># y-axis label</span>
   <span class="op">)</span> <span class="op">+</span>
   <span class="fu">theme</span><span class="op">(</span>plot.title <span class="op">=</span> <span class="fu">element_text</span><span class="op">(</span>size <span class="op">=</span> <span class="fu">rel</span><span class="op">(</span><span class="fl">.8</span><span class="op">)</span><span class="op">)</span><span class="op">)</span>  <span class="co"># make title smaller</span>
 
 <span class="co"># save the beak length bar chart</span>
 <span class="co"># note that the dimensions are different from the histograms above</span>
-<span class="fu">ggsave</span><span class="op">(</span><span class="st">"Beak Length Bar Chart.png"</span>, 
+<span class="fu">ggsave</span><span class="op">(</span><span class="st">"beak_length_bar_chart.png"</span>, 
        width <span class="op">=</span> <span class="fl">2.5</span>, height <span class="op">=</span> <span class="fl">3.5</span>, units <span class="op">=</span> <span class="st">"in"</span><span class="op">)</span>
 
 

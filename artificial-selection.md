@@ -4,7 +4,7 @@
 
 ## Introduction
 
-In this activity you will apply what you learned in the Finch Example and the Bluestem Variation activities to analyze a new dataset.
+In this activity you will apply what you learned in the Finch Selection Example and the Intraspecific Variation activities to analyze a new dataset.
 
 Students at Minnesota State University Moorhead conducted an experiment to determine the effect of artificial selection in Wisconsin Fast Plants (*Brassica rapa*). The students grew plants for 10 days and then counted the number of trichomes (hairlike structures) on the edge of the first true leaf of each plant. The 75% of plants with the fewest trichomes were removed from the population. The remaining plants were allowed to flower, were fertilized with each other, and produced seeds. Those seeds were planted, and the offspring generation were allowed to grow for 10 days. At that point the students counted the trichomes on the offspring genertation.
 
@@ -69,13 +69,13 @@ To answer the question, you should:
 1. Modify remaining code for use with the fast plant data
 2. Plot a histogram with facets for each generation (F0 and F1)
     - Instead of setting the fill color to vary by generation, set it to vary by whether or not the plants were **selected** for breeding. This is the only place you will use the **selected** variable
-    - Remove the line `guides(fill = FALSE) +` to show the fill color legend
+    - Remove the line `guides(fill = "none") +` to show the fill color legend
     - For help, see [A new variation] below
 3. Summarize trichome count by generation
 4. Create a bar chart showing the mean trichome count in each generation (with confidence intervals)
 5. Conduct a t-test to test if the difference in means is statistically significant
 
-For a reminder on how to perform the analysis and writing steps, see the Bluestem Variation activity.
+For a reminder on how to perform the analysis and writing steps, see the Intraspecific Variation activity.
 
 When you are finished:
 
@@ -83,7 +83,7 @@ When you are finished:
 
 ### A new variation
 
-In the finch and bluestem analyses, you created a histogram for each group and also colored the histograms differently for each group.
+In the Finch Selection Example and Intraspecific Variation Analysis, you created a histogram for each group and also colored the histograms differently for each group.
 
 In theory, there is no reason you can't use a different variable to color the histograms.
 
@@ -113,7 +113,7 @@ ggplot(
 
 For your current assignment, put each generation of plants on its own panel, and set the fill color of the columns by whether the plants were **selected** for breeding or not.
 
-Remove the line `guides(fill = FALSE) +` to show the fill color legend.
+Remove the line `guides(fill = "none") +` to show the fill color legend.
 
 In *your* figures, do not use subtitles and set your titles to say `"Figure 1."` and `"Figure 2."`.
 

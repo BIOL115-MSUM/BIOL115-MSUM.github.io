@@ -6,7 +6,7 @@ Here is the code you used to analyze the beak length in the finches dataset.
 
 You can either copy the code below and paste it into a new R script, e.g. `plant_height.R`, or [download](beak-length.R) it as an R script, copy, and paste from there.
 
-Once you've copied the code, you can work through changing file paths, object names, column names, and axis labels as needed to perform your bluestem analysis.
+Once you've copied the code, you can work through changing file paths, object names, column names, and axis labels as needed to perform your Intraspecific Variation Analysis.
 
 
 ```r
@@ -39,7 +39,7 @@ ggplot(
 ) +
   geom_histogram(bins = 14) +         # add the histogram, use 14 bins
   facet_wrap(~ outcome, ncol = 1) +   # outcome is the grouping variable
-  guides(fill = FALSE) +              # don't show a legend for fill color
+  guides(fill = "none") +             # don't show a legend for fill color
   labs(
     title = "Figure 1.",              # title
     x = "Beak Length (mm)",           # x-axis label
@@ -48,7 +48,7 @@ ggplot(
   theme(plot.title = element_text(size = rel(.8)))  # make title smaller
 
 # save your most recent plot
-ggsave("Beak Length Histogram.png",   # you choose a name for the file
+ggsave("beak_length_histogram.png",   # you choose a name for the file
        width = 3.5, height = 3.5,     # dimensions of saved file
        units = "in")                  # units for the dimensions
 
@@ -59,15 +59,14 @@ ggsave("Beak Length Histogram.png",   # you choose a name for the file
 beak_length_grouped_summary <- 
   finches %>% 
   group_by(outcome) %>% 
-  summarize(mean = mean(beak_length),
-            sd = sd(beak_length),
-            n = n()) %>% 
-  mutate(sem = sd / sqrt(n),
-         upper = mean + 1.96 * sem,
-         lower = mean - 1.96 * sem)
-
-# print the results in the console
-beak_length_grouped_summary
+  summarize(
+    mean = mean(beak_length),
+    sample_size = n(),
+    standard_error = sd(beak_length) / sqrt(sample_size),
+    upper_conf_limit = mean + 1.96 * standard_error,
+    lower_conf_limit = mean - 1.96 * standard_error
+  ) %>% 
+  print()                             # print the results in the console
 
 
 # bar chart ---------------------------------------------------------------
@@ -79,23 +78,23 @@ ggplot(
                 y = mean,               # mean beak length on the y axis
                 fill = outcome)         # make died/survived different colors
 ) +
-  geom_col() +                          # add columns
-  geom_errorbar(                        # add error bars
-    mapping = aes(ymin = lower,         #   lower 95% confidence limit
-                  ymax = upper),        #   upper 95% confidence limit
-    width = .3                          #   width of horizontal part of bars
+  geom_col() +                                 # add columns
+  geom_errorbar(                               # add error bars
+    mapping = aes(ymin = lower_conf_limit,     #   lower 95% confidence limit
+                  ymax = upper_conf_limit),    #   upper 95% confidence limit
+    width = .3                                 #   width of horizontal bars
   ) +
-  guides(fill = FALSE) +                # don't show a legend for fill color
+  guides(fill = "none") +                      # don't show fill color legend
   labs(
-    title = "Figure 2.",                # title
-    x = "Outcome",                      # x-axis label
-    y = "Beak Length (mm)"              # y-axis label
+    title = "Figure 2.",                       # title
+    x = "Outcome",                             # x-axis label
+    y = "Beak Length (mm)"                     # y-axis label
   ) +
   theme(plot.title = element_text(size = rel(.8)))  # make title smaller
 
 # save the beak length bar chart
 # note that the dimensions are different from the histograms above
-ggsave("Beak Length Bar Chart.png", 
+ggsave("beak_length_bar_chart.png", 
        width = 2.5, height = 3.5, units = "in")
 
 

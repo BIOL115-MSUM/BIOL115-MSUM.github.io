@@ -74,7 +74,7 @@ Put your cursor on the first line and press Cmd+Return to run it. The cursor aut
 
 You will see a warning and some messages in the Console tab, but those can be safely ignored.
 
-You must run the `library()` each time you start RStudio. That's why it's nice to keep that code at the very top of your script.
+You must run the `library()` commands each time you start RStudio. That's why it's nice to keep that code at the very top of your script.
 
 ## Read the data
 
@@ -204,12 +204,7 @@ ggplot(
 ) +
   geom_histogram(bins = 14) +         # add the histogram, use 14 bins
   facet_wrap(~ outcome, ncol = 1) +   # outcome is the grouping variable
-  guides(fill = FALSE)                # don't show a legend for fill color
-```
-
-```
-#> Warning: `guides(<scale> = FALSE)` is deprecated. Please use `guides(<scale> =
-#> "none")` instead.
+  guides(fill = "none")               # don't show a legend for fill color
 ```
 
 <img src="finch-analysis_files/figure-html/grouped-histogram-1.png" width="70%" style="display: block; margin: auto;" />
@@ -228,18 +223,13 @@ ggplot(
 ) +
   geom_histogram(bins = 14) +         # add the histogram, use 14 bins
   facet_wrap(~ outcome, ncol = 1) +   # outcome is the grouping variable
-  guides(fill = FALSE) +              # don't show a legend for fill color
+  guides(fill = "none") +             # don't show a legend for fill color
   labs(
     title = "Figure 1.",              # title
     x = "Beak Length (mm)",           # x-axis label
     y = "Number of Birds"             # y-axis label
   ) +
   theme(plot.title = element_text(size = rel(.8)))  # make title smaller
-```
-
-```
-#> Warning: `guides(<scale> = FALSE)` is deprecated. Please use `guides(<scale> =
-#> "none")` instead.
 ```
 
 <img src="finch-analysis_files/figure-html/grouped-histogram-labels-1.png" width="70%" style="display: block; margin: auto;" />
@@ -254,21 +244,23 @@ A good figure legend for this histogram would be:
 
 ### Export your figure
 
-You will only be turning in Assignment #2 Bluestem Analysis, so **YOU DO NOT NEED TO EXPORT THESE FIGURES** for your lab today. However, if you did want to save your figures and put them in a Microsoft Word document, here are directions for doing that:
+Often when you complete a data analysis, you want to incorporate the figures you create into a report or manuscript. While **YOU DO NOT NEED TO DO ANYTHING WITH THE FINCH FIGURES** as part of your assignment today, it will be useful to know how to do it when you reach the Intraspecific Variation analysis later in the lab.
 
-To put your figure in a Microsoft Word document (your assignment in part 4), you must first save it as an image file on your computer. You can do this with `ggsave()`, which saves the most recent ggplot displayed.
+To put your figure in a Microsoft Word document, you must first save it as an image file on your computer. You can do this with `ggsave()`, which saves the most recent ggplot displayed.
 
-You choose a file name, the dimensions of the output file (think about how big you want this to be when you paste it into a word document), and the units of the dimensions (e.g `"in"` for inches). For example, this code saves your histogram as a 3.5" x 3.5" PNG file:
+In your finch script, paste this code below the code you used to create your histogram:
 
 
 ```r
 # save your most recent plot
-ggsave("Beak Length Histogram.png",   # you choose a name for the file
+ggsave("beak_length_histogram.png",   # you choose a name for the file
        width = 3.5, height = 3.5,     # dimensions of saved file DO NOT CHANGE
        units = "in")                  # units for the dimensions DO NOT CHANGE
 ```
 
-Look in Files tab in RStudio and you'll see a file named **Beak Length Histogram.png** now. You can click it to open the file in your computer's default image viewer.
+Be sure to put the name of the image file you will create inside quotation marks as above. It should end with ".png", to indicate you want a PNG file. Here we have chosen a good width and height in inches (3.5" x 3.5") so that the fonts are sized appropriately on the image.
+
+After you run this code, look in Files tab in RStudio and you'll see a file named **beak_length_histogram.png** now. You can click it to open the file in your computer's default image viewer.
 
 ## Summarize the data
 
@@ -288,24 +280,25 @@ The `group_by(outcome)` function tells R to give us separate summaries for each 
 beak_length_grouped_summary <- 
   finches %>% 
   group_by(outcome) %>% 
-  summarize(mean = mean(beak_length),
-            sd = sd(beak_length),
-            n = n()) %>% 
-  mutate(sem = sd / sqrt(n),
-         upper = mean + 1.96 * sem,
-         lower = mean - 1.96 * sem)
-
-# print the results in the console
-beak_length_grouped_summary
+  summarize(
+    mean = mean(beak_length),
+    sample_size = n(),
+    standard_error = sd(beak_length) / sqrt(sample_size),
+    upper_conf_limit = mean + 1.96 * standard_error,
+    lower_conf_limit = mean - 1.96 * standard_error
+  ) %>% 
+  print()                             # print the results in the console
 ```
 
 ```
-#> # A tibble: 2 × 7
-#>   outcome   mean    sd     n    sem upper lower
-#>   <chr>    <dbl> <dbl> <int>  <dbl> <dbl> <dbl>
-#> 1 died      10.5 0.698    50 0.0987  10.7  10.3
-#> 2 survived  11.1 0.840    50 0.119   11.3  10.8
+#> # A tibble: 2 × 6
+#>   outcome   mean sample_size standard_error upper_conf_limit lower_conf_limit
+#>   <chr>    <dbl>       <int>          <dbl>            <dbl>            <dbl>
+#> 1 died      10.5          50         0.0987             10.7             10.3
+#> 2 survived  11.1          50         0.119              11.3             10.8
 ```
+
+The number **1.96** in the code above is derived from statistical theory. You will not need to change it for any of the analyses you do later.
 
 ### Plot summarized data
 
@@ -322,31 +315,26 @@ ggplot(
                 y = mean,               # mean beak length on the y axis
                 fill = outcome)         # make died/survived different colors
 ) +
-  geom_col() +                          # add columns
-  geom_errorbar(                        # add error bars
-    mapping = aes(ymin = lower,         #   lower 95% confidence limit
-                  ymax = upper),        #   upper 95% confidence limit
-    width = .3                          #   width of horizontal part of bars
+  geom_col() +                                 # add columns
+  geom_errorbar(                               # add error bars
+    mapping = aes(ymin = lower_conf_limit,     #   lower 95% confidence limit
+                  ymax = upper_conf_limit),    #   upper 95% confidence limit
+    width = .3                                 #   width of horizontal bars
   ) +
-  guides(fill = FALSE) +                # don't show a legend for fill color
+  guides(fill = "none") +                      # don't show fill color legend
   labs(
-    title = "Figure 2.",                # title
-    x = "Outcome",                      # x-axis label
-    y = "Beak Length (mm)"              # y-axis label
+    title = "Figure 2.",                       # title
+    x = "Outcome",                             # x-axis label
+    y = "Beak Length (mm)"                     # y-axis label
   ) +
   theme(plot.title = element_text(size = rel(.8)))  # make title smaller
-```
-
-```
-#> Warning: `guides(<scale> = FALSE)` is deprecated. Please use `guides(<scale> =
-#> "none")` instead.
 ```
 
 <img src="finch-analysis_files/figure-html/bar-chart-1.png" width="70%" style="display: block; margin: auto;" />
 
 A good figure legend for this figure would be:
 
-<blockquote class="text-info">Figure 2. <strong>Mean beak length varied between medium ground finches (<i>Geospiza fortis</i>) that survived or died during the 1977 drought on Daphne Major, Galapagos archipelago.</strong> Each sample consisted of 50 individuals. Birds were banded and measured during 1975-1977 and resighted in 1978. Error bars represent 95% confidence intervals.</blockquote>
+<blockquote class="text-info">Figure 2. <strong>Mean beak length of medium ground finches (<i>Geospiza fortis</i>) that survived or died during the 1977 drought on Daphne Major, Galapagos archipelago.</strong> Each sample consisted of 50 individuals. Birds were banded and measured during 1975-1977 and resighted in 1978. Error bars represent 95% confidence intervals.</blockquote>
 
 Export your figure:
 
@@ -354,7 +342,7 @@ Export your figure:
 ```r
 # save the beak length bar chart
 # note that the dimensions are different from the histograms above
-ggsave("Beak Length Bar Chart.png", 
+ggsave("beak_length_bar_chart.png", 
        width = 2.5, height = 3.5, units = "in")  # DO NOT CHANGE
 ```
 

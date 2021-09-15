@@ -12,15 +12,15 @@ If your instructor has not set up a course workspace, you can just use Your Work
 
 In your Course Workspace, you will see a list of projects:
 
-- Finch Example Project
-- Bluestem Variation Project
-- Artificial Selection Project
+- Finch Selection Example
+- Intraspecific Variation Analysis
+- Artificial Selection Analysis
 
-Click the "Start" button to open the **Finch Example Project** project. This will create your own copy of the project that can be accessed by both you and the instructor.
+Click the "Start" button to open the **Finch Selection Example** project. This will create your own copy of the project that can be accessed by both you and the instructor.
 
-Click the name of the project, **Finch Example Project**, to open the project.
+Click the name of the project, **Finch Selection Example**, to open the project.
 
-If your instructor has not set up a course workspace, you can just create a new project by clicking the **New Project** button. Name it **Finch Example Project**.
+If your instructor has not set up a course workspace, you can just create a new project by clicking the **New Project** button. Name it **Finch Selection Example**.
 
 ## Find data file
 
