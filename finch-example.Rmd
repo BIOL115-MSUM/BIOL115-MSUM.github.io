@@ -4,6 +4,10 @@
 
 In this activity you will be introduced to scripts, graphing, and analysis in R. 
 
+<div class="mx-auto" style="width: 320px;">
+  <iframe width="320" height="446" src="https://macaulaylibrary.org/asset/83940941/embed/320" frameborder="0" allowfullscreen style="width:320px;"></iframe>
+</div>
+
 You will use the Finches dataset to learn how to read a tabular dataset into R, inspect it, and perform basic statistical summaries on it. You will estimate means, standard deviations, standard errors of the mean, and confidence intervals around the mean. You will also learn how to plot histograms and bar charts (also called column charts).
 
 The question you are tasked with answering for Part 3 is:

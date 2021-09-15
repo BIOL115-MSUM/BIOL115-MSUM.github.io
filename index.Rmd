@@ -11,10 +11,13 @@ documentclass: book
 
 # Welcome {-}
 
-Welcome to the companion website for *BIOL 115 Organismal Biology* at Minnesota State University Moorhead. The site serves primarily as a beginners guide to data analysis in R. In this activity students learn to use R and RStudio to compare phenotypic variation in biological populations.
+Welcome to the companion website for Organismal Biology (BIOL 115 and 115L) at Minnesota State University Moorhead. The site serves primarily as a beginners guide to data analysis in R. In this activity students learn to use R and RStudio to compare phenotypic variation in biological populations.
 
-<div class="mx-auto" style="width: 320px;">
-  <iframe width="320" height="446" src="https://macaulaylibrary.org/asset/83940941/embed/320" frameborder="0" allowfullscreen style="width:320px;"></iframe>
+<div class="mx-auto" style="width: 600px;">
+<figure class="figure text-right">
+  <img src="images/lab_book_cover_2019.png" class="figure-img img-fluid rounded" alt="Line drawing of flowers and butterfly.">
+  <figcaption class="figure-caption text-right">Illustration by Patrice Delaney.</figcaption>
+</figure>
 </div>
 
 These activities were developed by Chris Merkord and Alison Wallace, with contributions from Katie Olson and others.
