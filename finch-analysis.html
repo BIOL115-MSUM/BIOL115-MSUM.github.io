@@ -100,7 +100,7 @@
 </ol>
 <p>The main caveat is to be careful to copy all code, especially closing parentheses <code>)</code> at the end of code chunks.</p>
 <p>Now that you have a script, try copying and pasting this code into it. For example:</p>
-<div class="sourceCode" id="cb18"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb51"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/base/MathFun.html">sqrt</a></span><span class="op">(</span><span class="fl">9</span><span class="op">)</span></code></pre></div>
 <p>To run the code, place your cursor on the same line as the code as click Run on the Source pane toolbar, then Run Selected Lines. Or just hold down the Command key and press the Return key. This is called a keyboard shortcut, and is written as <strong>Cmd+Return</strong>.</p>
 <p>When you run the line of code, RStudio copies it to the Console pane and executes it.</p>
@@ -125,7 +125,7 @@
 Copy the code in the first box below (including the comments) and paste it into your script.
 </p>
 <p>If you still have the code <code><a href="https://rdrr.io/r/base/MathFun.html">sqrt(9)</a></code> in your script, feel free to delete it.</p>
-<div class="sourceCode" id="cb19"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb52"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co"># load packages -----------------------------------------------------------</span>
 
 <span class="co"># run every time you restart RStudio</span>
@@ -144,7 +144,7 @@ Now run BOTH lines of code
 </h2>
 <p>Now that you have a script and have loaded the necessary packages, you’re ready to get coding!</p>
 <p>To read the data, you will use a function named <code><a href="https://readxl.tidyverse.org/reference/read_excel.html">read_excel()</a></code>. Here we run that function and assign the results to an object names <code>finches</code>.</p>
-<div class="sourceCode" id="cb20"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb53"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co"># read data ----------------------------------------------------------------</span>
 
 <span class="co"># read the finches data</span>
@@ -161,43 +161,43 @@ Now run BOTH lines of code
 <p class="text-success">
 To look at an object you have just created, print it to the console window by <strong>typing its name and running it</strong>:
 </p>
-<div class="sourceCode" id="cb21"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb54"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co"># print the results in the console</span>
-<span class="va">finches</span>
-<span class="co">#&gt; # A tibble: 100 × 12</span>
-<span class="co">#&gt;    band species     sex   first_adult_year last_year outcome weight  wing tarsus</span>
-<span class="co">#&gt;   &lt;dbl&gt; &lt;chr&gt;       &lt;chr&gt;            &lt;dbl&gt;     &lt;dbl&gt; &lt;chr&gt;    &lt;dbl&gt; &lt;dbl&gt;  &lt;dbl&gt;</span>
-<span class="co">#&gt; 1     9 Geospiza f… unkn…             1975      1977 died      14.5  67     18  </span>
-<span class="co">#&gt; 2    12 Geospiza f… fema…             1975      1977 died      13.5  66     18.3</span>
-<span class="co">#&gt; 3   276 Geospiza f… unkn…             1976      1977 died      16.4  64.2   18.5</span>
-<span class="co">#&gt; 4   278 Geospiza f… unkn…             1976      1977 died      18.5  67.2   19.3</span>
-<span class="co">#&gt; 5   283 Geospiza f… male              1976      1977 died      17.4  70.2   19.3</span>
-<span class="co">#&gt; 6   288 Geospiza f… unkn…             1976      1977 died      16.3  71.2   20.3</span>
-<span class="co">#&gt; # … with 94 more rows, and 3 more variables: beak_length &lt;dbl&gt;,</span>
-<span class="co">#&gt; #   beak_depth &lt;dbl&gt;, beak_width &lt;dbl&gt;</span></code></pre></div>
+<span class="va">finches</span></code></pre></div>
+<pre><code>#&gt; # A tibble: 100 × 12
+#&gt;    band species     sex   first_adult_year last_year outcome weight  wing tarsus
+#&gt;   &lt;dbl&gt; &lt;chr&gt;       &lt;chr&gt;            &lt;dbl&gt;     &lt;dbl&gt; &lt;chr&gt;    &lt;dbl&gt; &lt;dbl&gt;  &lt;dbl&gt;
+#&gt; 1     9 Geospiza f… unkn…             1975      1977 died      14.5  67     18  
+#&gt; 2    12 Geospiza f… fema…             1975      1977 died      13.5  66     18.3
+#&gt; 3   276 Geospiza f… unkn…             1976      1977 died      16.4  64.2   18.5
+#&gt; 4   278 Geospiza f… unkn…             1976      1977 died      18.5  67.2   19.3
+#&gt; 5   283 Geospiza f… male              1976      1977 died      17.4  70.2   19.3
+#&gt; 6   288 Geospiza f… unkn…             1976      1977 died      16.3  71.2   20.3
+#&gt; # … with 94 more rows, and 3 more variables: beak_length &lt;dbl&gt;,
+#&gt; #   beak_depth &lt;dbl&gt;, beak_width &lt;dbl&gt;</code></pre>
 <p>The first thing you notice is that this object is not a vector like the objects you were working with before. Instead, it’s a <strong>tibble</strong>, which is an object that stores tabular data.</p>
 <p>The first line of the output gives the data type (tibble) and dimensions of the data (number of rows x number of columns). In the tidyverse, columns are referred to as “variables”.</p>
 <p>The first 10 rows are shown, as well as the first few variables. How many variables depends on how wide your Console window is.</p>
 <p>For each variable, it’s name is given, followed by the type of data. Most of the time we worth with either numeric data (<code>&lt;dbl&gt;</code>) or text data (<code>&lt;chr&gt;</code>).</p>
 <p>If there are more than 10 rows, or more variables than can fit on the screen, there will be a sentence at the end saying “… with xx more rows, and x more variables”, followed by a list of the unshown variables.</p>
 <p>A quick way of seeing the first few observations for all variables is to use the <code>glimpse()</code> function:</p>
-<div class="sourceCode" id="cb22"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb56"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co"># take a quick look at all the variables in the dataset</span>
-<span class="fu">glimpse</span><span class="op">(</span><span class="va">finches</span><span class="op">)</span>
-<span class="co">#&gt; Rows: 100</span>
-<span class="co">#&gt; Columns: 12</span>
-<span class="co">#&gt; $ band             &lt;dbl&gt; 9, 12, 276, 278, 283, 288, 293, 294, 298, 307, 311, 3…</span>
-<span class="co">#&gt; $ species          &lt;chr&gt; "Geospiza fortis", "Geospiza fortis", "Geospiza forti…</span>
-<span class="co">#&gt; $ sex              &lt;chr&gt; "unknown", "female", "unknown", "unknown", "male", "u…</span>
-<span class="co">#&gt; $ first_adult_year &lt;dbl&gt; 1975, 1975, 1976, 1976, 1976, 1976, 1976, 1976, 1976,…</span>
-<span class="co">#&gt; $ last_year        &lt;dbl&gt; 1977, 1977, 1977, 1977, 1977, 1977, 1977, 1977, 1977,…</span>
-<span class="co">#&gt; $ outcome          &lt;chr&gt; "died", "died", "died", "died", "died", "died", "died…</span>
-<span class="co">#&gt; $ weight           &lt;dbl&gt; 14.50, 13.50, 16.44, 18.54, 17.44, 16.34, 15.74, 16.8…</span>
-<span class="co">#&gt; $ wing             &lt;dbl&gt; 67.00, 66.00, 64.19, 67.19, 70.19, 71.19, 67.19, 68.1…</span>
-<span class="co">#&gt; $ tarsus           &lt;dbl&gt; 18.00, 18.30, 18.47, 19.27, 19.27, 20.27, 17.57, 18.1…</span>
-<span class="co">#&gt; $ beak_length      &lt;dbl&gt; 9.20, 9.50, 9.93, 11.13, 12.13, 10.63, 9.93, 11.33, 9…</span>
-<span class="co">#&gt; $ beak_depth       &lt;dbl&gt; 8.3, 7.5, 8.0, 10.6, 11.2, 9.1, 9.5, 10.5, 8.4, 8.6, …</span>
-<span class="co">#&gt; $ beak_width       &lt;dbl&gt; 8.1, 7.5, 7.6, 9.4, 9.5, 8.8, 8.9, 9.1, 8.2, 8.4, 8.5…</span></code></pre></div>
+<span class="fu">glimpse</span><span class="op">(</span><span class="va">finches</span><span class="op">)</span></code></pre></div>
+<pre><code>#&gt; Rows: 100
+#&gt; Columns: 12
+#&gt; $ band             &lt;dbl&gt; 9, 12, 276, 278, 283, 288, 293, 294, 298, 307, 311, 3…
+#&gt; $ species          &lt;chr&gt; "Geospiza fortis", "Geospiza fortis", "Geospiza forti…
+#&gt; $ sex              &lt;chr&gt; "unknown", "female", "unknown", "unknown", "male", "u…
+#&gt; $ first_adult_year &lt;dbl&gt; 1975, 1975, 1976, 1976, 1976, 1976, 1976, 1976, 1976,…
+#&gt; $ last_year        &lt;dbl&gt; 1977, 1977, 1977, 1977, 1977, 1977, 1977, 1977, 1977,…
+#&gt; $ outcome          &lt;chr&gt; "died", "died", "died", "died", "died", "died", "died…
+#&gt; $ weight           &lt;dbl&gt; 14.50, 13.50, 16.44, 18.54, 17.44, 16.34, 15.74, 16.8…
+#&gt; $ wing             &lt;dbl&gt; 67.00, 66.00, 64.19, 67.19, 70.19, 71.19, 67.19, 68.1…
+#&gt; $ tarsus           &lt;dbl&gt; 18.00, 18.30, 18.47, 19.27, 19.27, 20.27, 17.57, 18.1…
+#&gt; $ beak_length      &lt;dbl&gt; 9.20, 9.50, 9.93, 11.13, 12.13, 10.63, 9.93, 11.33, 9…
+#&gt; $ beak_depth       &lt;dbl&gt; 8.3, 7.5, 8.0, 10.6, 11.2, 9.1, 9.5, 10.5, 8.4, 8.6, …
+#&gt; $ beak_width       &lt;dbl&gt; 8.1, 7.5, 7.6, 9.4, 9.5, 8.8, 8.9, 9.1, 8.2, 8.4, 8.5…</code></pre>
 <p>If you want to see the entire dataset, click the name of the data object in the Environment tab, or run <code><a href="https://rdrr.io/r/utils/View.html">View(finches)</a></code>. This will open a handy data viewer window. Once you are done looking at the data, close the window and continue.</p>
 </div>
 <div id="plot-a-histogram" class="section level2" number="6.6">
@@ -212,7 +212,7 @@ To look at an object you have just created, print it to the console window by <s
 <span class="header-section-number">6.6.1</span> Basic histogram<a class="anchor" aria-label="anchor" href="#basic-histogram"><i class="fas fa-link"></i></a>
 </h3>
 <p>To plot a basic histogram of the <code>beak_length</code> variable, use the following code. Note the use of a <code><a href="https://rdrr.io/r/base/Arithmetic.html">+</a></code> after the <code>ggplot()</code> function. Copy this code to your script and run it. RStudio is smart enough to recognize that it should all be run together, so putting your cursor on any of these lines and typing Cmd+Return will run all the lines at once.</p>
-<div class="sourceCode" id="cb23"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb58"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co"># histogram ---------------------------------------------------------------</span>
 
 <span class="co"># histogram of beak length</span>
@@ -230,7 +230,7 @@ To look at an object you have just created, print it to the console window by <s
 <span class="header-section-number">6.6.2</span> Add facets<a class="anchor" aria-label="anchor" href="#add-facets"><i class="fas fa-link"></i></a>
 </h3>
 <p>Sometimes we want to see how the distribution of a variable varies among different subsets of the data. For example, to answer our question we want to see how beak length varies between birds that did or did not survive the drought. One easy way to do this is with the <code>facet_wrap()</code> function in ggplot. Note that you have to add a <code><a href="https://rdrr.io/r/base/Arithmetic.html">+</a></code> operator after the <code>geom_histogram()</code> line.</p>
-<div class="sourceCode" id="cb24"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb59"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co"># histogram of beak length, grouped by survival</span>
 <span class="fu">ggplot</span><span class="op">(</span>
   data <span class="op">=</span> <span class="va">finches</span>,                     <span class="co"># use the finches dataset</span>
@@ -239,9 +239,9 @@ To look at an object you have just created, print it to the console window by <s
 <span class="op">)</span> <span class="op">+</span>
   <span class="fu">geom_histogram</span><span class="op">(</span>bins <span class="op">=</span> <span class="fl">14</span><span class="op">)</span> <span class="op">+</span>         <span class="co"># add the histogram, use 14 bins</span>
   <span class="fu">facet_wrap</span><span class="op">(</span><span class="op">~</span> <span class="va">outcome</span>, ncol <span class="op">=</span> <span class="fl">1</span><span class="op">)</span> <span class="op">+</span>   <span class="co"># outcome is the grouping variable</span>
-  <span class="fu">guides</span><span class="op">(</span>fill <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span>                <span class="co"># don't show a legend for fill color</span>
-<span class="co">#&gt; Warning: `guides(&lt;scale&gt; = FALSE)` is deprecated. Please use `guides(&lt;scale&gt; =</span>
-<span class="co">#&gt; "none")` instead.</span></code></pre></div>
+  <span class="fu">guides</span><span class="op">(</span>fill <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span>                <span class="co"># don't show a legend for fill color</span></code></pre></div>
+<pre><code>#&gt; Warning: `guides(&lt;scale&gt; = FALSE)` is deprecated. Please use `guides(&lt;scale&gt; =
+#&gt; "none")` instead.</code></pre>
 <div class="inline-figure"><img src="finch-analysis_files/figure-html/grouped-histogram-1.png" width="70%" style="display: block; margin: auto;"></div>
 </div>
 <div id="add-labels" class="section level3" number="6.6.3">
@@ -249,7 +249,7 @@ To look at an object you have just created, print it to the console window by <s
 <span class="header-section-number">6.6.3</span> Add labels<a class="anchor" aria-label="anchor" href="#add-labels"><i class="fas fa-link"></i></a>
 </h3>
 <p>The last thing you might want to do is spruce up your plot by adding better axis labels and removing the redundant color legend. This is done with the <code>labs()</code> function and the :</p>
-<div class="sourceCode" id="cb25"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb61"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co"># histogram of beak length, grouped by survival, with labels</span>
 <span class="fu">ggplot</span><span class="op">(</span>
   data <span class="op">=</span> <span class="va">finches</span>,                     <span class="co"># use the finches dataset</span>
@@ -264,9 +264,9 @@ To look at an object you have just created, print it to the console window by <s
     x <span class="op">=</span> <span class="st">"Beak Length (mm)"</span>,           <span class="co"># x-axis label</span>
     y <span class="op">=</span> <span class="st">"Number of Birds"</span>             <span class="co"># y-axis label</span>
   <span class="op">)</span> <span class="op">+</span>
-  <span class="fu">theme</span><span class="op">(</span>plot.title <span class="op">=</span> <span class="fu">element_text</span><span class="op">(</span>size <span class="op">=</span> <span class="fu">rel</span><span class="op">(</span><span class="fl">.8</span><span class="op">)</span><span class="op">)</span><span class="op">)</span>  <span class="co"># make title smaller</span>
-<span class="co">#&gt; Warning: `guides(&lt;scale&gt; = FALSE)` is deprecated. Please use `guides(&lt;scale&gt; =</span>
-<span class="co">#&gt; "none")` instead.</span></code></pre></div>
+  <span class="fu">theme</span><span class="op">(</span>plot.title <span class="op">=</span> <span class="fu">element_text</span><span class="op">(</span>size <span class="op">=</span> <span class="fu">rel</span><span class="op">(</span><span class="fl">.8</span><span class="op">)</span><span class="op">)</span><span class="op">)</span>  <span class="co"># make title smaller</span></code></pre></div>
+<pre><code>#&gt; Warning: `guides(&lt;scale&gt; = FALSE)` is deprecated. Please use `guides(&lt;scale&gt; =
+#&gt; "none")` instead.</code></pre>
 <div class="inline-figure"><img src="finch-analysis_files/figure-html/grouped-histogram-labels-1.png" width="70%" style="display: block; margin: auto;"></div>
 </div>
 <div id="write-a-figure-legend" class="section level3" number="6.6.4">
@@ -286,7 +286,7 @@ Figure 1. <strong>Distribution of beak lengths among medium ground finches (<i>G
 <p>You will only be turning in Assignment #2 Bluestem Analysis, so <strong>YOU DO NOT NEED TO EXPORT THESE FIGURES</strong> for your lab today. However, if you did want to save your figures and put them in a Microsoft Word document, here are directions for doing that:</p>
 <p>To put your figure in a Microsoft Word document (your assignment in part 4), you must first save it as an image file on your computer. You can do this with <code>ggsave()</code>, which saves the most recent ggplot displayed.</p>
 <p>You choose a file name, the dimensions of the output file (think about how big you want this to be when you paste it into a word document), and the units of the dimensions (e.g <code>"in"</code> for inches). For example, this code saves your histogram as a 3.5" x 3.5" PNG file:</p>
-<div class="sourceCode" id="cb26"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb63"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co"># save your most recent plot</span>
 <span class="fu">ggsave</span><span class="op">(</span><span class="st">"Beak Length Histogram.png"</span>,   <span class="co"># you choose a name for the file</span>
        width <span class="op">=</span> <span class="fl">3.5</span>, height <span class="op">=</span> <span class="fl">3.5</span>,     <span class="co"># dimensions of saved file DO NOT CHANGE</span>
@@ -305,7 +305,7 @@ Figure 1. <strong>Distribution of beak lengths among medium ground finches (<i>G
 <p>The following code will summarize the dataset by calculating the mean, standard deviation and standard error of the mean (SEM) of the <code>beak_length</code> variable.</p>
 <p>Notice the use of the equations you learned in Part 2.</p>
 <p>The <code>group_by(outcome)</code> function tells R to give us separate summaries for each outcome (died vs. survived).</p>
-<div class="sourceCode" id="cb27"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb64"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co"># summarize ---------------------------------------------------------------</span>
 
 <span class="co"># summarize the dataset by outcome (survived vs. died)</span>
@@ -320,19 +320,19 @@ Figure 1. <strong>Distribution of beak lengths among medium ground finches (<i>G
          lower <span class="op">=</span> <span class="va">mean</span> <span class="op">-</span> <span class="fl">1.96</span> <span class="op">*</span> <span class="va">sem</span><span class="op">)</span>
 
 <span class="co"># print the results in the console</span>
-<span class="va">beak_length_grouped_summary</span>
-<span class="co">#&gt; # A tibble: 2 × 7</span>
-<span class="co">#&gt;   outcome   mean    sd     n    sem upper lower</span>
-<span class="co">#&gt;   &lt;chr&gt;    &lt;dbl&gt; &lt;dbl&gt; &lt;int&gt;  &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;</span>
-<span class="co">#&gt; 1 died      10.5 0.698    50 0.0987  10.7  10.3</span>
-<span class="co">#&gt; 2 survived  11.1 0.840    50 0.119   11.3  10.8</span></code></pre></div>
+<span class="va">beak_length_grouped_summary</span></code></pre></div>
+<pre><code>#&gt; # A tibble: 2 × 7
+#&gt;   outcome   mean    sd     n    sem upper lower
+#&gt;   &lt;chr&gt;    &lt;dbl&gt; &lt;dbl&gt; &lt;int&gt;  &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;
+#&gt; 1 died      10.5 0.698    50 0.0987  10.7  10.3
+#&gt; 2 survived  11.1 0.840    50 0.119   11.3  10.8</code></pre>
 </div>
 <div id="plot-summarized-data" class="section level3" number="6.7.2">
 <h3>
 <span class="header-section-number">6.7.2</span> Plot summarized data<a class="anchor" aria-label="anchor" href="#plot-summarized-data"><i class="fas fa-link"></i></a>
 </h3>
 <p>To plot these means and confidence intervals, you can use a bar chart with the <code>geom_col()</code> and <code>geom_errorbar()</code> functions in ggplot:</p>
-<div class="sourceCode" id="cb28"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb66"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co"># bar chart ---------------------------------------------------------------</span>
 
 <span class="co"># bar chart of mean beak lengths</span>
@@ -354,16 +354,16 @@ Figure 1. <strong>Distribution of beak lengths among medium ground finches (<i>G
     x <span class="op">=</span> <span class="st">"Outcome"</span>,                      <span class="co"># x-axis label</span>
     y <span class="op">=</span> <span class="st">"Beak Length (mm)"</span>              <span class="co"># y-axis label</span>
   <span class="op">)</span> <span class="op">+</span>
-  <span class="fu">theme</span><span class="op">(</span>plot.title <span class="op">=</span> <span class="fu">element_text</span><span class="op">(</span>size <span class="op">=</span> <span class="fu">rel</span><span class="op">(</span><span class="fl">.8</span><span class="op">)</span><span class="op">)</span><span class="op">)</span>  <span class="co"># make title smaller</span>
-<span class="co">#&gt; Warning: `guides(&lt;scale&gt; = FALSE)` is deprecated. Please use `guides(&lt;scale&gt; =</span>
-<span class="co">#&gt; "none")` instead.</span></code></pre></div>
+  <span class="fu">theme</span><span class="op">(</span>plot.title <span class="op">=</span> <span class="fu">element_text</span><span class="op">(</span>size <span class="op">=</span> <span class="fu">rel</span><span class="op">(</span><span class="fl">.8</span><span class="op">)</span><span class="op">)</span><span class="op">)</span>  <span class="co"># make title smaller</span></code></pre></div>
+<pre><code>#&gt; Warning: `guides(&lt;scale&gt; = FALSE)` is deprecated. Please use `guides(&lt;scale&gt; =
+#&gt; "none")` instead.</code></pre>
 <div class="inline-figure"><img src="finch-analysis_files/figure-html/bar-chart-1.png" width="70%" style="display: block; margin: auto;"></div>
 <p>A good figure legend for this figure would be:</p>
 <blockquote class="text-info">
 Figure 2. <strong>Mean beak length varied between medium ground finches (<i>Geospiza fortis</i>) that survived or died during the 1977 drought on Daphne Major, Galapagos archipelago.</strong> Each sample consisted of 50 individuals. Birds were banded and measured during 1975-1977 and resighted in 1978. Error bars represent 95% confidence intervals.
 </blockquote>
 <p>Export your figure:</p>
-<div class="sourceCode" id="cb29"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb68"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co"># save the beak length bar chart</span>
 <span class="co"># note that the dimensions are different from the histograms above</span>
 <span class="fu">ggsave</span><span class="op">(</span><span class="st">"Beak Length Bar Chart.png"</span>, 
@@ -381,22 +381,22 @@ Figure 2. <strong>Mean beak length varied between medium ground finches (<i>Geos
 </h4>
 <p>A <em>t</em>-test is a statistical test that will tell you if the difference in means between two groups is likely due to chance (i.e. sampling error) or not.</p>
 <p>The <em>t</em>-test function in R is <code><a href="https://rdrr.io/r/stats/t.test.html">t.test()</a></code> and can be used like this:</p>
-<div class="sourceCode" id="cb30"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb69"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co"># t-test ------------------------------------------------------------------</span>
 
 <span class="co"># perform a two-sample t-test assuming unequal variances</span>
-<span class="fu"><a href="https://rdrr.io/r/stats/t.test.html">t.test</a></span><span class="op">(</span><span class="va">beak_length</span> <span class="op">~</span> <span class="va">outcome</span>, data <span class="op">=</span> <span class="va">finches</span><span class="op">)</span>
-<span class="co">#&gt; </span>
-<span class="co">#&gt;  Welch Two Sample t-test</span>
-<span class="co">#&gt; </span>
-<span class="co">#&gt; data:  beak_length by outcome</span>
-<span class="co">#&gt; t = -3.6335, df = 94.807, p-value = 0.0004539</span>
-<span class="co">#&gt; alternative hypothesis: true difference in means is not equal to 0</span>
-<span class="co">#&gt; 95 percent confidence interval:</span>
-<span class="co">#&gt;  -0.8681443 -0.2546557</span>
-<span class="co">#&gt; sample estimates:</span>
-<span class="co">#&gt;     mean in group died mean in group survived </span>
-<span class="co">#&gt;                10.5122                11.0736</span></code></pre></div>
+<span class="fu"><a href="https://rdrr.io/r/stats/t.test.html">t.test</a></span><span class="op">(</span><span class="va">beak_length</span> <span class="op">~</span> <span class="va">outcome</span>, data <span class="op">=</span> <span class="va">finches</span><span class="op">)</span></code></pre></div>
+<pre><code>#&gt; 
+#&gt;  Welch Two Sample t-test
+#&gt; 
+#&gt; data:  beak_length by outcome
+#&gt; t = -3.6335, df = 94.807, p-value = 0.0004539
+#&gt; alternative hypothesis: true difference in means is not equal to 0
+#&gt; 95 percent confidence interval:
+#&gt;  -0.8681443 -0.2546557
+#&gt; sample estimates:
+#&gt;     mean in group died mean in group survived 
+#&gt;                10.5122                11.0736</code></pre>
 <p>The first part of the code above, <code>beak_length ~ outcome</code>, tells R to compare the mean beak lengths among the two outcomes (died or survived).</p>
 <p>The second part, <code>data = finches</code>, tells R to use the finches dataset.</p>
 </div>

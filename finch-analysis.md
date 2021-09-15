@@ -107,6 +107,9 @@ To solve this error, run the two `library()` commands and then retry reading the
 ```r
 # print the results in the console
 finches
+```
+
+```
 #> # A tibble: 100 × 12
 #>    band species     sex   first_adult_year last_year outcome weight  wing tarsus
 #>   <dbl> <chr>       <chr>            <dbl>     <dbl> <chr>    <dbl> <dbl>  <dbl>
@@ -136,6 +139,9 @@ A quick way of seeing the first few observations for all variables is to use the
 ```r
 # take a quick look at all the variables in the dataset
 glimpse(finches)
+```
+
+```
 #> Rows: 100
 #> Columns: 12
 #> $ band             <dbl> 9, 12, 276, 278, 283, 288, 293, 294, 298, 307, 311, 3…
@@ -199,6 +205,9 @@ ggplot(
   geom_histogram(bins = 14) +         # add the histogram, use 14 bins
   facet_wrap(~ outcome, ncol = 1) +   # outcome is the grouping variable
   guides(fill = FALSE)                # don't show a legend for fill color
+```
+
+```
 #> Warning: `guides(<scale> = FALSE)` is deprecated. Please use `guides(<scale> =
 #> "none")` instead.
 ```
@@ -226,6 +235,9 @@ ggplot(
     y = "Number of Birds"             # y-axis label
   ) +
   theme(plot.title = element_text(size = rel(.8)))  # make title smaller
+```
+
+```
 #> Warning: `guides(<scale> = FALSE)` is deprecated. Please use `guides(<scale> =
 #> "none")` instead.
 ```
@@ -285,6 +297,9 @@ beak_length_grouped_summary <-
 
 # print the results in the console
 beak_length_grouped_summary
+```
+
+```
 #> # A tibble: 2 × 7
 #>   outcome   mean    sd     n    sem upper lower
 #>   <chr>    <dbl> <dbl> <int>  <dbl> <dbl> <dbl>
@@ -320,6 +335,9 @@ ggplot(
     y = "Beak Length (mm)"              # y-axis label
   ) +
   theme(plot.title = element_text(size = rel(.8)))  # make title smaller
+```
+
+```
 #> Warning: `guides(<scale> = FALSE)` is deprecated. Please use `guides(<scale> =
 #> "none")` instead.
 ```
@@ -359,6 +377,9 @@ The *t*-test function in R is `t.test()` and can be used like this:
 
 # perform a two-sample t-test assuming unequal variances
 t.test(beak_length ~ outcome, data = finches)
+```
+
+```
 #> 
 #> 	Welch Two Sample t-test
 #> 
