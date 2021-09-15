@@ -186,8 +186,7 @@ ggplot(
     x = "Beak Length (mm)",                   # human-readable x-axis label
     y = "Number of Birds",                    # human-readable y-axis label
     caption = "Author: Org Bio Instructors"   # so we know who made it
-  ) +
-  theme(plot.title = element_text(size = rel(.8)))  # make title smaller
+  )
 ```
 
 ### Write a figure legend
@@ -272,8 +271,7 @@ ggplot(
     x = "Outcome",                            # human-readable x-axis label
     y = "Beak Length (mm)",                   # human-readable y-axis label
     caption = "Author: Org Bio Instructors"   # so we know who made it
-  ) +
-  theme(plot.title = element_text(size = rel(.8)))  # make title smaller
+  )
 ```
 
 A good figure legend for this figure would be:

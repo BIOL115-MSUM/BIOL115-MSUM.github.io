@@ -34,8 +34,7 @@ ggplot(
     x = "Beak Length (mm)",             # human-readable x-axis label
     y = "Number of Birds",              # human-readable y-axis label
     caption = "Author: YOUR NAME HERE"  # your name so we know who made it
-  ) +
-  theme(plot.title = element_text(size = rel(.8)))  # make title smaller
+  )
 
 # save your most recent plot
 ggsave("beak_length_histogram.png",   # you choose a name for the file
@@ -80,8 +79,7 @@ ggplot(
     x = "Outcome",                      # human-readable x-axis label
     y = "Beak Length (mm)",             # human-readable y-axis label
     caption = "Author: YOUR NAME HERE"  # your name so we know who made it
-  ) +
-  theme(plot.title = element_text(size = rel(.8)))  # make title smaller
+  )
 
 # save the beak length bar chart
 # note that the dimensions are different from the histograms above
