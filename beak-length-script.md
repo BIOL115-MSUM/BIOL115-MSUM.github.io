@@ -101,25 +101,7 @@ ggsave("Beak Length Bar Chart.png",
 
 # t-test ------------------------------------------------------------------
 
-# get a vector of beak lengths for birds that died
-beak_length_died <-
-  finches %>%                     # start with finches dataset
-  filter(outcome == "died") %>%   # only include rows w/ outcome=died
-  pull(beak_length)               # extract the beak_length column
-
-# print the new object in the console... it is a vector
-beak_length_died
-
-# get a vector of beak lengths for birds that survived
-beak_length_survived <-
-  finches %>% 
-  filter(outcome == "survived") %>% 
-  pull(beak_length)
-
-# print the results in the console
-beak_length_survived
-
 # perform a two-sample t-test assuming unequal variances
-t.test(beak_length_died, beak_length_survived)
+t.test(beak_length ~ outcome, data = finches)
 ```
 

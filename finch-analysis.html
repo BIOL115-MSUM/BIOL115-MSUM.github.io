@@ -4,15 +4,15 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<title>6 Finch Analysis | Comparing Populations: Introduction to Data Analysis in R</title>
+<title>6 Finch Analysis | Organismal Biology: Companion Website to BIOL 115 @ MSUM</title>
 <meta name="author" content="Chris Merkord and Alison Wallace">
 <meta name="description" content="6.1 R scripts  6.1.1 Create a script Until now, you have run commands by typing them into the console. One of the benefits of R over programs such as Excel, however, is the ability to save your...">
 <meta name="generator" content="bookdown 0.24.1 with bs4_book()">
-<meta property="og:title" content="6 Finch Analysis | Comparing Populations: Introduction to Data Analysis in R">
+<meta property="og:title" content="6 Finch Analysis | Organismal Biology: Companion Website to BIOL 115 @ MSUM">
 <meta property="og:type" content="book">
 <meta property="og:description" content="6.1 R scripts  6.1.1 Create a script Until now, you have run commands by typing them into the console. One of the benefits of R over programs such as Excel, however, is the ability to save your...">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="6 Finch Analysis | Comparing Populations: Introduction to Data Analysis in R">
+<meta name="twitter:title" content="6 Finch Analysis | Organismal Biology: Companion Website to BIOL 115 @ MSUM">
 <meta name="twitter:description" content="6.1 R scripts  6.1.1 Create a script Until now, you have run commands by typing them into the console. One of the benefits of R over programs such as Excel, however, is the ability to save your...">
 <!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/header-attrs-2.11/header-attrs.js"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
@@ -27,7 +27,7 @@
 
     <div class="d-flex align-items-start justify-content-between">
       <h1>
-        <a href="index.html" title="">Comparing Populations: Introduction to Data Analysis in R</a>
+        <a href="index.html" title="">Organismal Biology: Companion Website to BIOL 115 @ MSUM</a>
       </h1>
       <button class="btn btn-outline-primary d-lg-none ml-2 mt-1" type="button" data-toggle="collapse" data-target="#main-nav" aria-expanded="true" aria-controls="main-nav"><i class="fas fa-bars"></i><span class="sr-only">Show table of contents</span></button>
     </div>
@@ -379,60 +379,26 @@ Figure 2. <strong>Mean beak length varied between medium ground finches (<i>Geos
 <h4>
 <span class="header-section-number">6.7.3.1</span> Conduct a <em>t</em>-test<a class="anchor" aria-label="anchor" href="#conduct-a-t-test"><i class="fas fa-link"></i></a>
 </h4>
-<p>A t-test will tell you if the difference in means is likely due to chance (i.e. sampling error) or not.</p>
-<p>The <em>t</em>-test function in R is a bit picky… it requires you to give it two arguments: a vector of measurements for one group and another vector of measurements for the other group. To do this, you must perform three steps:</p>
-<ol style="list-style-type: decimal">
-<li>Create a vector of beak lengths for birds that died.</li>
-<li>Create a vector of beak lengths for birds that survived.</li>
-<li>Compare the two vectors using a t-test.</li>
-</ol>
-<p>STEP 1: The following code will take a dataset, in this case <code>finches</code>, remove rows that do not meet a given criteria, and extract the column of interest as a vector, and store the result as a new object named <code>beak_length_died</code>.</p>
+<p>A <em>t</em>-test is a statistical test that will tell you if the difference in means between two groups is likely due to chance (i.e. sampling error) or not.</p>
+<p>The <em>t</em>-test function in R is <code><a href="https://rdrr.io/r/stats/t.test.html">t.test()</a></code> and can be used like this:</p>
 <div class="sourceCode" id="cb30"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co"># t-test ------------------------------------------------------------------</span>
 
-<span class="co"># get a vector of beak lengths for birds that died</span>
-<span class="va">beak_length_died</span> <span class="op">&lt;-</span>
-  <span class="va">finches</span> <span class="op">%&gt;%</span>                     <span class="co"># start with finches dataset</span>
-  <span class="fu"><a href="https://rdrr.io/r/stats/filter.html">filter</a></span><span class="op">(</span><span class="va">outcome</span> <span class="op">==</span> <span class="st">"died"</span><span class="op">)</span> <span class="op">%&gt;%</span>   <span class="co"># only include rows w/ outcome=died</span>
-  <span class="fu">pull</span><span class="op">(</span><span class="va">beak_length</span><span class="op">)</span>               <span class="co"># extract the beak_length column</span>
-
-<span class="co"># print the new object in the console... it is a vector</span>
-<span class="va">beak_length_died</span>
-<span class="co">#&gt;  [1]  9.20  9.50  9.93 11.13 12.13 10.63  9.93 11.33  9.93 11.10 10.80  9.70</span>
-<span class="co">#&gt; [13] 10.60  9.60 10.50  9.90  9.60 10.70  9.30 10.10  9.70 11.00 11.00 11.60</span>
-<span class="co">#&gt; [25] 10.50 10.20  9.70 11.10 11.10 10.20 10.80 10.00 11.10 10.30 11.10 10.50</span>
-<span class="co">#&gt; [37] 11.00 10.00 10.30 11.70 10.20 10.90 11.90 10.20 10.50 10.50  9.80 11.80</span>
-<span class="co">#&gt; [49] 11.00 10.30</span></code></pre></div>
-<p>STEP 2: Now copy that code and change “died” to “survived” in your object name, so <code>beak_length_survived</code>, and in the filter criteria, so <code>outcome == "survived"</code>.</p>
-<div class="sourceCode" id="cb31"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="co"># get a vector of beak lengths for birds that survived</span>
-<span class="va">beak_length_survived</span> <span class="op">&lt;-</span>
-  <span class="va">finches</span> <span class="op">%&gt;%</span> 
-  <span class="fu"><a href="https://rdrr.io/r/stats/filter.html">filter</a></span><span class="op">(</span><span class="va">outcome</span> <span class="op">==</span> <span class="st">"survived"</span><span class="op">)</span> <span class="op">%&gt;%</span> 
-  <span class="fu">pull</span><span class="op">(</span><span class="va">beak_length</span><span class="op">)</span>
-
-<span class="co"># print the results in the console</span>
-<span class="va">beak_length_survived</span>
-<span class="co">#&gt;  [1] 11.50 10.20 12.10 11.60 10.30 11.40  8.70  9.90 10.20 10.30 11.43 11.93</span>
-<span class="co">#&gt; [13] 11.03 10.63 10.83 11.23 11.23 10.23 11.63 12.23 11.03 11.13 10.93 11.03</span>
-<span class="co">#&gt; [25] 10.23 11.33 10.03 10.70 10.00 12.43 11.09  9.63 11.60 11.30 12.13 12.03</span>
-<span class="co">#&gt; [37] 10.63 11.83 12.43 12.73 10.33 11.03 12.53 12.13 10.43 10.53 11.23 11.23</span>
-<span class="co">#&gt; [49] 10.90 10.50</span></code></pre></div>
-<p>STEP 3: Perform a t-test using the <code><a href="https://rdrr.io/r/stats/t.test.html">t.test()</a></code> function:</p>
-<div class="sourceCode" id="cb32"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="co"># perform a two-sample t-test assuming unequal variances</span>
-<span class="fu"><a href="https://rdrr.io/r/stats/t.test.html">t.test</a></span><span class="op">(</span><span class="va">beak_length_died</span>, <span class="va">beak_length_survived</span><span class="op">)</span>
+<span class="co"># perform a two-sample t-test assuming unequal variances</span>
+<span class="fu"><a href="https://rdrr.io/r/stats/t.test.html">t.test</a></span><span class="op">(</span><span class="va">beak_length</span> <span class="op">~</span> <span class="va">outcome</span>, data <span class="op">=</span> <span class="va">finches</span><span class="op">)</span>
 <span class="co">#&gt; </span>
 <span class="co">#&gt;  Welch Two Sample t-test</span>
 <span class="co">#&gt; </span>
-<span class="co">#&gt; data:  beak_length_died and beak_length_survived</span>
+<span class="co">#&gt; data:  beak_length by outcome</span>
 <span class="co">#&gt; t = -3.6335, df = 94.807, p-value = 0.0004539</span>
 <span class="co">#&gt; alternative hypothesis: true difference in means is not equal to 0</span>
 <span class="co">#&gt; 95 percent confidence interval:</span>
 <span class="co">#&gt;  -0.8681443 -0.2546557</span>
 <span class="co">#&gt; sample estimates:</span>
-<span class="co">#&gt; mean of x mean of y </span>
-<span class="co">#&gt;   10.5122   11.0736</span></code></pre></div>
+<span class="co">#&gt;     mean in group died mean in group survived </span>
+<span class="co">#&gt;                10.5122                11.0736</span></code></pre></div>
+<p>The first part of the code above, <code>beak_length ~ outcome</code>, tells R to compare the mean beak lengths among the two outcomes (died or survived).</p>
+<p>The second part, <code>data = finches</code>, tells R to use the finches dataset.</p>
 </div>
 <div id="interpret-the-results" class="section level4" number="6.7.3.2">
 <h4>
@@ -441,9 +407,9 @@ Figure 2. <strong>Mean beak length varied between medium ground finches (<i>Geos
 <p>The two numbers to focus on here are the <strong>p-value</strong> and the <strong>95% confidence interval</strong>.</p>
 <p>The <em>p</em>-value tells you what proportion of the time you would expect to find a difference in population like these two if they were in fact the same. Scientists generally use a cutoff (or <em>alpha level</em>) of 0.05 to determine if a difference is “statistically significant”. In this case, a <em>p</em>-value of 0.0004539 is much lower than 0.05, so we can reject our null hypothesis and accept our alternative hypothesis that the true difference in means is not equal to 0.</p>
 <p>As further evidence that the difference between the means is not equal to zero, you can see that the 95% confidence interval does not include zero.</p>
-<p>To report the findings of a t-test, for example in the Results section of a report or scientific article, you would say:</p>
+<p>To report the findings of a <em>t</em>-test, for example in the Results section of a report or scientific article, you would say:</p>
 <blockquote class="text-info">
-Birds that survived the 1977 drought generally had longer beaks than those that died (Fig. 1). Mean beak lengths were 11.1 mm in survivors and 10.5 mm in non-survivors (Fig. 2). This difference was stastistically significant according to a Welch’s two-sample t-test assuming unequal variances (<em>t</em>=3.6335, <em>df</em>=94.807, <em>p</em>=0.0004539).
+Birds that survived the 1977 drought generally had longer beaks than those that died (Fig. 1). Mean beak lengths were 11.1 mm in survivors and 10.5 mm in non-survivors (Fig. 2). This difference was stastistically significant according to a Welch’s two-sample <em>t</em>-test assuming unequal variances (<em>t</em>=3.6335, <em>df</em>=94.807, <em>p</em>=0.0004539).
 </blockquote>
 
 </div>
@@ -503,7 +469,7 @@ Birds that survived the 1977 drought generally had longer beaks than those that 
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>Comparing Populations: Introduction to Data Analysis in R</strong>" was written by Chris Merkord and Alison Wallace. It was last built on 2021-09-15.</p>
+    <p>"<strong>Organismal Biology: Companion Website to BIOL 115 @ MSUM</strong>" was written by Chris Merkord and Alison Wallace. It was last built on 2021-09-15.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">

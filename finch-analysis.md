@@ -349,72 +349,32 @@ The question to ask is: could you have observed a difference as great as this if
 
 #### Conduct a *t*-test
 
-A t-test will tell you if the difference in means is likely due to chance (i.e. sampling error) or not.
+A *t*-test is a statistical test that will tell you if the difference in means between two groups is likely due to chance (i.e. sampling error) or not.
 
-The *t*-test function in R is a bit picky... it requires you to give it two arguments: a vector of measurements for one group and another vector of measurements for the other group. To do this, you must perform three steps:
-
-1. Create a vector of beak lengths for birds that died.
-2. Create a vector of beak lengths for birds that survived.
-3. Compare the two vectors using a t-test.
-
-STEP 1: The following code will take a dataset, in this case `finches`, remove rows that do not meet a given criteria, and extract the column of interest as a vector, and store the result as a new object named `beak_length_died`.
+The *t*-test function in R is `t.test()` and can be used like this:
 
 
 ```r
 # t-test ------------------------------------------------------------------
 
-# get a vector of beak lengths for birds that died
-beak_length_died <-
-  finches %>%                     # start with finches dataset
-  filter(outcome == "died") %>%   # only include rows w/ outcome=died
-  pull(beak_length)               # extract the beak_length column
-
-# print the new object in the console... it is a vector
-beak_length_died
-#>  [1]  9.20  9.50  9.93 11.13 12.13 10.63  9.93 11.33  9.93 11.10 10.80  9.70
-#> [13] 10.60  9.60 10.50  9.90  9.60 10.70  9.30 10.10  9.70 11.00 11.00 11.60
-#> [25] 10.50 10.20  9.70 11.10 11.10 10.20 10.80 10.00 11.10 10.30 11.10 10.50
-#> [37] 11.00 10.00 10.30 11.70 10.20 10.90 11.90 10.20 10.50 10.50  9.80 11.80
-#> [49] 11.00 10.30
-```
-
-STEP 2: Now copy that code and change "died" to "survived" in your object name, so `beak_length_survived`, and in the filter criteria, so `outcome == "survived"`.
-
-
-```r
-# get a vector of beak lengths for birds that survived
-beak_length_survived <-
-  finches %>% 
-  filter(outcome == "survived") %>% 
-  pull(beak_length)
-
-# print the results in the console
-beak_length_survived
-#>  [1] 11.50 10.20 12.10 11.60 10.30 11.40  8.70  9.90 10.20 10.30 11.43 11.93
-#> [13] 11.03 10.63 10.83 11.23 11.23 10.23 11.63 12.23 11.03 11.13 10.93 11.03
-#> [25] 10.23 11.33 10.03 10.70 10.00 12.43 11.09  9.63 11.60 11.30 12.13 12.03
-#> [37] 10.63 11.83 12.43 12.73 10.33 11.03 12.53 12.13 10.43 10.53 11.23 11.23
-#> [49] 10.90 10.50
-```
-
-STEP 3: Perform a t-test using the `t.test()` function:
-
-
-```r
 # perform a two-sample t-test assuming unequal variances
-t.test(beak_length_died, beak_length_survived)
+t.test(beak_length ~ outcome, data = finches)
 #> 
 #> 	Welch Two Sample t-test
 #> 
-#> data:  beak_length_died and beak_length_survived
+#> data:  beak_length by outcome
 #> t = -3.6335, df = 94.807, p-value = 0.0004539
 #> alternative hypothesis: true difference in means is not equal to 0
 #> 95 percent confidence interval:
 #>  -0.8681443 -0.2546557
 #> sample estimates:
-#> mean of x mean of y 
-#>   10.5122   11.0736
+#>     mean in group died mean in group survived 
+#>                10.5122                11.0736
 ```
+
+The first part of the code above, `beak_length ~ outcome`, tells R to compare the mean beak lengths among the two outcomes (died or survived).
+
+The second part, `data = finches`, tells R to use the finches dataset.
 
 #### Interpret the Results
 
@@ -424,6 +384,6 @@ The *p*-value tells you what proportion of the time you would expect to find a d
 
 As further evidence that the difference between the means is not equal to zero, you can see that the 95% confidence interval does not include zero.
 
-To report the findings of a t-test, for example in the Results section of a report or scientific article, you would say:
+To report the findings of a *t*-test, for example in the Results section of a report or scientific article, you would say:
 
-<blockquote class="text-info">Birds that survived the 1977 drought generally had longer beaks than those that died (Fig. 1). Mean beak lengths were 11.1 mm in survivors and 10.5 mm in non-survivors (Fig. 2).  This difference was stastistically significant according to a Welch's two-sample t-test assuming unequal variances (*t*=3.6335, *df*=94.807, *p*=0.0004539).</blockquote>
+<blockquote class="text-info">Birds that survived the 1977 drought generally had longer beaks than those that died (Fig. 1). Mean beak lengths were 11.1 mm in survivors and 10.5 mm in non-survivors (Fig. 2).  This difference was stastistically significant according to a Welch's two-sample *t*-test assuming unequal variances (*t*=3.6335, *df*=94.807, *p*=0.0004539).</blockquote>
