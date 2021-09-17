@@ -8,14 +8,9 @@ library(tidyverse)  # load tidyverse, for working with datasets
 
 # read data ---------------------------------------------------------------
 
-# read the finches data
-finches <- read_excel("finches_data.xlsx")
-
-# print the finches tibble in the console
-finches
-
-# take a quick look at all the variables in the dataset
-glimpse(finches)
+finches <- read_excel("finches_data.xlsx")  # read the finches data
+finches                                     # print finches data in console
+glimpse(finches)                            # another way to view data
 
 
 # histogram ---------------------------------------------------------------
@@ -46,8 +41,8 @@ ggsave("beak_length_histogram.png",   # you choose a name for the file
 # summarize the dataset by outcome (survived vs. died)
 beak_length_grouped_summary <- 
   finches %>% 
-  group_by(outcome) %>% 
-  summarize(
+  group_by(outcome) %>%               # for each outcome...
+  summarize(                          # calculate the following stats
     mean = mean(beak_length),
     sample_size = n(),
     standard_error = sd(beak_length) / sqrt(sample_size),
