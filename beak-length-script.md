@@ -19,14 +19,9 @@ library(tidyverse)  # load tidyverse, for working with datasets
 
 # read data ---------------------------------------------------------------
 
-# read the finches data
-finches <- read_excel("finches_data.xlsx")
-
-# print the finches tibble in the console
-finches
-
-# take a quick look at all the variables in the dataset
-glimpse(finches)
+finches <- read_excel("finches_data.xlsx")  # read the finches data
+finches                                     # print finches data in console
+glimpse(finches)                            # another way to view data
 
 
 # histogram ---------------------------------------------------------------
@@ -49,8 +44,7 @@ ggplot(
 
 # save your most recent plot
 ggsave("beak_length_histogram.png",   # you choose a name for the file
-       width = 3.5, height = 3.5,     # dimensions of saved file
-       units = "in")                  # units for the dimensions
+       width = 3.5, height = 3.5)     # dimensions of saved file in inches
 
 
 # summarize ---------------------------------------------------------------
@@ -58,8 +52,8 @@ ggsave("beak_length_histogram.png",   # you choose a name for the file
 # summarize the dataset by outcome (survived vs. died)
 beak_length_grouped_summary <- 
   finches %>% 
-  group_by(outcome) %>% 
-  summarize(
+  group_by(outcome) %>%               # for each outcome...
+  summarize(                          # calculate the following stats
     mean = mean(beak_length),
     sample_size = n(),
     standard_error = sd(beak_length) / sqrt(sample_size),
@@ -93,10 +87,7 @@ ggplot(
   )
 
 # save the beak length bar chart
-# note that the dimensions are different from the histograms above
-ggsave("beak_length_bar_chart.png", 
-       width = 2.5, height = 3.5, units = "in")
-
+ggsave("beak_length_bar_chart.png", width = 2.5, height = 3.5)
 
 # t-test ------------------------------------------------------------------
 
