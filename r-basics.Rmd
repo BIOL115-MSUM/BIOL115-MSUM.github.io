@@ -1,40 +1,13 @@
-# R as a Calculator
+# R Basics
 
-In this section, you will learn how to use the Console Window to run commands as you perform basic arithmetic operations. You will learn the basics of using functions, and finally learn about creating objects using the assignment operator.
+In this section, you will learn how to:
 
-## The RStudio IDE
-
-When you first open RStudio, you will see a window with three panes, the left pane will be on a tab named **Console**, the upper right pane will be on a tab named **Environment**, and the bottom right pane will be on a tab named **Files**, like this:
-
-```{r echo = FALSE, out.width = "75%"}
-knitr::include_graphics("screenshots/rstudio_ide_1.png")
-```
-
-For now we will use the Console and Environment tabs.
-
-## The Console tab
-
-The Console is where you enter commands (code) for R to interpret.
-
-To give it a try, place your cursor in the Console window by clicking in it. You should see a greater than sign `>` (called the "prompt") with a blinking cursor next to it.
-
-Type the number `2` and press the enter key. Pressing enter is like asking R a question. R will evaluate the code you typed (yes, it's really computer code!) and print the output, the answer to your question, on the screen like this: 
-
-    `[1] 2`
-
-<p class="text-success font-weight-bold">Congratulations, you just wrote your first computer program!</p>
-
-The `2` is the answer to your question and the `[1]` indicates that the answer had one part. For the most part you can ignore the number in brackets.
-
-For the rest of this tutorial, we will use the following notation to indicate code that you should type into the console, and what the output should look like:
-
-```{r}
-1
-```
-
-Note that in our examples, we do not show the prompt and we add two hash marks `#>` to indicate lines of output.
-
-<span class="label label-info">Tip</span> If you ever try to type something in the console and nothing happens, it may be because some other pane has RStudio's attention. Click the Console pane and make sure the blinking cursor is showing.
+- Practice running code in the console window
+- Perform basic arithmetic operations
+- Create objects using the assignment operator
+- Use functions to perform complex tasks
+- Combine multiple operations
+- Add a comment to a line of code
 
 ## R as a calculator
 

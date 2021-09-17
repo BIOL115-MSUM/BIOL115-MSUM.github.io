@@ -6,7 +6,7 @@ rmd_files: [
   
   "getting-started.Rmd",
   "create-project.Rmd",
-  "calculator.Rmd",
+  "r-basics.Rmd",
   
   "finch-example.Rmd",
   "finch-project.Rmd",
