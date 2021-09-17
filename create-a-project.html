@@ -41,9 +41,9 @@
         <ul class="book-toc list-unstyled">
 <li><a class="" href="index.html">Welcome</a></li>
 <li class="book-part">Getting Started</li>
-<li><a class="" href="get-rstudio.html"><span class="header-section-number">1</span> Get RStudio</a></li>
+<li><a class="" href="about-r-and-rstudio.html"><span class="header-section-number">1</span> About R and RStudio</a></li>
 <li><a class="active" href="create-a-project.html"><span class="header-section-number">2</span> Create A Project</a></li>
-<li><a class="" href="r-as-a-calculator.html"><span class="header-section-number">3</span> R as a Calculator</a></li>
+<li><a class="" href="r-basics.html"><span class="header-section-number">3</span> R Basics</a></li>
 <li class="book-part">Finch Selection</li>
 <li><a class="" href="introduction.html"><span class="header-section-number">4</span> Introduction</a></li>
 <li><a class="" href="finch-project.html"><span class="header-section-number">5</span> Finch Project</a></li>
@@ -80,24 +80,62 @@
 <p>To create a new project:</p>
 <ol style="list-style-type: decimal">
 <li>Go to Your Workspace</li>
-<li>Go to the Projects area</li>
-<li>Click the button to start a New Project</li>
+<li>Go to the Projects tab</li>
+<li>Click the button to start a New Project and select “New RStudio Project”</li>
 </ol>
 <div class="inline-figure"><img src="screenshots/rstudio_cloud_new_project.png" width="75%" style="display: block; margin: auto;"></div>
 <p>Wait a moment while your new project is deployed.</p>
-<p>When the screen refreshes you will have a new, empty project and you can move on to the next step.</p>
+<p>When the screen refreshes you will have a new, empty project.</p>
+<p>You can give your project a name by clicking on the words “Untitled Project” at the top of the window.</p>
+</div>
+<div id="the-rstudio-ide" class="section level2" number="2.3">
+<h2>
+<span class="header-section-number">2.3</span> The RStudio IDE<a class="anchor" aria-label="anchor" href="#the-rstudio-ide"><i class="fas fa-link"></i></a>
+</h2>
+<p>When you first open a project, you will see a window with three panes, the left pane will be on a tab named <strong>Console</strong>, the upper right pane will be on a tab named <strong>Environment</strong>, and the bottom right pane will be on a tab named <strong>Files</strong>, like this:</p>
+<div class="inline-figure"><img src="screenshots/rstudio_ide_1.png" width="75%" style="display: block; margin: auto;"></div>
+</div>
+<div id="the-console-tab" class="section level2" number="2.4">
+<h2>
+<span class="header-section-number">2.4</span> The Console tab<a class="anchor" aria-label="anchor" href="#the-console-tab"><i class="fas fa-link"></i></a>
+</h2>
+<p>The Console is where you enter commands (code) for R to interpret.</p>
+<p>To give it a try, place your cursor in the Console window by clicking in it. You should see a greater than sign <code><a href="https://rdrr.io/r/base/Comparison.html">&gt;</a></code> (called the “prompt”) with a blinking cursor next to it.</p>
+<p>Type a double quote, the words “Hello World!”, and another double quote, like this:</p>
+<pre><code>`"Hello World"`</code></pre>
+<p>Now press the enter key to run the code. Under the code you ran will appear the output, which will look like this:</p>
+<pre><code>`[1] "Hello World!"`</code></pre>
+<p class="text-success font-weight-bold">
+Congratulations, you just wrote your first computer program!
+</p>
+<p>Now try another one. Type this code and press enter:</p>
+<pre><code>`1+1`</code></pre>
+<p>The output should look like:</p>
+<pre><code>`[1] 2`</code></pre>
+<p>Pressing enter is like asking R a question. R will evaluate the code you typed (yes, it’s really computer code!) and print the output, which is the answer to your question.</p>
+<p>In the second example, your question was <code>1+1</code> and the answer was <code>2</code>.</p>
+<p>The number in square brackets, <code>[1]</code>, indicates that the answer had one part. You can pretty much ignore the brackets for now.</p>
+<p>For the rest of this tutorial, we will use the following notation to indicate code that you should type into the console, and what the output should look like:</p>
+<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fl">2</span><span class="op">+</span><span class="fl">2</span></code></pre></div>
+<pre><code>#&gt; [1] 4</code></pre>
+<p>The first box indicates the code you should run. Note that we do not show the <code><a href="https://rdrr.io/r/base/Comparison.html">&gt;</a></code> prompt, although you will see it in your console. Also note the clipboard icon on the right side of the box. You can click it to copy the code and then paste it into the console. This can save a lot of time with complex code.</p>
+<p>The second box indicates the output you should see after you run the code. We add the symbols to indicate lines of output, but output in your console will not have those symbols.</p>
+<p><span class="label label-info">Tip</span> If you ever try to type something in the console and nothing happens, it may be because some other pane has RStudio’s attention. Click the Console pane and make sure the blinking cursor is showing.</p>
 
 </div>
 </div>
   <div class="chapter-nav">
-<div class="prev"><a href="get-rstudio.html"><span class="header-section-number">1</span> Get RStudio</a></div>
-<div class="next"><a href="r-as-a-calculator.html"><span class="header-section-number">3</span> R as a Calculator</a></div>
+<div class="prev"><a href="about-r-and-rstudio.html"><span class="header-section-number">1</span> About R and RStudio</a></div>
+<div class="next"><a href="r-basics.html"><span class="header-section-number">3</span> R Basics</a></div>
 </div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
     <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
       <ul class="nav navbar-nav">
 <li><a class="nav-link" href="#create-a-project"><span class="header-section-number">2</span> Create A Project</a></li>
 <li><a class="nav-link" href="#what-are-projects"><span class="header-section-number">2.1</span> What are Projects?</a></li>
 <li><a class="nav-link" href="#create-a-project-in-rstudio-cloud"><span class="header-section-number">2.2</span> Create a Project in RStudio Cloud</a></li>
+<li><a class="nav-link" href="#the-rstudio-ide"><span class="header-section-number">2.3</span> The RStudio IDE</a></li>
+<li><a class="nav-link" href="#the-console-tab"><span class="header-section-number">2.4</span> The Console tab</a></li>
 </ul>
 
       <div class="book-extra">
@@ -115,7 +153,7 @@
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>Organismal Biology: Companion Website to BIOL 115 @ MSUM</strong>" was written by Chris Merkord and Alison Wallace. It was last built on 2021-09-15.</p>
+    <p>"<strong>Organismal Biology: Companion Website to BIOL 115 @ MSUM</strong>" was written by Chris Merkord and Alison Wallace. It was last built on 2021-09-17.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">
