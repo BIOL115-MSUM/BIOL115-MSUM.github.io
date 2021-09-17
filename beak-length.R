@@ -38,8 +38,7 @@ ggplot(
 
 # save your most recent plot
 ggsave("beak_length_histogram.png",   # you choose a name for the file
-       width = 3.5, height = 3.5,     # dimensions of saved file
-       units = "in")                  # units for the dimensions
+       width = 3.5, height = 3.5)     # dimensions of saved file in inches
 
 
 # summarize ---------------------------------------------------------------
@@ -82,10 +81,7 @@ ggplot(
   )
 
 # save the beak length bar chart
-# note that the dimensions are different from the histograms above
-ggsave("beak_length_bar_chart.png", 
-       width = 2.5, height = 3.5, units = "in")
-
+ggsave("beak_length_bar_chart.png", width = 2.5, height = 3.5)
 
 # t-test ------------------------------------------------------------------
 
