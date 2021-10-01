@@ -18,6 +18,7 @@ rmd_files: [
   "artificial-selection.Rmd",
   
   "beak-length-script.Rmd",
+  "common-errors.Rmd"
   
 ]
 
