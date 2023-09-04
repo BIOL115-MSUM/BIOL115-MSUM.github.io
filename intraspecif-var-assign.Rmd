@@ -4,12 +4,12 @@ In this assignment, you will create a document containing the following:
 
 - A histogram of plant heights
 - A bar chart of plant heights
-- A histogram of panicle lengths
-- A bar chart of panicle lengths
+- A histogram of rame lengths
+- A bar chart of rame lengths
 - Four figure legends, one for each of the figures listed above.
 - A section titled **RESULTS** which includes:
     - A paragraph describing the difference in plant heights between the two sites, citing the first two figures and giving the results of the plant height *t*-test.
-    - A paragraph describing the difference in panicle lengths between the two sites, citing the last two figures and giving the results of the panicle length *t*-test.
+    - A paragraph describing the difference in rame lengths between the two sites, citing the last two figures and giving the results of the rame length *t*-test.
 
 When you're done, submit the document to your instructor.
 
@@ -50,7 +50,7 @@ The variables in the dataset are:
 
 - **site** ("A" vs. "B"; note the letters are capitalized)
 - **plant_height** (plant height measured in cm)
-- **panicle_length** (panicle length measured in mm)
+- **rame_length** (rame length measured in mm)
 
 ## Modify script
 
@@ -74,12 +74,12 @@ Now save the `plant_height.R` script. If you see any red x's pop up on the left 
 
 Finally, run the `plant_height.R` script, one line at a time, watching for errors and looking closely at any figures you generate. If you get an error or notice a mistake, fix it and start running the code again from the top.
 
-## Repeat for panicle length
+## Repeat for rame length
 
-Now you can repeat the same process for panicle length.
+Now you can repeat the same process for rame length.
 
-1. With your plant height script `plant_height.R` open go to **File > Save As** and save the new script as `panicle_length.R`
-4. Use Find and Replace to change `plant_height` to `panicle_length` throughout.
+1. With your plant height script `plant_height.R` open go to **File > Save As** and save the new script as `rame_length.R`
+4. Use Find and Replace to change `plant_height` to `rame_length` throughout.
 4. Change the axis labels
 3. Change the file names for saving
 4. Change the figure titles (e.g. **Figure 1** becomes **Figure 3**, and **2** becomes **4**)
@@ -107,7 +107,7 @@ For tips on how to write a good figure legend, see [Writing an Effective Figure 
 Write a RESULTS section as you might for a report or peer-reviewed article. This section should include:
 
 - A paragraph describing the difference in plant heights between the two sites, citing the first two figures and giving the results of the plant height *t*-test.
-- A paragraph describing the difference in panicle lengths between the two sites, citing the last two figures and giving the results of the panicle length *t*-test.
+- A paragraph describing the difference in rame lengths between the two sites, citing the last two figures and giving the results of the rame length *t*-test.
 
 For reference, here is the paragraph we wrote for the beak length analysis:
 
