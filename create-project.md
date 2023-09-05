@@ -5,9 +5,9 @@
 RStudio projects make it straightforward to divide your work into multiple contexts, each with their own working directory, workspace, history, and source documents (scripts), and data files.
 
 
-## Create a Project in RStudio Cloud
+## Create a Project in Posit Cloud
 
-Go to [Rstudio Cloud](https://rstudio.cloud/) and sign in.
+Go to [Posit Cloud](https://posit.cloud/) and sign in.
 
 To create a new project:
 

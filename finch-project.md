@@ -2,7 +2,7 @@
 
 ## Select Workspace
 
-If your instructor has set up a course workspace on RStudio Cloud, they will disseminate a link which will give you access to the workspace on RStudio Cloud. Open the link in a web browser, sign in to RStudio Cloud, and click to join the workspace.
+If your instructor has set up a course workspace on Posit Cloud, they will disseminate a link which will give you access to the workspace on RStudio Cloud. Open the link in a web browser, sign in to RStudio Cloud, and click to join the workspace.
 
 Once you have joined, you will see two spaces listed under Spaces in the Navigation panel on the left. The first is **Your Workspace**, the second is the course workspace, for example **Course Workspace**. Select Course Workspace.
 
@@ -26,7 +26,7 @@ If your instructor has not set up a course workspace, you can just create a new 
 
 In the bottom right pane, click the **Files** tab.
 
-You should see several files, including one that says **finches_data.xlsx**. This is an Excel file containing the finch data.
+You should see several files, including one that says **finches-data.xlsx**. This is an Excel file containing the finch data.
 
 <img src="screenshots/files_tab_finches_data.png" width="75%" style="display: block; margin: auto;" />
 
@@ -43,5 +43,5 @@ Test your understanding by answering the following questions with your lab partn
 - **How many variables (columns) are there?**
 - **What are the names of the variables?** (The first row contains the variable names) Note that the names are not capitalized and use underscores (`_`) instead of spaces. This is important when writing R code.
 
-Close the Excel file and switch back to RStudio Cloud.
+Close the Excel file and switch back to Posit Cloud.
 

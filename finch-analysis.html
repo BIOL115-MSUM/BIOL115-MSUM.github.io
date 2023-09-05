@@ -117,7 +117,7 @@
 </h2>
 <p>In R, users share code with each other in the form of <strong>packages</strong>, each of which is a bundle of code, data, and other files. While R includes some basic functionality in it’s “base” packages, you often need to work with other packages when doing any data analysis.</p>
 <p>In this tutorial you will use a group of packages collectively referred to as the <strong>tidyverse</strong>.</p>
-<p>Before you can use a package, you need to download and install it. In RStudio Cloud, we have already done this step for you by running <code>install.packages("tidyverse")</code> so you can skip this step.</p>
+<p>Before you can use a package, you need to download and install it. In Posit Cloud, we have already done this step for you by running <code>install.packages("tidyverse")</code> so you can skip this step.</p>
 <p>If you are using RStudio Desktop, you will need to install the package first. In which case, you can either run the code above or use the Packages tab.</p>
 </div>
 <div id="load-the-packages" class="section level2" number="6.3">
@@ -152,7 +152,7 @@ Now run BOTH lines of code
 <code class="sourceCode R"><span><span class="co"># read data ----------------------------------------------------------------</span></span>
 <span></span>
 <span><span class="co"># read the finches data</span></span>
-<span><span class="va">finches</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://readxl.tidyverse.org/reference/read_excel.html">read_excel</a></span><span class="op">(</span><span class="st">"finches_data.xlsx"</span><span class="op">)</span></span></code></pre></div>
+<span><span class="va">finches</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://readxl.tidyverse.org/reference/read_excel.html">read_excel</a></span><span class="op">(</span><span class="st">"finches-data.xlsx"</span><span class="op">)</span></span></code></pre></div>
 <p>If you get an error at this point (red text in the console output) see the two warnings below.</p>
 <p><span class="label label-warning">Warning</span> If you didn’t run the two <code><a href="https://rdrr.io/r/base/library.html">library()</a></code> commands, then when your run <code><a href="https://readxl.tidyverse.org/reference/read_excel.html">read_excel()</a></code> you will get an error that says:</p>
 <p><code>Error in read_excel() : could not find function "read_excel"</code></p>

@@ -17,8 +17,8 @@ When you're done, submit the document to your instructor.
 
 Follow these directions to get started:
 
-1. Go to [RStudio Cloud](https://rstudio.cloud/) and sign in. 
-2. On the left, under Spaces, click on **Course Workspace**
+1. Go to [Posit Cloud](https://Posit.cloud/) and sign in. 
+2. On the left, under Spaces, click on the **Org Bio 2023** workspace.
 3. Click the **Start** button on the **Intraspecific Variation Project** assignment.
 
 ## Find the data
@@ -26,7 +26,7 @@ Follow these directions to get started:
 When your project starts, look at the **Files** tab in the lower right pane.
 
 There are two files you should take note of:
-- [grass_data.xlsx](grass_data.xlsx) - this is the data file you will use. It should already be in your project folder.
+- [grass-data.xlsx](grass-data.xlsx) - this is the data file you will use. It should already be in your project folder.
 
 ## Create script
 
@@ -38,7 +38,7 @@ Create a new R script, save it as `plant_height.R`. Then go to the [Beak Length 
 
 ## Look at the grass data
 
-In your new script, adjust the code so that it reads the grass_data.xlsx instead of finches_data.xlsx. Also be sure to change the name you give the data after your read it in.
+In your new script, adjust the code so that it reads the grass-data.xlsx instead of finches-data.xlsx. Also be sure to change the name you give the data after your read it in.
 
 
 
@@ -121,4 +121,4 @@ Once you have all the components in your Word document, save it and submit it to
 
 ## Saving your work
 
-All of your files, including R scripts and image files, will be saved on RStudio Cloud. You can return any time to rerun your code, edit a script, or download a file.
+All of your files, including R scripts and image files, will be saved on Posit Cloud. You can return any time to rerun your code, edit a script, or download a file.

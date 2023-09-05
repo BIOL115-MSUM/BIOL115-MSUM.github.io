@@ -47,7 +47,7 @@ In R, users share code with each other in the form of **packages**, each of whic
 
 In this tutorial you will use a group of packages collectively referred to as the **tidyverse**.
 
-Before you can use a package, you need to download and install it. In RStudio Cloud, we have already done this step for you by running `install.packages("tidyverse")` so you can skip this step.
+Before you can use a package, you need to download and install it. In Posit Cloud, we have already done this step for you by running `install.packages("tidyverse")` so you can skip this step.
 
 If you are using RStudio Desktop, you will need to install the package first. In which case, you can either run the code above or use the Packages tab.
 
@@ -87,7 +87,7 @@ To read the data, you will use a function named `read_excel()`. Here we run that
 # read data ----------------------------------------------------------------
 
 # read the finches data
-finches <- read_excel("finches_data.xlsx")
+finches <- read_excel("finches-data.xlsx")
 ```
 
 

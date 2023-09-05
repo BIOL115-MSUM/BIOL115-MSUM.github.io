@@ -8,7 +8,7 @@ library(tidyverse)  # load tidyverse, for working with datasets
 
 # read data ---------------------------------------------------------------
 
-finches <- read_excel("finches_data.xlsx")  # read the finches data
+finches <- read_excel("finches-data.xlsx")  # read the finches data
 finches                                     # print finches data in console
 glimpse(finches)                            # another way to view data
 

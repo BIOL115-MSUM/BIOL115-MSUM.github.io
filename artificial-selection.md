@@ -20,8 +20,8 @@ The question you are trying to answer in this activity is:
 
 Follow these directions to get started:
 
-1. Go to [RStudio Cloud](https://rstudio.cloud/) and sign in. 
-2. On the left, under Spaces, click on **Course Workspace**
+1. Go to [Posit Cloud](https://posit.cloud/) and sign in. 
+2. On the left, under Spaces, click on the **Org Bio 2023** workspace
 3. Click the **Start** button on the **Artificial Selection Project** assignment.
 
 ## Find the data
@@ -29,7 +29,7 @@ Follow these directions to get started:
 When your project starts, look at the **Files** tab in the lower right pane.
 
 There are two files you should take note of:
-- [fastplant_data.xlsx](fastplant_data.xlsx) - this is the data file you will use. If it's not in your project folder, download it here and upload to the folder.
+- [fastplant-data.xlsx](fastplant-data.xlsx) - this is the data file you will use. If it's not in your project folder, download it here and upload to the folder.
 - beak-length.R - this is a copy of the [Beak Length R Script](beak-length-script.html) from the Finch Analysis.
 
 ## Create a new script
@@ -38,7 +38,7 @@ We suggest you start your assignment by creating a new script and copying the co
 
 ## Look at the fast plant data
 
-In your new script, adjust the code so that it reads the fastplant_data.xlsx instead of finches_data.xlsx. Run the code and note the data object which appeared in your Environment tab. Click on the blue table icon to the right of the object name to open the data viewer window.
+In your new script, adjust the code so that it reads the fastplant-data.xlsx instead of finches-data.xlsx. Run the code and note the data object which appeared in your Environment tab. Click on the blue table icon to the right of the object name to open the data viewer window.
 
 Inspect the data.
 

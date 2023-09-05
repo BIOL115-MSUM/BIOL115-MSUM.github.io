@@ -5,7 +5,7 @@ sign-up
 your-workspace
 create-a-project
 what-are-projects
-create-a-project-in-rstudio-cloud
+create-a-project-in-posit-cloud
 the-rstudio-ide
 the-console-tab
 r-basics
