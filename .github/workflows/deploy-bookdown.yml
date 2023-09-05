@@ -4,8 +4,6 @@ on:
        - master
        - main
 
-name: renderbook
-
 jobs:
 
   bookdown:
