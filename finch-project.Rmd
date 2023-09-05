@@ -26,7 +26,7 @@ If your instructor has not set up a course workspace, you can just create a new 
 
 In the bottom right pane, click the **Files** tab.
 
-You should see several files, including one that says **finches_data.xlsx**. This is an Excel file containing the finch data.
+You should see several files, including one that says **finches-data.xlsx**. This is an Excel file containing the finch data.
 
 ```{r echo = FALSE, out.width = "75%"}
 knitr::include_graphics("screenshots/files_tab_finches_data.png")

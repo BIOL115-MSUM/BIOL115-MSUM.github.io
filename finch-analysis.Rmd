@@ -84,7 +84,7 @@ To read the data, you will use a function named `read_excel()`. Here we run that
 # read data ----------------------------------------------------------------
 
 # read the finches data
-finches <- read_excel("finches_data.xlsx")
+finches <- read_excel("finches-data.xlsx")
 ```
 
 
