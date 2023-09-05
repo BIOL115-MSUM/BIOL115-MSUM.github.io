@@ -12,8 +12,8 @@ You measured the plant height as a proxy for growth and rame length as a proxy f
 
 You sampled plants at two sites: 
 
-1. **Site A**, at the MSUM Regional Science Center, was last burned in spring 2018. The site was previously part of a golf course and was restored to grassland about 30 years ago. Your instructor may have called this the "unburned" site, but note that it has been burned in the past, just not recently.
-2. **Site B**, at the Bluestem Prairie Scientific and Natural Area, was last burned in spring 2023. The site is remnant native grassland, meaning it has never been plowed. Your instructor may have called this the "burned" site.
+1. **Site 1**, at the MSUM Regional Science Center, was last burned in spring 2018. The site was previously part of a golf course and was restored to grassland about 30 years ago. Your instructor may have called this the "unburned" site, but note that it has been burned in the past, just not recently.
+2. **Site 2**, at the Bluestem Prairie Scientific and Natural Area, was last burned in spring 2023. The site is remnant native grassland, meaning it has never been plowed. Your instructor may have called this the "burned" site.
 
 Both sites are managed by the Minnesota Department of Natural Resources and The Nature Conservancy using a combination of fire, mowing, and chemical treatment to control invasive species.
 
@@ -23,7 +23,7 @@ You will compare the plant heights and rame lengths of plants in these two sites
 
 The goal of the activity is to answer the following question:
 
-<blockquote class="text-success">Do plant height or rame length of Big Bluestem (<i>Andropogon gerardii</i>) plants vary between site A and site B?</blockquote>
+<blockquote class="text-success">Does burning a grassland affect plant height or rame length of Big Bluestem (<i>Andropogon gerardii</i>)</blockquote>
 
 ## Your assignment
 
