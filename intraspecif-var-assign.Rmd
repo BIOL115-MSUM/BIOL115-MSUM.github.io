@@ -48,7 +48,7 @@ Each row in the dataset represents an individual plant.
 
 The variables in the dataset are:
 
-- **site** ("A" vs. "B"; note the letters are capitalized)
+- **treatment** ("burned" vs. "unburned")
 - **plant_height** (plant height measured in cm)
 - **rame_length** (rame length measured in mm)
 
@@ -64,7 +64,7 @@ To get you moving along, here are some suggestions:
 
 - replace `finches` with `grass` throughout
 - replace `beak_length` with `plant_height` throughout
-- replace `outcome` with `site` throughout
+- replace `outcome` with `treatment` throughout
 - for the histogram and bar chart
     - change the x- and y-axis labels (in `labs()`)
     - put your name in the caption so we know who made the figure (in `labs()`)
