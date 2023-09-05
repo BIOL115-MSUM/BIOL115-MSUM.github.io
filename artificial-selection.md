@@ -48,7 +48,7 @@ The variables in the dataset are:
 
 - **generation**. The generation the plant belonged to? (values include `"F0"` or `"F1"`)
 - **trichome_count**. The number of trichomes the plant had. (values are numeric integers)
-- **selected**. For the F0 generation, was the individual plant selected for breeding? (values include, `"yes"`, `"no"`, or `"NA"` if the plant was from the F1 generation)
+- **selection**. For the F0 generation, was the individual plant selected for breeding, or culled? (values include, `"Culled"`, `"Not Culled"`, or `"N/A"` if the plant was from the F1 generation)
 
 Ask yourself:
 
@@ -68,7 +68,7 @@ To answer the question, you should:
 
 1. Modify remaining code for use with the fast plant data
 2. Plot a histogram with facets for each generation (F0 and F1)
-    - Instead of setting the fill color to vary by generation, set it to vary by whether or not the plants were **selected** for breeding. This is the only place you will use the **selected** variable
+    - Instead of setting the fill color to vary by generation, set it to vary by whether or not the plants were selected for breeding (the **selection** variable). This is the only place you will use the **selection** variable
     - Remove the line `guides(fill = "none") +` to show the fill color legend
     - For help, see [A new variation] below
 3. Summarize trichome count by generation
@@ -111,11 +111,9 @@ ggplot(
 
 <img src="artificial-selection_files/figure-html/finch-sex-histogram-1.png" width="70%" style="display: block; margin: auto;" />
 
-For your current assignment, put each generation of plants on its own panel, and set the fill color of the columns by whether the plants were **selected** for breeding or not.
+For your current assignment, put each generation of plants on its own panel, and set the fill color of the columns by whether the plants were selected for breeding or not (the variable **selection**).
 
 Remove the line `guides(fill = "none") +` to show the fill color legend.
-
-In *your* figures, the titles should be `"Figure 1."` and `"Figure 2."`.
 
 For example:
 

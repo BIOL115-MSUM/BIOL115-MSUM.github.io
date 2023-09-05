@@ -2,7 +2,7 @@
 knit: "bookdown::render_book"
 title: "Organismal Biology: Companion Website to BIOL 115 @ MSUM"
 author: "Chris Merkord and Alison Wallace"
-date: "2021-09-17"
+date: "2023-09-05"
 github-repo: BIOL115-MSUM/BIOL115-MSUM.github.io
 description: "A beginners guide to data analysis in R focused on comparing phenotypic variation in biological populations. Developed for the course BIOL 115L Organismal Biology Lab at Minnesota State University by Chris Merkord and Alison Wallace, with contributions from Katie Olson and others."
 site: bookdown::bookdown_site
@@ -31,7 +31,7 @@ Parts 1 to 3 of this lab will teach you how to use R and RStudio. Part 4 contain
 about creating objects using the assignment operator. 
 - In Part 3 of this lab, you will be introduced to R scripts. You will use the Finches dataset to learn
 how to read a tabular dataset into R, inspect it, and perform basic statistical summaries on it. You will estimate means, standard deviations, standard errors of the mean, and confidence intervals around the mean. You will also learn how to plot histograms and bar charts. 
-- In Part 4, you will apply what you have learned to the grass data you collected at the Regional Science Center. You will create a new R script, read the grass data into R, plot histograms of plant height and panicle length, estimate the means of those variables, and plot them on bar charts.
+- In Part 4, you will apply what you have learned to the grass data you collected at the Regional Science Center. You will create a new R script, read the grass data into R, plot histograms of plant height and rame length, estimate the means of those variables, and plot them on bar charts.
 
 ## Acknowledgements {-}
 

@@ -119,8 +119,8 @@ finches
 #> 4   278 Geospiza f… unkn…             1976      1977 died      18.5  67.2   19.3
 #> 5   283 Geospiza f… male              1976      1977 died      17.4  70.2   19.3
 #> 6   288 Geospiza f… unkn…             1976      1977 died      16.3  71.2   20.3
-#> # … with 94 more rows, and 3 more variables: beak_length <dbl>,
-#> #   beak_depth <dbl>, beak_width <dbl>
+#> # ℹ 94 more rows
+#> # ℹ 3 more variables: beak_length <dbl>, beak_depth <dbl>, beak_width <dbl>
 ```
 
 The first thing you notice is that this object is not a vector like the objects you were working with before. Instead, it's a **tibble**, which is an object that stores tabular data.
@@ -373,7 +373,7 @@ t.test(beak_length ~ outcome, data = finches)
 #> 
 #> data:  beak_length by outcome
 #> t = -3.6335, df = 94.807, p-value = 0.0004539
-#> alternative hypothesis: true difference in means is not equal to 0
+#> alternative hypothesis: true difference in means between group died and group survived is not equal to 0
 #> 95 percent confidence interval:
 #>  -0.8681443 -0.2546557
 #> sample estimates:

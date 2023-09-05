@@ -51,7 +51,7 @@ find-the-data
 create-script
 look-at-the-grass-data
 modify-script
-repeat-for-panicle-length
+repeat-for-rame-length
 write-figure-legends
 write-a-results-section
 submit-your-assignment
@@ -66,3 +66,4 @@ look-at-the-fast-plant-data
 your-assignment-1
 a-new-variation
 beak-length-script
+common-errors

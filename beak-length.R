@@ -22,7 +22,8 @@ ggplot(
                 fill = outcome)       # fill sets the color of the boxes
 ) +
   geom_histogram(bins = 14) +         # add the histogram, use 14 bins
-  facet_wrap(~ outcome, ncol = 1) +   # outcome is the grouping variable
+  facet_wrap(~ outcome, ncol = 1,     # outcome is the grouping variable
+    scales = "free_y") +              # allow y axes to vary on each facet
   guides(fill = "none") +             # don't show a legend for fill color
   labs(
     title = "Figure 1.",                # change number if necessary

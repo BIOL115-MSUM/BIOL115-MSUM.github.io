@@ -7,17 +7,20 @@
 <title>6 Finch Analysis | Organismal Biology: Companion Website to BIOL 115 @ MSUM</title>
 <meta name="author" content="Chris Merkord and Alison Wallace">
 <meta name="description" content="6.1 R scripts  6.1.1 Create a script Until now, you have run commands by typing them into the console. One of the benefits of R over programs such as Excel, however, is the ability to save your...">
-<meta name="generator" content="bookdown 0.24.1 with bs4_book()">
+<meta name="generator" content="bookdown 0.35 with bs4_book()">
 <meta property="og:title" content="6 Finch Analysis | Organismal Biology: Companion Website to BIOL 115 @ MSUM">
 <meta property="og:type" content="book">
 <meta property="og:description" content="6.1 R scripts  6.1.1 Create a script Until now, you have run commands by typing them into the console. One of the benefits of R over programs such as Excel, however, is the ability to save your...">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="6 Finch Analysis | Organismal Biology: Companion Website to BIOL 115 @ MSUM">
 <meta name="twitter:description" content="6.1 R scripts  6.1.1 Create a script Until now, you have run commands by typing them into the console. One of the benefits of R over programs such as Excel, however, is the ability to save your...">
-<!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/header-attrs-2.11/header-attrs.js"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
-<script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.3.0.9000/transition.js"></script><script src="libs/bs3compat-0.3.0.9000/tabs.js"></script><script src="libs/bs3compat-0.3.0.9000/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
-<script src="libs/bs4_book-1.0.0/bs4_book.js"></script><script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- CSS -->
+<script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.5.1.9000/transition.js"></script><script src="libs/bs3compat-0.5.1.9000/tabs.js"></script><script src="libs/bs3compat-0.5.1.9000/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
+<script src="libs/bs4_book-1.0.0/bs4_book.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- CSS --><style type="text/css">
+    
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  </style>
 </head>
 <body data-spy="scroll" data-target="#toc">
 
@@ -55,6 +58,7 @@
 <li><a class="" href="artificial-selection.html"><span class="header-section-number">9</span> Artificial Selection</a></li>
 <li class="book-part">Appendices</li>
 <li><a class="" href="beak-length-script.html"><span class="header-section-number">10</span> Beak Length Script</a></li>
+<li><a class="" href="common-errors.html"><span class="header-section-number">11</span> Common Errors</a></li>
 </ul>
 
         <div class="book-extra">
@@ -101,10 +105,10 @@
 <p>The main caveat is to be careful to copy all code, especially closing parentheses <code>)</code> at the end of code chunks.</p>
 <p>Now that you have a script, try copying and pasting this code into it. For example:</p>
 <div class="sourceCode" id="cb54"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/base/MathFun.html">sqrt</a></span><span class="op">(</span><span class="fl">9</span><span class="op">)</span></code></pre></div>
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/MathFun.html">sqrt</a></span><span class="op">(</span><span class="fl">9</span><span class="op">)</span></span></code></pre></div>
 <p>To run the code, place your cursor on the same line as the code as click Run on the Source pane toolbar, then Run Selected Lines. Or just hold down the Command key and press the Return key. This is called a keyboard shortcut, and is written as <strong>Cmd+Return</strong>.</p>
 <p>When you run the line of code, RStudio copies it to the Console pane and executes it.</p>
-<p>Now that you’ve tried it, you can delete <code><a href="https://rdrr.io/r/base/MathFun.html">sqrt(9)</a></code> from your script before you move on.</p>
+<p>Now that you’ve tried it, you can delete <code>sqrt(9)</code> from your script before you move on.</p>
 </div>
 </div>
 <div id="r-packages" class="section level2" number="6.2">
@@ -113,7 +117,7 @@
 </h2>
 <p>In R, users share code with each other in the form of <strong>packages</strong>, each of which is a bundle of code, data, and other files. While R includes some basic functionality in it’s “base” packages, you often need to work with other packages when doing any data analysis.</p>
 <p>In this tutorial you will use a group of packages collectively referred to as the <strong>tidyverse</strong>.</p>
-<p>Before you can use a package, you need to download and install it. In RStudio Cloud, we have already done this step for you by running <code><a href="https://rdrr.io/r/utils/install.packages.html">install.packages("tidyverse")</a></code> so you can skip this step.</p>
+<p>Before you can use a package, you need to download and install it. In RStudio Cloud, we have already done this step for you by running <code>install.packages("tidyverse")</code> so you can skip this step.</p>
 <p>If you are using RStudio Desktop, you will need to install the package first. In which case, you can either run the code above or use the Packages tab.</p>
 </div>
 <div id="load-the-packages" class="section level2" number="6.3">
@@ -124,13 +128,13 @@
 <p class="text-info">
 Copy the code in the first box below (including the comments) and paste it into your script.
 </p>
-<p>If you still have the code <code><a href="https://rdrr.io/r/base/MathFun.html">sqrt(9)</a></code> in your script, feel free to delete it.</p>
+<p>If you still have the code <code>sqrt(9)</code> in your script, feel free to delete it.</p>
 <div class="sourceCode" id="cb55"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="co"># load packages -----------------------------------------------------------</span>
-
-<span class="co"># run every time you restart RStudio</span>
-<span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://readxl.tidyverse.org">readxl</a></span><span class="op">)</span>     <span class="co"># load readxl, for reading Excel files</span>
-<span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://tidyverse.tidyverse.org">tidyverse</a></span><span class="op">)</span>  <span class="co"># load tidyverse, for working with datasets</span></code></pre></div>
+<code class="sourceCode R"><span><span class="co"># load packages -----------------------------------------------------------</span></span>
+<span></span>
+<span><span class="co"># run every time you restart RStudio</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://readxl.tidyverse.org">readxl</a></span><span class="op">)</span>     <span class="co"># load readxl, for reading Excel files</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://tidyverse.tidyverse.org">tidyverse</a></span><span class="op">)</span>  <span class="co"># load tidyverse, for working with datasets</span></span></code></pre></div>
 <p class="text-info">
 Now run BOTH lines of code
 </p>
@@ -145,10 +149,10 @@ Now run BOTH lines of code
 <p>Now that you have a script and have loaded the necessary packages, you’re ready to get coding!</p>
 <p>To read the data, you will use a function named <code><a href="https://readxl.tidyverse.org/reference/read_excel.html">read_excel()</a></code>. Here we run that function and assign the results to an object names <code>finches</code>.</p>
 <div class="sourceCode" id="cb56"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="co"># read data ----------------------------------------------------------------</span>
-
-<span class="co"># read the finches data</span>
-<span class="va">finches</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://readxl.tidyverse.org/reference/read_excel.html">read_excel</a></span><span class="op">(</span><span class="st">"finches_data.xlsx"</span><span class="op">)</span></code></pre></div>
+<code class="sourceCode R"><span><span class="co"># read data ----------------------------------------------------------------</span></span>
+<span></span>
+<span><span class="co"># read the finches data</span></span>
+<span><span class="va">finches</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://readxl.tidyverse.org/reference/read_excel.html">read_excel</a></span><span class="op">(</span><span class="st">"finches_data.xlsx"</span><span class="op">)</span></span></code></pre></div>
 <p>If you get an error at this point (red text in the console output) see the two warnings below.</p>
 <p><span class="label label-warning">Warning</span> If you didn’t run the two <code><a href="https://rdrr.io/r/base/library.html">library()</a></code> commands, then when your run <code><a href="https://readxl.tidyverse.org/reference/read_excel.html">read_excel()</a></code> you will get an error that says:</p>
 <p><code>Error in read_excel() : could not find function "read_excel"</code></p>
@@ -162,8 +166,8 @@ Now run BOTH lines of code
 To look at an object you have just created, print it to the console window by <strong>typing its name and running it</strong>:
 </p>
 <div class="sourceCode" id="cb57"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="co"># print the results in the console</span>
-<span class="va">finches</span></code></pre></div>
+<code class="sourceCode R"><span><span class="co"># print the results in the console</span></span>
+<span><span class="va">finches</span></span></code></pre></div>
 <pre><code>#&gt; # A tibble: 100 × 12
 #&gt;    band species     sex   first_adult_year last_year outcome weight  wing tarsus
 #&gt;   &lt;dbl&gt; &lt;chr&gt;       &lt;chr&gt;            &lt;dbl&gt;     &lt;dbl&gt; &lt;chr&gt;    &lt;dbl&gt; &lt;dbl&gt;  &lt;dbl&gt;
@@ -173,17 +177,17 @@ To look at an object you have just created, print it to the console window by <s
 #&gt; 4   278 Geospiza f… unkn…             1976      1977 died      18.5  67.2   19.3
 #&gt; 5   283 Geospiza f… male              1976      1977 died      17.4  70.2   19.3
 #&gt; 6   288 Geospiza f… unkn…             1976      1977 died      16.3  71.2   20.3
-#&gt; # … with 94 more rows, and 3 more variables: beak_length &lt;dbl&gt;,
-#&gt; #   beak_depth &lt;dbl&gt;, beak_width &lt;dbl&gt;</code></pre>
+#&gt; # ℹ 94 more rows
+#&gt; # ℹ 3 more variables: beak_length &lt;dbl&gt;, beak_depth &lt;dbl&gt;, beak_width &lt;dbl&gt;</code></pre>
 <p>The first thing you notice is that this object is not a vector like the objects you were working with before. Instead, it’s a <strong>tibble</strong>, which is an object that stores tabular data.</p>
 <p>The first line of the output gives the data type (tibble) and dimensions of the data (number of rows x number of columns). In the tidyverse, columns are referred to as “variables”.</p>
 <p>The first 10 rows are shown, as well as the first few variables. How many variables depends on how wide your Console window is.</p>
 <p>For each variable, it’s name is given, followed by the type of data. Most of the time we worth with either numeric data (<code>&lt;dbl&gt;</code>) or text data (<code>&lt;chr&gt;</code>).</p>
 <p>If there are more than 10 rows, or more variables than can fit on the screen, there will be a sentence at the end saying “… with xx more rows, and x more variables”, followed by a list of the unshown variables.</p>
-<p>A quick way of seeing the first few observations for all variables is to use the <code>glimpse()</code> function:</p>
+<p>A quick way of seeing the first few observations for all variables is to use the <code><a href="https://pillar.r-lib.org/reference/glimpse.html">glimpse()</a></code> function:</p>
 <div class="sourceCode" id="cb59"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="co"># take a quick look at all the variables in the dataset</span>
-<span class="fu">glimpse</span><span class="op">(</span><span class="va">finches</span><span class="op">)</span></code></pre></div>
+<code class="sourceCode R"><span><span class="co"># take a quick look at all the variables in the dataset</span></span>
+<span><span class="fu"><a href="https://pillar.r-lib.org/reference/glimpse.html">glimpse</a></span><span class="op">(</span><span class="va">finches</span><span class="op">)</span></span></code></pre></div>
 <pre><code>#&gt; Rows: 100
 #&gt; Columns: 12
 #&gt; $ band             &lt;dbl&gt; 9, 12, 276, 278, 283, 288, 293, 294, 298, 307, 311, 3…
@@ -198,7 +202,7 @@ To look at an object you have just created, print it to the console window by <s
 #&gt; $ beak_length      &lt;dbl&gt; 9.20, 9.50, 9.93, 11.13, 12.13, 10.63, 9.93, 11.33, 9…
 #&gt; $ beak_depth       &lt;dbl&gt; 8.3, 7.5, 8.0, 10.6, 11.2, 9.1, 9.5, 10.5, 8.4, 8.6, …
 #&gt; $ beak_width       &lt;dbl&gt; 8.1, 7.5, 7.6, 9.4, 9.5, 8.8, 8.9, 9.1, 8.2, 8.4, 8.5…</code></pre>
-<p>If you want to see the entire dataset, click the name of the data object in the Environment tab, or run <code><a href="https://rdrr.io/r/utils/View.html">View(finches)</a></code>. This will open a handy data viewer window. Once you are done looking at the data, close the window and continue.</p>
+<p>If you want to see the entire dataset, click the name of the data object in the Environment tab, or run <code>View(finches)</code>. This will open a handy data viewer window. Once you are done looking at the data, close the window and continue.</p>
 </div>
 <div id="plot-a-histogram" class="section level2" number="6.6">
 <h2>
@@ -206,21 +210,21 @@ To look at an object you have just created, print it to the console window by <s
 </h2>
 <p>The first step in any data analysis is always to plot the data.</p>
 <p>Because we want to compare means between two groups, a useful plot is a <strong>histogram</strong>, which shows how often each value (or range of values) was observed.</p>
-<p>Plotting in the tidyverse is most easily accomplished using the <code>ggplot()</code> function and its associated helper functions.</p>
+<p>Plotting in the tidyverse is most easily accomplished using the <code><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot()</a></code> function and its associated helper functions.</p>
 <div id="basic-histogram" class="section level3" number="6.6.1">
 <h3>
 <span class="header-section-number">6.6.1</span> Basic histogram<a class="anchor" aria-label="anchor" href="#basic-histogram"><i class="fas fa-link"></i></a>
 </h3>
-<p>To plot a basic histogram of the <code>beak_length</code> variable, use the following code. Note the use of a <code><a href="https://rdrr.io/r/base/Arithmetic.html">+</a></code> after the <code>ggplot()</code> function. Copy this code to your script and run it. RStudio is smart enough to recognize that it should all be run together, so putting your cursor on any of these lines and typing Cmd+Return will run all the lines at once.</p>
+<p>To plot a basic histogram of the <code>beak_length</code> variable, use the following code. Note the use of a <code>+</code> after the <code><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot()</a></code> function. Copy this code to your script and run it. RStudio is smart enough to recognize that it should all be run together, so putting your cursor on any of these lines and typing Cmd+Return will run all the lines at once.</p>
 <div class="sourceCode" id="cb61"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="co"># histogram ---------------------------------------------------------------</span>
-
-<span class="co"># histogram of beak length</span>
-<span class="fu">ggplot</span><span class="op">(</span>
-  data <span class="op">=</span> <span class="va">finches</span>,                     <span class="co"># use the finches dataset</span>
-  mapping <span class="op">=</span> <span class="fu">aes</span><span class="op">(</span>x <span class="op">=</span> <span class="va">beak_length</span><span class="op">)</span>      <span class="co"># put beak length on the x axis</span>
-<span class="op">)</span> <span class="op">+</span>
-  <span class="fu">geom_histogram</span><span class="op">(</span>bins <span class="op">=</span> <span class="fl">14</span><span class="op">)</span>           <span class="co"># add the histogram, use 14 bins</span></code></pre></div>
+<code class="sourceCode R"><span><span class="co"># histogram ---------------------------------------------------------------</span></span>
+<span></span>
+<span><span class="co"># histogram of beak length</span></span>
+<span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span></span>
+<span>  data <span class="op">=</span> <span class="va">finches</span>,                     <span class="co"># use the finches dataset</span></span>
+<span>  mapping <span class="op">=</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">beak_length</span><span class="op">)</span>      <span class="co"># put beak length on the x axis</span></span>
+<span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_histogram.html">geom_histogram</a></span><span class="op">(</span>bins <span class="op">=</span> <span class="fl">14</span><span class="op">)</span>           <span class="co"># add the histogram, use 14 bins</span></span></code></pre></div>
 <div class="inline-figure"><img src="finch-analysis_files/figure-html/histogram-1.png" width="70%" style="display: block; margin: auto;"></div>
 <p>You can plot histograms of other variables by changing the <code>x =</code> part of the code.</p>
 <p>You can also experiment with different numbers of bins. The goal is to have enough that you can see a hump-shaped distribution, but not so many that you have too many bins with few or no observations. Try plotting a histogram with 50 bins, and another with 3 bins. Not very informational, are they?</p>
@@ -229,40 +233,40 @@ To look at an object you have just created, print it to the console window by <s
 <h3>
 <span class="header-section-number">6.6.2</span> Add facets<a class="anchor" aria-label="anchor" href="#add-facets"><i class="fas fa-link"></i></a>
 </h3>
-<p>Sometimes we want to see how the distribution of a variable varies among different subsets of the data. For example, to answer our question we want to see how beak length varies between birds that did or did not survive the drought. One easy way to do this is with the <code>facet_wrap()</code> function in ggplot. Note that you have to add a <code><a href="https://rdrr.io/r/base/Arithmetic.html">+</a></code> operator after the <code>geom_histogram()</code> line.</p>
+<p>Sometimes we want to see how the distribution of a variable varies among different subsets of the data. For example, to answer our question we want to see how beak length varies between birds that did or did not survive the drought. One easy way to do this is with the <code><a href="https://ggplot2.tidyverse.org/reference/facet_wrap.html">facet_wrap()</a></code> function in ggplot. Note that you have to add a <code>+</code> operator after the <code><a href="https://ggplot2.tidyverse.org/reference/geom_histogram.html">geom_histogram()</a></code> line.</p>
 <div class="sourceCode" id="cb62"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="co"># histogram of beak length, grouped by survival</span>
-<span class="fu">ggplot</span><span class="op">(</span>
-  data <span class="op">=</span> <span class="va">finches</span>,                     <span class="co"># use the finches dataset</span>
-  mapping <span class="op">=</span> <span class="fu">aes</span><span class="op">(</span>x <span class="op">=</span> <span class="va">beak_length</span>,      <span class="co"># put beak length on the x axis</span>
-                fill <span class="op">=</span> <span class="va">outcome</span><span class="op">)</span>       <span class="co"># fill sets the color of the boxes</span>
-<span class="op">)</span> <span class="op">+</span>
-  <span class="fu">geom_histogram</span><span class="op">(</span>bins <span class="op">=</span> <span class="fl">14</span><span class="op">)</span> <span class="op">+</span>         <span class="co"># add the histogram, use 14 bins</span>
-  <span class="fu">facet_wrap</span><span class="op">(</span><span class="op">~</span> <span class="va">outcome</span>, ncol <span class="op">=</span> <span class="fl">1</span><span class="op">)</span> <span class="op">+</span>   <span class="co"># outcome is the grouping variable</span>
-  <span class="fu">guides</span><span class="op">(</span>fill <span class="op">=</span> <span class="st">"none"</span><span class="op">)</span>               <span class="co"># don't show a legend for fill color</span></code></pre></div>
+<code class="sourceCode R"><span><span class="co"># histogram of beak length, grouped by survival</span></span>
+<span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span></span>
+<span>  data <span class="op">=</span> <span class="va">finches</span>,                     <span class="co"># use the finches dataset</span></span>
+<span>  mapping <span class="op">=</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">beak_length</span>,      <span class="co"># put beak length on the x axis</span></span>
+<span>                fill <span class="op">=</span> <span class="va">outcome</span><span class="op">)</span>       <span class="co"># fill sets the color of the boxes</span></span>
+<span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_histogram.html">geom_histogram</a></span><span class="op">(</span>bins <span class="op">=</span> <span class="fl">14</span><span class="op">)</span> <span class="op">+</span>         <span class="co"># add the histogram, use 14 bins</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/facet_wrap.html">facet_wrap</a></span><span class="op">(</span><span class="op">~</span> <span class="va">outcome</span>, ncol <span class="op">=</span> <span class="fl">1</span><span class="op">)</span> <span class="op">+</span>   <span class="co"># outcome is the grouping variable</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/guides.html">guides</a></span><span class="op">(</span>fill <span class="op">=</span> <span class="st">"none"</span><span class="op">)</span>               <span class="co"># don't show a legend for fill color</span></span></code></pre></div>
 <div class="inline-figure"><img src="finch-analysis_files/figure-html/grouped-histogram-1.png" width="70%" style="display: block; margin: auto;"></div>
 </div>
 <div id="add-labels" class="section level3" number="6.6.3">
 <h3>
 <span class="header-section-number">6.6.3</span> Add labels<a class="anchor" aria-label="anchor" href="#add-labels"><i class="fas fa-link"></i></a>
 </h3>
-<p>The last thing you might want to do is spruce up your plot by adding better axis labels and removing the redundant color legend. This is done with the <code>labs()</code> function and the :</p>
+<p>The last thing you might want to do is spruce up your plot by adding better axis labels and removing the redundant color legend. This is done with the <code><a href="https://ggplot2.tidyverse.org/reference/labs.html">labs()</a></code> function and the :</p>
 <div class="sourceCode" id="cb63"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="co"># histogram of beak length, grouped by survival, with labels</span>
-<span class="fu">ggplot</span><span class="op">(</span>
-  data <span class="op">=</span> <span class="va">finches</span>,                     <span class="co"># use the finches dataset</span>
-  mapping <span class="op">=</span> <span class="fu">aes</span><span class="op">(</span>x <span class="op">=</span> <span class="va">beak_length</span>,      <span class="co"># put beak length on the x axis</span>
-                fill <span class="op">=</span> <span class="va">outcome</span><span class="op">)</span>       <span class="co"># fill sets the color of the boxes</span>
-<span class="op">)</span> <span class="op">+</span>
-  <span class="fu">geom_histogram</span><span class="op">(</span>bins <span class="op">=</span> <span class="fl">14</span><span class="op">)</span> <span class="op">+</span>         <span class="co"># add the histogram, use 14 bins</span>
-  <span class="fu">facet_wrap</span><span class="op">(</span><span class="op">~</span> <span class="va">outcome</span>, ncol <span class="op">=</span> <span class="fl">1</span><span class="op">)</span> <span class="op">+</span>   <span class="co"># outcome is the grouping variable</span>
-  <span class="fu">guides</span><span class="op">(</span>fill <span class="op">=</span> <span class="st">"none"</span><span class="op">)</span> <span class="op">+</span>             <span class="co"># don't show a legend for fill color</span>
-  <span class="fu">labs</span><span class="op">(</span>
-    title <span class="op">=</span> <span class="st">"Figure 1."</span>,                      <span class="co"># this is the first figure</span>
-    x <span class="op">=</span> <span class="st">"Beak Length (mm)"</span>,                   <span class="co"># human-readable x-axis label</span>
-    y <span class="op">=</span> <span class="st">"Number of Birds"</span>,                    <span class="co"># human-readable y-axis label</span>
-    caption <span class="op">=</span> <span class="st">"Author: Org Bio Instructors"</span>   <span class="co"># so we know who made it</span>
-  <span class="op">)</span></code></pre></div>
+<code class="sourceCode R"><span><span class="co"># histogram of beak length, grouped by survival, with labels</span></span>
+<span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span></span>
+<span>  data <span class="op">=</span> <span class="va">finches</span>,                     <span class="co"># use the finches dataset</span></span>
+<span>  mapping <span class="op">=</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">beak_length</span>,      <span class="co"># put beak length on the x axis</span></span>
+<span>                fill <span class="op">=</span> <span class="va">outcome</span><span class="op">)</span>       <span class="co"># fill sets the color of the boxes</span></span>
+<span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_histogram.html">geom_histogram</a></span><span class="op">(</span>bins <span class="op">=</span> <span class="fl">14</span><span class="op">)</span> <span class="op">+</span>         <span class="co"># add the histogram, use 14 bins</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/facet_wrap.html">facet_wrap</a></span><span class="op">(</span><span class="op">~</span> <span class="va">outcome</span>, ncol <span class="op">=</span> <span class="fl">1</span><span class="op">)</span> <span class="op">+</span>   <span class="co"># outcome is the grouping variable</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/guides.html">guides</a></span><span class="op">(</span>fill <span class="op">=</span> <span class="st">"none"</span><span class="op">)</span> <span class="op">+</span>             <span class="co"># don't show a legend for fill color</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">labs</a></span><span class="op">(</span></span>
+<span>    title <span class="op">=</span> <span class="st">"Figure 1."</span>,                      <span class="co"># this is the first figure</span></span>
+<span>    x <span class="op">=</span> <span class="st">"Beak Length (mm)"</span>,                   <span class="co"># human-readable x-axis label</span></span>
+<span>    y <span class="op">=</span> <span class="st">"Number of Birds"</span>,                    <span class="co"># human-readable y-axis label</span></span>
+<span>    caption <span class="op">=</span> <span class="st">"Author: Org Bio Instructors"</span>   <span class="co"># so we know who made it</span></span>
+<span>  <span class="op">)</span></span></code></pre></div>
 <div class="inline-figure"><img src="finch-analysis_files/figure-html/grouped-histogram-labels-1.png" width="70%" style="display: block; margin: auto;"></div>
 </div>
 <div id="write-a-figure-legend" class="section level3" number="6.6.4">
@@ -280,14 +284,14 @@ Figure 1. <strong>Distribution of beak lengths among medium ground finches (<i>G
 <span class="header-section-number">6.6.5</span> Export your figure<a class="anchor" aria-label="anchor" href="#export-your-figure"><i class="fas fa-link"></i></a>
 </h3>
 <p>Often when you complete a data analysis, you want to incorporate the figures you create into a report or manuscript. While <strong>YOU DO NOT NEED TO DO ANYTHING WITH THE FINCH FIGURES</strong> as part of your assignment today, it will be useful to know how to do it when you reach the Intraspecific Variation analysis later in the lab.</p>
-<p>To put your figure in a Microsoft Word document, you must first save it as an image file on your computer. You can do this with <code>ggsave()</code>, which saves the most recent ggplot displayed.</p>
+<p>To put your figure in a Microsoft Word document, you must first save it as an image file on your computer. You can do this with <code><a href="https://ggplot2.tidyverse.org/reference/ggsave.html">ggsave()</a></code>, which saves the most recent ggplot displayed.</p>
 <p>In your finch script, paste this code below the code you used to create your histogram:</p>
 <div class="sourceCode" id="cb64"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="co"># save your most recent plot</span>
-<span class="fu">ggsave</span><span class="op">(</span><span class="st">"beak_length_histogram.png"</span>,   <span class="co"># you choose a name for the file</span>
-       width <span class="op">=</span> <span class="fl">3.5</span>, height <span class="op">=</span> <span class="fl">3.5</span>,     <span class="co"># dimensions of saved file DO NOT CHANGE</span>
-       units <span class="op">=</span> <span class="st">"in"</span><span class="op">)</span>                  <span class="co"># units for the dimensions DO NOT CHANGE</span></code></pre></div>
-<p>Be sure to put the name of the image file you will create inside quotation marks as above. It should end with “.png”, to indicate you want a PNG file. Here we have chosen a good width and height in inches (3.5" x 3.5") so that the fonts are sized appropriately on the image.</p>
+<code class="sourceCode R"><span><span class="co"># save your most recent plot</span></span>
+<span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggsave.html">ggsave</a></span><span class="op">(</span><span class="st">"beak_length_histogram.png"</span>,   <span class="co"># you choose a name for the file</span></span>
+<span>       width <span class="op">=</span> <span class="fl">3.5</span>, height <span class="op">=</span> <span class="fl">3.5</span>,     <span class="co"># dimensions of saved file DO NOT CHANGE</span></span>
+<span>       units <span class="op">=</span> <span class="st">"in"</span><span class="op">)</span>                  <span class="co"># units for the dimensions DO NOT CHANGE</span></span></code></pre></div>
+<p>Be sure to put the name of the image file you will create inside quotation marks as above. It should end with “.png”, to indicate you want a PNG file. Here we have chosen a good width and height in inches (3.5” x 3.5”) so that the fonts are sized appropriately on the image.</p>
 <p>After you run this code, look in Files tab in RStudio and you’ll see a file named <strong>beak_length_histogram.png</strong> now. You can click it to open the file in your computer’s default image viewer.</p>
 </div>
 </div>
@@ -303,20 +307,20 @@ Figure 1. <strong>Distribution of beak lengths among medium ground finches (<i>G
 <p>Notice the use of the equations you learned in Part 2.</p>
 <p>The <code>group_by(outcome)</code> function tells R to give us separate summaries for each outcome (died vs. survived).</p>
 <div class="sourceCode" id="cb65"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="co"># summarize ---------------------------------------------------------------</span>
-
-<span class="co"># summarize the dataset by outcome (survived vs. died)</span>
-<span class="va">beak_length_grouped_summary</span> <span class="op">&lt;-</span> 
-  <span class="va">finches</span> <span class="op">%&gt;%</span> 
-  <span class="fu">group_by</span><span class="op">(</span><span class="va">outcome</span><span class="op">)</span> <span class="op">%&gt;%</span> 
-  <span class="fu">summarize</span><span class="op">(</span>
-    mean <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">beak_length</span><span class="op">)</span>,
-    sample_size <span class="op">=</span> <span class="fu">n</span><span class="op">(</span><span class="op">)</span>,
-    standard_error <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/sd.html">sd</a></span><span class="op">(</span><span class="va">beak_length</span><span class="op">)</span> <span class="op">/</span> <span class="fu"><a href="https://rdrr.io/r/base/MathFun.html">sqrt</a></span><span class="op">(</span><span class="va">sample_size</span><span class="op">)</span>,
-    upper_conf_limit <span class="op">=</span> <span class="va">mean</span> <span class="op">+</span> <span class="fl">1.96</span> <span class="op">*</span> <span class="va">standard_error</span>,
-    lower_conf_limit <span class="op">=</span> <span class="va">mean</span> <span class="op">-</span> <span class="fl">1.96</span> <span class="op">*</span> <span class="va">standard_error</span>
-  <span class="op">)</span> <span class="op">%&gt;%</span> 
-  <span class="fu"><a href="https://rdrr.io/r/base/print.html">print</a></span><span class="op">(</span><span class="op">)</span>                             <span class="co"># print the results in the console</span></code></pre></div>
+<code class="sourceCode R"><span><span class="co"># summarize ---------------------------------------------------------------</span></span>
+<span></span>
+<span><span class="co"># summarize the dataset by outcome (survived vs. died)</span></span>
+<span><span class="va">beak_length_grouped_summary</span> <span class="op">&lt;-</span> </span>
+<span>  <span class="va">finches</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> </span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/group_by.html">group_by</a></span><span class="op">(</span><span class="va">outcome</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> </span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/summarise.html">summarize</a></span><span class="op">(</span></span>
+<span>    mean <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">beak_length</span><span class="op">)</span>,</span>
+<span>    sample_size <span class="op">=</span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/context.html">n</a></span><span class="op">(</span><span class="op">)</span>,</span>
+<span>    standard_error <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/sd.html">sd</a></span><span class="op">(</span><span class="va">beak_length</span><span class="op">)</span> <span class="op">/</span> <span class="fu"><a href="https://rdrr.io/r/base/MathFun.html">sqrt</a></span><span class="op">(</span><span class="va">sample_size</span><span class="op">)</span>,</span>
+<span>    upper_conf_limit <span class="op">=</span> <span class="va">mean</span> <span class="op">+</span> <span class="fl">1.96</span> <span class="op">*</span> <span class="va">standard_error</span>,</span>
+<span>    lower_conf_limit <span class="op">=</span> <span class="va">mean</span> <span class="op">-</span> <span class="fl">1.96</span> <span class="op">*</span> <span class="va">standard_error</span></span>
+<span>  <span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> </span>
+<span>  <span class="fu"><a href="https://rdrr.io/r/base/print.html">print</a></span><span class="op">(</span><span class="op">)</span>                             <span class="co"># print the results in the console</span></span></code></pre></div>
 <pre><code>#&gt; # A tibble: 2 × 6
 #&gt;   outcome   mean sample_size standard_error upper_conf_limit lower_conf_limit
 #&gt;   &lt;chr&gt;    &lt;dbl&gt;       &lt;int&gt;          &lt;dbl&gt;            &lt;dbl&gt;            &lt;dbl&gt;
@@ -328,30 +332,30 @@ Figure 1. <strong>Distribution of beak lengths among medium ground finches (<i>G
 <h3>
 <span class="header-section-number">6.7.2</span> Plot summarized data<a class="anchor" aria-label="anchor" href="#plot-summarized-data"><i class="fas fa-link"></i></a>
 </h3>
-<p>To plot these means and confidence intervals, you can use a bar chart with the <code>geom_col()</code> and <code>geom_errorbar()</code> functions in ggplot:</p>
+<p>To plot these means and confidence intervals, you can use a bar chart with the <code><a href="https://ggplot2.tidyverse.org/reference/geom_bar.html">geom_col()</a></code> and <code><a href="https://ggplot2.tidyverse.org/reference/geom_linerange.html">geom_errorbar()</a></code> functions in ggplot:</p>
 <div class="sourceCode" id="cb67"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="co"># bar chart ---------------------------------------------------------------</span>
-
-<span class="co"># bar chart of mean beak lengths</span>
-<span class="fu">ggplot</span><span class="op">(</span>
-  data <span class="op">=</span> <span class="va">beak_length_grouped_summary</span>,   <span class="co"># use summary data, not "finches"</span>
-  mapping <span class="op">=</span> <span class="fu">aes</span><span class="op">(</span>x <span class="op">=</span> <span class="va">outcome</span>,            <span class="co"># survival on the x axis</span>
-                y <span class="op">=</span> <span class="va">mean</span>,               <span class="co"># mean beak length on the y axis</span>
-                fill <span class="op">=</span> <span class="va">outcome</span><span class="op">)</span>         <span class="co"># make died/survived different colors</span>
-<span class="op">)</span> <span class="op">+</span>
-  <span class="fu">geom_col</span><span class="op">(</span><span class="op">)</span> <span class="op">+</span>                                <span class="co"># add columns</span>
-  <span class="fu">geom_errorbar</span><span class="op">(</span>                              <span class="co"># add error bars</span>
-    mapping <span class="op">=</span> <span class="fu">aes</span><span class="op">(</span>ymin <span class="op">=</span> <span class="va">lower_conf_limit</span>,    <span class="co">#   lower 95% confidence limit</span>
-                  ymax <span class="op">=</span> <span class="va">upper_conf_limit</span><span class="op">)</span>,   <span class="co">#   upper 95% confidence limit</span>
-    width <span class="op">=</span> <span class="fl">.3</span>                                <span class="co">#   width of horizontal bars</span>
-  <span class="op">)</span> <span class="op">+</span>
-  <span class="fu">guides</span><span class="op">(</span>fill <span class="op">=</span> <span class="st">"none"</span><span class="op">)</span> <span class="op">+</span>                     <span class="co"># don't show fill color legend</span>
-  <span class="fu">labs</span><span class="op">(</span>
-    title <span class="op">=</span> <span class="st">"Figure 2."</span>,                      <span class="co"># this is the second figure</span>
-    x <span class="op">=</span> <span class="st">"Outcome"</span>,                            <span class="co"># human-readable x-axis label</span>
-    y <span class="op">=</span> <span class="st">"Beak Length (mm)"</span>,                   <span class="co"># human-readable y-axis label</span>
-    caption <span class="op">=</span> <span class="st">"Author: Org Bio Instructors"</span>   <span class="co"># so we know who made it</span>
-  <span class="op">)</span></code></pre></div>
+<code class="sourceCode R"><span><span class="co"># bar chart ---------------------------------------------------------------</span></span>
+<span></span>
+<span><span class="co"># bar chart of mean beak lengths</span></span>
+<span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span></span>
+<span>  data <span class="op">=</span> <span class="va">beak_length_grouped_summary</span>,   <span class="co"># use summary data, not "finches"</span></span>
+<span>  mapping <span class="op">=</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">outcome</span>,            <span class="co"># survival on the x axis</span></span>
+<span>                y <span class="op">=</span> <span class="va">mean</span>,               <span class="co"># mean beak length on the y axis</span></span>
+<span>                fill <span class="op">=</span> <span class="va">outcome</span><span class="op">)</span>         <span class="co"># make died/survived different colors</span></span>
+<span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_bar.html">geom_col</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span>                                <span class="co"># add columns</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_linerange.html">geom_errorbar</a></span><span class="op">(</span>                              <span class="co"># add error bars</span></span>
+<span>    mapping <span class="op">=</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>ymin <span class="op">=</span> <span class="va">lower_conf_limit</span>,    <span class="co">#   lower 95% confidence limit</span></span>
+<span>                  ymax <span class="op">=</span> <span class="va">upper_conf_limit</span><span class="op">)</span>,   <span class="co">#   upper 95% confidence limit</span></span>
+<span>    width <span class="op">=</span> <span class="fl">.3</span>                                <span class="co">#   width of horizontal bars</span></span>
+<span>  <span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/guides.html">guides</a></span><span class="op">(</span>fill <span class="op">=</span> <span class="st">"none"</span><span class="op">)</span> <span class="op">+</span>                     <span class="co"># don't show fill color legend</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">labs</a></span><span class="op">(</span></span>
+<span>    title <span class="op">=</span> <span class="st">"Figure 2."</span>,                      <span class="co"># this is the second figure</span></span>
+<span>    x <span class="op">=</span> <span class="st">"Outcome"</span>,                            <span class="co"># human-readable x-axis label</span></span>
+<span>    y <span class="op">=</span> <span class="st">"Beak Length (mm)"</span>,                   <span class="co"># human-readable y-axis label</span></span>
+<span>    caption <span class="op">=</span> <span class="st">"Author: Org Bio Instructors"</span>   <span class="co"># so we know who made it</span></span>
+<span>  <span class="op">)</span></span></code></pre></div>
 <div class="inline-figure"><img src="finch-analysis_files/figure-html/bar-chart-1.png" width="70%" style="display: block; margin: auto;"></div>
 <p>A good figure legend for this figure would be:</p>
 <blockquote class="text-info">
@@ -359,10 +363,10 @@ Figure 2. <strong>Mean beak length of medium ground finches (<i>Geospiza fortis<
 </blockquote>
 <p>Export your figure:</p>
 <div class="sourceCode" id="cb68"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="co"># save the beak length bar chart</span>
-<span class="co"># note that the dimensions are different from the histograms above</span>
-<span class="fu">ggsave</span><span class="op">(</span><span class="st">"beak_length_bar_chart.png"</span>, 
-       width <span class="op">=</span> <span class="fl">2.5</span>, height <span class="op">=</span> <span class="fl">3.5</span>, units <span class="op">=</span> <span class="st">"in"</span><span class="op">)</span>  <span class="co"># DO NOT CHANGE</span></code></pre></div>
+<code class="sourceCode R"><span><span class="co"># save the beak length bar chart</span></span>
+<span><span class="co"># note that the dimensions are different from the histograms above</span></span>
+<span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggsave.html">ggsave</a></span><span class="op">(</span><span class="st">"beak_length_bar_chart.png"</span>, </span>
+<span>       width <span class="op">=</span> <span class="fl">2.5</span>, height <span class="op">=</span> <span class="fl">3.5</span>, units <span class="op">=</span> <span class="st">"in"</span><span class="op">)</span>  <span class="co"># DO NOT CHANGE</span></span></code></pre></div>
 </div>
 <div id="compare-means" class="section level3" number="6.7.3">
 <h3>
@@ -377,16 +381,16 @@ Figure 2. <strong>Mean beak length of medium ground finches (<i>Geospiza fortis<
 <p>A <em>t</em>-test is a statistical test that will tell you if the difference in means between two groups is likely due to chance (i.e. sampling error) or not.</p>
 <p>The <em>t</em>-test function in R is <code><a href="https://rdrr.io/r/stats/t.test.html">t.test()</a></code> and can be used like this:</p>
 <div class="sourceCode" id="cb69"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="co"># t-test ------------------------------------------------------------------</span>
-
-<span class="co"># perform a two-sample t-test assuming unequal variances</span>
-<span class="fu"><a href="https://rdrr.io/r/stats/t.test.html">t.test</a></span><span class="op">(</span><span class="va">beak_length</span> <span class="op">~</span> <span class="va">outcome</span>, data <span class="op">=</span> <span class="va">finches</span><span class="op">)</span></code></pre></div>
+<code class="sourceCode R"><span><span class="co"># t-test ------------------------------------------------------------------</span></span>
+<span></span>
+<span><span class="co"># perform a two-sample t-test assuming unequal variances</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/stats/t.test.html">t.test</a></span><span class="op">(</span><span class="va">beak_length</span> <span class="op">~</span> <span class="va">outcome</span>, data <span class="op">=</span> <span class="va">finches</span><span class="op">)</span></span></code></pre></div>
 <pre><code>#&gt; 
 #&gt;  Welch Two Sample t-test
 #&gt; 
 #&gt; data:  beak_length by outcome
 #&gt; t = -3.6335, df = 94.807, p-value = 0.0004539
-#&gt; alternative hypothesis: true difference in means is not equal to 0
+#&gt; alternative hypothesis: true difference in means between group died and group survived is not equal to 0
 #&gt; 95 percent confidence interval:
 #&gt;  -0.8681443 -0.2546557
 #&gt; sample estimates:
@@ -464,7 +468,7 @@ Birds that survived the 1977 drought generally had longer beaks than those that 
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>Organismal Biology: Companion Website to BIOL 115 @ MSUM</strong>" was written by Chris Merkord and Alison Wallace. It was last built on 2021-09-17.</p>
+    <p>"<strong>Organismal Biology: Companion Website to BIOL 115 @ MSUM</strong>" was written by Chris Merkord and Alison Wallace. It was last built on 2023-09-05.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">
