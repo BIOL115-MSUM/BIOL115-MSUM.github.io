@@ -20,8 +20,8 @@ The question you are trying to answer in this activity is:
 
 Follow these directions to get started:
 
-1. Go to [RStudio Cloud](https://rstudio.cloud/) and sign in. 
-2. On the left, under Spaces, click on **Course Workspace**
+1. Go to [Posit Cloud](https://posit.cloud/) and sign in. 
+2. On the left, under Spaces, click on the **Org Bio 2023** workspace
 3. Click the **Start** button on the **Artificial Selection Project** assignment.
 
 ## Find the data
