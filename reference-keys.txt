@@ -1,6 +1,6 @@
 about-r-and-rstudio
 desktop-vs.-cloud
-rstudio-cloud-setup
+posit-cloud-setup
 sign-up
 your-workspace
 create-a-project

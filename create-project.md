@@ -12,10 +12,10 @@ Go to [Rstudio Cloud](https://rstudio.cloud/) and sign in.
 To create a new project:
 
 1. Go to Your Workspace
-2. Go to the Projects tab
+2. Go to the Content tab
 2. Click the button to start a New Project and select "New RStudio Project"
 
-<img src="screenshots/rstudio_cloud_new_project.png" width="75%" style="display: block; margin: auto;" />
+<img src="screenshots/posit_cloud_new_project.png" width="75%" style="display: block; margin: auto;" />
 
 Wait a moment while your new project is deployed.
 
