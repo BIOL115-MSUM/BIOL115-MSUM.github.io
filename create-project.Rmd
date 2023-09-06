@@ -16,7 +16,7 @@ To create a new project:
 3. Click the "New Project" button
 4. Select "New RStudio Project"
 
-```{r posit-cloud-new-proj-screenshot, echo=FALSE, out.width=}
+```{r posit-cloud-new-proj-screenshot, echo=FALSE, out.width = "75%"}
 knitr::include_graphics("screenshots/posit_cloud_new_project.png")
 ```
 
