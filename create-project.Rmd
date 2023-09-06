@@ -46,17 +46,17 @@ Type a double quote, the words "Hello World!", and another double quote, like th
 
 Now press the enter key to run the code. Under the code you ran will appear the output, which will look like this:
 
-    `[1] "Hello World!"`
+    [1] "Hello World!"
 
 <p class="text-success font-weight-bold">Congratulations, you just wrote your first computer program!</p>
 
 Now try another one. Type this code and press enter:
 
-    `1+1`
+    1+1
 
 The output should look like:
 
-    `[1] 2`
+    [1] 2
 
 Pressing enter is like asking R a question. R will evaluate the code you typed (yes, it's really computer code!) and print the output, which is the answer to your question.
 
