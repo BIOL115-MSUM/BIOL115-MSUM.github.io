@@ -2,14 +2,14 @@
 
 In this assignment, you will create a document containing the following:
 
-- A histogram of plant heights
-- A bar chart of plant heights
-- A histogram of rame lengths
-- A bar chart of rame lengths
-- Four figure legends, one for each of the figures listed above.
-- A section titled **RESULTS** which includes:
-    - A paragraph describing the difference in plant heights between the two sites, citing the first two figures and giving the results of the plant height *t*-test.
-    - A paragraph describing the difference in rame lengths between the two sites, citing the last two figures and giving the results of the rame length *t*-test.
+-   A histogram of plant heights
+-   A bar chart of plant heights
+-   A histogram of rame lengths
+-   A bar chart of rame lengths
+-   Four figure legends, one for each of the figures listed above.
+-   A section titled **RESULTS** which includes:
+    -   A paragraph describing the difference in plant heights between the two sites, citing the first two figures and giving the results of the plant height *t*-test.
+    -   A paragraph describing the difference in rame lengths between the two sites, citing the last two figures and giving the results of the rame length *t*-test.
 
 When you're done, submit the document to your instructor.
 
@@ -17,20 +17,19 @@ When you're done, submit the document to your instructor.
 
 Follow these directions to get started:
 
-1. Go to [Posit Cloud](https://Posit.cloud/) and sign in. 
-2. On the left, under Spaces, click on the **Org Bio 2023** workspace.
-3. Click the **Start** button on the **Intraspecific Variation Project** assignment.
+1.  Go to [Posit Cloud](https://Posit.cloud/) and sign in.
+2.  On the left, under Spaces, click on the **Org Bio 2023** workspace.
+3.  Click the **Start** button on the **Intraspecific Variation Project** assignment.
 
 ## Find the data
 
 When your project starts, look at the **Files** tab in the lower right pane.
 
-There are two files you should take note of:
-- [grass-data.xlsx](grass-data.xlsx) - this is the data file you will use. It should already be in your project folder.
+There are two files you should take note of: - [grass-data.xlsx](grass-data.xlsx) - this is the data file you will use. It should already be in your project folder.
 
 ## Create script
 
-It's always easier to modify existing code than to create new code from scratch. 
+It's always easier to modify existing code than to create new code from scratch.
 
 For this assignment, you can use the code you just created to analyze **beak length** as a starting point.
 
@@ -40,17 +39,15 @@ Create a new R script, save it as `plant_height.R`. Then go to the [Beak Length 
 
 In your new script, adjust the code so that it reads the grass-data.xlsx instead of finches-data.xlsx. Also be sure to change the name you give the data after your read it in.
 
-
-
 Run the code and note the data object which appeared in your Environment tab. Click on the blue table icon to the right of the object name to open the data viewer window.
 
 Each row in the dataset represents an individual plant.
 
 The variables in the dataset are:
 
-- **treatment** ("burned" vs. "unburned")
-- **plant_height** (plant height measured in cm)
-- **rame_length** (rame length measured in mm)
+-   **treatment** ("burned" vs. "unburned")
+-   **plant_height** (plant height measured in cm)
+-   **rame_length** (rame length measured in mm)
 
 ## Modify script
 
@@ -62,13 +59,13 @@ If you are feeling saavy, use "find and replace" (the magnifying glass on the So
 
 To get you moving along, here are some suggestions:
 
-- replace `finches` with `grass` throughout
-- replace `beak_length` with `plant_height` throughout
-- replace `outcome` with `treatment` throughout
-- for the histogram and bar chart
-    - change the x- and y-axis labels (in `labs()`)
-    - put your name in the caption so we know who made the figure (in `labs()`)
-    - change the name of the file you save the histogram as (in `ggsave()`)
+-   replace `finches` with `grass` throughout
+-   replace `beak_length` with `plant_height` throughout
+-   replace `outcome` with `treatment` throughout
+-   for the histogram and bar chart
+    -   change the x- and y-axis labels (in `labs()`)
+    -   put your name in the caption so we know who made the figure (in `labs()`)
+    -   change the name of the file you save the histogram as (in `ggsave()`)
 
 Now save the `plant_height.R` script. If you see any red x's pop up on the left side of your script, those indicate potential errors. Hover your mouse over them to see the error message and try to solve the problem before you run the code. Your instructor or a friend will come in handy with solving any errors.
 
@@ -78,46 +75,90 @@ Finally, run the `plant_height.R` script, one line at a time, watching for error
 
 Now you can repeat the same process for rame length.
 
-1. With your plant height script `plant_height.R` open go to **File > Save As** and save the new script as `rame_length.R`
-4. Use Find and Replace to change `plant_height` to `rame_length` throughout.
-4. Change the axis labels
-3. Change the file names for saving
-4. Change the figure titles (e.g. **Figure 1** becomes **Figure 3**, and **2** becomes **4**)
+1.  With your plant height script `plant_height.R` open go to **File \> Save As** and save the new script as `rame_length.R`
+2.  Use Find and Replace to change `plant_height` to `rame_length` throughout.
+3.  Change the axis labels
+4.  Change the file names for saving
+5.  Change the figure titles (e.g. **Figure 1** becomes **Figure 3**, and **2** becomes **4**)
 
+## Start your Word Document
+
+1.  Open Microsoft Word on your computer, or log in to [Microsoft Word 365](https://www.minnstate.edu/system/its/office365/Index.html) online using your MSUM credentials (StarID\@go.minnstate.edu)
+
+2.  Write "RESULTS" for your heading
+
+3.  Leave a space for two paragraphs, one for plant height results, the other for rame length.
+
+4.  Exprt your figures from RStudio:
+
+    a.  In the Files tab in RStudio, check the box next to one of your images
+    b.  In the Files tab, click "More" button (the gear icon)
+    c.  Select "Export..."
+    d.  Click "Download"
+    e.  Choose a location to save the file
+    f.  Repeat for each of the other 3 figures
+
+    (note: you can download all 4 at once, but the file with be a .zip file you will have to extract)
+
+5.  Import your figures to Word
+
+    a.  Have your Word document open, and the File Browser window where you can see your image files
+    b.  Drag the image files and drop them onto your Word Document
+    c.  They should automatically be sized correctly so Figures 1 and 2 will fit on a line and Figures 3 and 4 will fit on the next line.
+    d.  If they are not sized correctly, resize them by grabbing the corner of an image and dragging to make it smaller
+
+Important: DO NOT EXPORT FIGURES FROM YOUR PLOTS TAB. Either by using the Export function or taking a screenshot. The size of the images will not be good and the text will be too small to read in Word. If you export your figures this way, we will ask you to redo them.
 
 ## Write figure legends
 
-Write figure legends for each figure in your Word document.
+Write figure legends for each figure in your Word document. Each figure legend should be a paragraph starting with the figure number and a period (e.g. Figure 1.) Place all four figure legends one after the other *below* the group of four figures.
+
+For tips on how to write a good figure legend, see [Writing an Effective Figure Legend](https://www.aje.com/en/arc/writing-effective-figure-legend/). *In general*, a figure legend should provide the following parts:
+
+-   Title: A brief title that applies to the entire figure, including all panels.
+-   Materials and methods: A description of the techniques used.
+-   Results: A statement of the results that can be gleaned from the particular figure.
+-   Definitions: An explanation of features in the figure.
+
+Your figure legends for *this lab* should include the following:
+
+-   The type of information being shown (e.g. is it the "distribution" of a variable, as in a histogram, or the "mean" (average) values of a variable in multiple groups, as in a bar chart?)
+-   The variables being shown. This includes both measured variables, and grouping variables.
+-   When and where the data come from (briefly, only enough information so that someone could replicate the experiment, so exact dates and locations are not necessary).
+-   The sample sizes (number of plants measured) in each group shown in the graph.
 
 For reference, here are the figure legends for the finch beak length analysis again:
 
-<blockquote class="text-info">Figure 1. <strong>Distribution of beak lengths among medium ground finches (<i>Geospiza fortis</i>) grouped by outcome during the 1977 drought on Daphne Major, Galapagos archipelago.</strong> Each sample consisted of 50 individuals. Birds were banded and measured during 1975-1977 and resighted in 1978.</blockquote>
+<blockquote class="text-info">
 
-<blockquote class="text-info">Figure 2. <strong>Mean beak length of medium ground finches (<i>Geospiza fortis</i>) that survived or died during the 1977 drought on Daphne Major, Galapagos archipelago.</strong> Each sample consisted of 50 individuals. Birds were banded and measured during 1975-1977 and resighted in 1978. Error bars represent 95% confidence intervals.</blockquote>
+Figure 1. <strong>Distribution of beak lengths among medium ground finches (<i>Geospiza fortis</i>) grouped by outcome during the 1977 drought on Daphne Major, Galapagos archipelago.</strong> Each sample consisted of 50 individuals. Birds were banded and measured during 1975-1977 and resighted in 1978.
 
-For tips on how to write a good figure legend, see [Writing an Effective Figure Legend](https://www.aje.com/en/arc/writing-effective-figure-legend/). In general, a figure legend should provide the following parts:
+</blockquote>
 
-- Title: A brief title that applies to the entire figure, including all panels.
-- Materials and methods: A description of the techniques used.
-- Results: A statement of the results that can be gleaned from the particular figure.
-- Definitions: An explanation of features in the figure.
+<blockquote class="text-info">
+
+Figure 2. <strong>Mean beak length of medium ground finches (<i>Geospiza fortis</i>) that survived or died during the 1977 drought on Daphne Major, Galapagos archipelago.</strong> Each sample consisted of 50 individuals. Birds were banded and measured during 1975-1977 and resighted in 1978. Error bars represent 95% confidence intervals.
+
+</blockquote>
 
 ## Write a RESULTS section
 
 Write a RESULTS section as you might for a report or peer-reviewed article. This section should include:
 
-- A paragraph describing the difference in plant heights between the two sites, citing the first two figures and giving the results of the plant height *t*-test.
-- A paragraph describing the difference in rame lengths between the two sites, citing the last two figures and giving the results of the rame length *t*-test.
+-   A paragraph describing the difference in plant heights between the two sites, citing the first two figures and giving the results of the plant height *t*-test.
+-   A paragraph describing the difference in rame lengths between the two sites, citing the last two figures and giving the results of the rame length *t*-test.
 
 For reference, here is the paragraph we wrote for the beak length analysis:
 
-<blockquote class="text-info">Birds that survived the 1977 drought generally had longer beaks than those that died (Fig. 1). Mean beak lengths were 11.1 mm in survivors and 10.5 mm in non-survivors (Fig. 2).  This difference was stastistically significant according to a Welch's two-sample t-test assuming unequal variances (*t*=3.6335, *df*=94.807, *p*=0.0004539).</blockquote>
+<blockquote class="text-info">
 
+Birds that survived the 1977 drought generally had longer beaks than those that died (Fig. 1). Mean beak lengths were 11.1 mm in survivors and 10.5 mm in non-survivors (Fig. 2). This difference was stastistically significant according to a Welch's two-sample t-test assuming unequal variances (*t*=3.6335, *df*=94.807, *p*=0.0004539).
+
+</blockquote>
 
 ## Submit your assignment
 
 Once you have all the components in your Word document, save it and submit it to your instructor.
-
 
 ## Saving your work
 
