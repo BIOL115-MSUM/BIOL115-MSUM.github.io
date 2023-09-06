@@ -16,7 +16,7 @@ To create a new project:
 3. Click the "New Project" button
 4. Select "New RStudio Project"
 
-```{r echo = FALSE, out.width = "75%"}
+```{r posit-cloud-new-proj-screenshot, echo=FALSE, out.width=}
 knitr::include_graphics("screenshots/posit_cloud_new_project.png")
 ```
 
@@ -30,7 +30,7 @@ Give your project a name by clicking on the words "Untitled Project" at the top 
 
 When you first open a project, you will see a window with three panes, the left pane will be on a tab named **Console**, the upper right pane will be on a tab named **Environment**, and the bottom right pane will be on a tab named **Files**, like this:
 
-```{r echo = FALSE, out.width = "75%"}
+```{r rstudio-ide-1-screenshot echo = FALSE, out.width = "75%"}
 knitr::include_graphics("screenshots/rstudio_ide_1.png")
 ```
 
@@ -66,7 +66,7 @@ The number in square brackets, `[1]`, indicates that the answer had one part. Yo
 
 For the rest of this tutorial, we will use the following notation to indicate code that you should type into the console, and what the output should look like:
 
-```{r}
+```{r two-plus-two}
 2+2
 ```
 
