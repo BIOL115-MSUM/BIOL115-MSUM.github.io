@@ -4,7 +4,7 @@ new_session: yes
 rmd_files: [
   "index.Rmd",
   
-  "getting-started.Rmd",
+  "about-r-rstudio.Rmd",
   "create-project.Rmd",
   "r-basics.Rmd",
   
