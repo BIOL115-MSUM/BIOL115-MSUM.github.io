@@ -19,16 +19,16 @@ library(tidyverse)  # load tidyverse, for working with datasets
 
 # read data ---------------------------------------------------------------
 
-finches <- read_excel("finches-data.xlsx")  # read the finches data
-finches                                     # print finches data in console
-glimpse(finches)                            # another way to view data
+finches_data <- read_excel("finches-data.xlsx")  # read the finches data
+finches_data                                     # print finches_data in console
+glimpse(finches_data)                            # another way to view data
 
 
 # histogram ---------------------------------------------------------------
 
 # histogram of beak length, grouped by survival, with labels
 ggplot(
-  data = finches,                     # use the finches dataset
+  data = finches_data,                # use the finches dataset
   mapping = aes(x = beak_length,      # put beak length on the x axis
                 fill = outcome)       # fill sets the color of the boxes
 ) +
@@ -52,7 +52,7 @@ ggsave("beak_length_histogram.png",   # you choose a name for the file
 
 # summarize the dataset by outcome (survived vs. died)
 beak_length_grouped_summary <- 
-  finches %>% 
+  finches_data %>% 
   group_by(outcome) %>%               # for each outcome...
   summarize(                          # calculate the following stats
     mean = mean(beak_length),
@@ -68,7 +68,7 @@ beak_length_grouped_summary <-
 
 # bar chart of mean beak lengths
 ggplot(
-  data = beak_length_grouped_summary,   # use summary data, not "finches"
+  data = beak_length_grouped_summary,   # use summary data, not "finches_data"
   mapping = aes(x = outcome,            # survival on the x axis
                 y = mean,               # mean beak length on the y axis
                 fill = outcome)         # make died/survived different colors
@@ -93,6 +93,6 @@ ggsave("beak_length_bar_chart.png", width = 2.5, height = 3.5)
 # t-test ------------------------------------------------------------------
 
 # perform a two-sample t-test assuming unequal variances
-t.test(beak_length ~ outcome, data = finches)
+t.test(beak_length ~ outcome, data = finches_data)
 ```
 

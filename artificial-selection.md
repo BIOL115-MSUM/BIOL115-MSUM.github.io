@@ -95,7 +95,7 @@ For example, here is the finch data colored by `sex`:
 ```r
 # histogram of beak length, grouped by survival, colored by sex
 ggplot(
-  data = finches,
+  data = finches_data,
   mapping = aes(x = beak_length,
                 fill = sex)           # color the boxes by gender
 ) +

@@ -17,7 +17,7 @@ self-assessment
 introduction
 the-finch-dataset
 finch-project
-select-workspace
+join-course-workspace
 start-project
 find-data-file
 inspect-data-file
@@ -52,6 +52,7 @@ create-script
 look-at-the-grass-data
 modify-script
 repeat-for-rame-length
+start-your-word-document
 write-figure-legends
 write-a-results-section
 submit-your-assignment

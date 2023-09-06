@@ -175,7 +175,7 @@ Does the number of trichomes on Fast Plants (<i>Brassica rapa</i>) plants vary b
 <div class="sourceCode" id="cb71"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># histogram of beak length, grouped by survival, colored by sex</span></span>
 <span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span></span>
-<span>  data <span class="op">=</span> <span class="va">finches</span>,</span>
+<span>  data <span class="op">=</span> <span class="va">finches_data</span>,</span>
 <span>  mapping <span class="op">=</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">beak_length</span>,</span>
 <span>                fill <span class="op">=</span> <span class="va">sex</span><span class="op">)</span>           <span class="co"># color the boxes by gender</span></span>
 <span><span class="op">)</span> <span class="op">+</span></span>

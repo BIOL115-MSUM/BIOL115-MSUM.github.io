@@ -16,4 +16,6 @@ The question you are tasked with answering for Part 3 is:
 
 ## The finch dataset
 
+Note: The finch data comes from [hhmi Biointeractive](https://www.biointeractive.org/classroom-resources/effects-natural-selection-finch-beak-size).
+
 In the finch dataset, each row represents an individual bird that was banded before the 1977 drought on Daphne Major island in the Galapagos archipelago. The variable named `outcome` contains one of two values: **survived** or **died**, depending on whether the bird was ever seen after the drought or not.

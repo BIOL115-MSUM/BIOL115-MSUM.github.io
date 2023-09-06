@@ -22,7 +22,7 @@ Wait a moment while your new project is deployed.
 
 When the screen refreshes you will have a new, empty project.
 
-You can give your project a name by clicking on the words "Untitled Project" at the top of the window.
+Give your project a name by clicking on the words "Untitled Project" at the top of the window. Any name is fine, but "Test Project" is good if you're not sure what to name it.
 
 ## The RStudio IDE
 
@@ -38,7 +38,7 @@ To give it a try, place your cursor in the Console window by clicking in it. You
 
 Type a double quote, the words "Hello World!", and another double quote, like this:
 
-    `"Hello World"`
+    "Hello World"
 
 Now press the enter key to run the code. Under the code you ran will appear the output, which will look like this:
 

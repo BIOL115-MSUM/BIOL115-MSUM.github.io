@@ -147,12 +147,12 @@ Now run BOTH lines of code
 <span class="header-section-number">6.4</span> Read the data<a class="anchor" aria-label="anchor" href="#read-the-data"><i class="fas fa-link"></i></a>
 </h2>
 <p>Now that you have a script and have loaded the necessary packages, you’re ready to get coding!</p>
-<p>To read the data, you will use a function named <code><a href="https://readxl.tidyverse.org/reference/read_excel.html">read_excel()</a></code>. Here we run that function and assign the results to an object names <code>finches</code>.</p>
+<p>To read the data, you will use a function named <code><a href="https://readxl.tidyverse.org/reference/read_excel.html">read_excel()</a></code>. Here we run that function and assign the results to an object names <code>finches_data</code>.</p>
 <div class="sourceCode" id="cb56"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># read data ----------------------------------------------------------------</span></span>
 <span></span>
 <span><span class="co"># read the finches data</span></span>
-<span><span class="va">finches</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://readxl.tidyverse.org/reference/read_excel.html">read_excel</a></span><span class="op">(</span><span class="st">"finches-data.xlsx"</span><span class="op">)</span></span></code></pre></div>
+<span><span class="va">finches_data</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://readxl.tidyverse.org/reference/read_excel.html">read_excel</a></span><span class="op">(</span><span class="st">"finches-data.xlsx"</span><span class="op">)</span></span></code></pre></div>
 <p>If you get an error at this point (red text in the console output) see the two warnings below.</p>
 <p><span class="label label-warning">Warning</span> If you didn’t run the two <code><a href="https://rdrr.io/r/base/library.html">library()</a></code> commands, then when your run <code><a href="https://readxl.tidyverse.org/reference/read_excel.html">read_excel()</a></code> you will get an error that says:</p>
 <p><code>Error in read_excel() : could not find function "read_excel"</code></p>
@@ -167,7 +167,7 @@ To look at an object you have just created, print it to the console window by <s
 </p>
 <div class="sourceCode" id="cb57"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># print the results in the console</span></span>
-<span><span class="va">finches</span></span></code></pre></div>
+<span><span class="va">finches_data</span></span></code></pre></div>
 <pre><code>#&gt; # A tibble: 100 × 12
 #&gt;    band species     sex   first_adult_year last_year outcome weight  wing tarsus
 #&gt;   &lt;dbl&gt; &lt;chr&gt;       &lt;chr&gt;            &lt;dbl&gt;     &lt;dbl&gt; &lt;chr&gt;    &lt;dbl&gt; &lt;dbl&gt;  &lt;dbl&gt;
@@ -187,7 +187,7 @@ To look at an object you have just created, print it to the console window by <s
 <p>A quick way of seeing the first few observations for all variables is to use the <code><a href="https://pillar.r-lib.org/reference/glimpse.html">glimpse()</a></code> function:</p>
 <div class="sourceCode" id="cb59"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># take a quick look at all the variables in the dataset</span></span>
-<span><span class="fu"><a href="https://pillar.r-lib.org/reference/glimpse.html">glimpse</a></span><span class="op">(</span><span class="va">finches</span><span class="op">)</span></span></code></pre></div>
+<span><span class="fu"><a href="https://pillar.r-lib.org/reference/glimpse.html">glimpse</a></span><span class="op">(</span><span class="va">finches_data</span><span class="op">)</span></span></code></pre></div>
 <pre><code>#&gt; Rows: 100
 #&gt; Columns: 12
 #&gt; $ band             &lt;dbl&gt; 9, 12, 276, 278, 283, 288, 293, 294, 298, 307, 311, 3…
@@ -202,7 +202,7 @@ To look at an object you have just created, print it to the console window by <s
 #&gt; $ beak_length      &lt;dbl&gt; 9.20, 9.50, 9.93, 11.13, 12.13, 10.63, 9.93, 11.33, 9…
 #&gt; $ beak_depth       &lt;dbl&gt; 8.3, 7.5, 8.0, 10.6, 11.2, 9.1, 9.5, 10.5, 8.4, 8.6, …
 #&gt; $ beak_width       &lt;dbl&gt; 8.1, 7.5, 7.6, 9.4, 9.5, 8.8, 8.9, 9.1, 8.2, 8.4, 8.5…</code></pre>
-<p>If you want to see the entire dataset, click the name of the data object in the Environment tab, or run <code>View(finches)</code>. This will open a handy data viewer window. Once you are done looking at the data, close the window and continue.</p>
+<p>If you want to see the entire dataset, click the name of the data object in the Environment tab, or run <code>View(finches_data)</code>. This will open a handy data viewer window. Once you are done looking at the data, close the window and continue.</p>
 </div>
 <div id="plot-a-histogram" class="section level2" number="6.6">
 <h2>
@@ -221,7 +221,7 @@ To look at an object you have just created, print it to the console window by <s
 <span></span>
 <span><span class="co"># histogram of beak length</span></span>
 <span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span></span>
-<span>  data <span class="op">=</span> <span class="va">finches</span>,                     <span class="co"># use the finches dataset</span></span>
+<span>  data <span class="op">=</span> <span class="va">finches_data</span>,                <span class="co"># use the finches dataset</span></span>
 <span>  mapping <span class="op">=</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">beak_length</span><span class="op">)</span>      <span class="co"># put beak length on the x axis</span></span>
 <span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_histogram.html">geom_histogram</a></span><span class="op">(</span>bins <span class="op">=</span> <span class="fl">14</span><span class="op">)</span>           <span class="co"># add the histogram, use 14 bins</span></span></code></pre></div>
@@ -237,7 +237,7 @@ To look at an object you have just created, print it to the console window by <s
 <div class="sourceCode" id="cb62"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># histogram of beak length, grouped by survival</span></span>
 <span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span></span>
-<span>  data <span class="op">=</span> <span class="va">finches</span>,                     <span class="co"># use the finches dataset</span></span>
+<span>  data <span class="op">=</span> <span class="va">finches_data</span>,                <span class="co"># use the finches dataset</span></span>
 <span>  mapping <span class="op">=</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">beak_length</span>,      <span class="co"># put beak length on the x axis</span></span>
 <span>                fill <span class="op">=</span> <span class="va">outcome</span><span class="op">)</span>       <span class="co"># fill sets the color of the boxes</span></span>
 <span><span class="op">)</span> <span class="op">+</span></span>
@@ -254,7 +254,7 @@ To look at an object you have just created, print it to the console window by <s
 <div class="sourceCode" id="cb63"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># histogram of beak length, grouped by survival, with labels</span></span>
 <span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span></span>
-<span>  data <span class="op">=</span> <span class="va">finches</span>,                     <span class="co"># use the finches dataset</span></span>
+<span>  data <span class="op">=</span> <span class="va">finches_data</span>,                <span class="co"># use the finches dataset</span></span>
 <span>  mapping <span class="op">=</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">beak_length</span>,      <span class="co"># put beak length on the x axis</span></span>
 <span>                fill <span class="op">=</span> <span class="va">outcome</span><span class="op">)</span>       <span class="co"># fill sets the color of the boxes</span></span>
 <span><span class="op">)</span> <span class="op">+</span></span>
@@ -311,7 +311,7 @@ Figure 1. <strong>Distribution of beak lengths among medium ground finches (<i>G
 <span></span>
 <span><span class="co"># summarize the dataset by outcome (survived vs. died)</span></span>
 <span><span class="va">beak_length_grouped_summary</span> <span class="op">&lt;-</span> </span>
-<span>  <span class="va">finches</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> </span>
+<span>  <span class="va">finches_data</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> </span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/group_by.html">group_by</a></span><span class="op">(</span><span class="va">outcome</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> </span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/summarise.html">summarize</a></span><span class="op">(</span></span>
 <span>    mean <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">beak_length</span><span class="op">)</span>,</span>
@@ -338,7 +338,7 @@ Figure 1. <strong>Distribution of beak lengths among medium ground finches (<i>G
 <span></span>
 <span><span class="co"># bar chart of mean beak lengths</span></span>
 <span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span></span>
-<span>  data <span class="op">=</span> <span class="va">beak_length_grouped_summary</span>,   <span class="co"># use summary data, not "finches"</span></span>
+<span>  data <span class="op">=</span> <span class="va">beak_length_grouped_summary</span>,   <span class="co"># use summary data, not "finches_data"</span></span>
 <span>  mapping <span class="op">=</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">outcome</span>,            <span class="co"># survival on the x axis</span></span>
 <span>                y <span class="op">=</span> <span class="va">mean</span>,               <span class="co"># mean beak length on the y axis</span></span>
 <span>                fill <span class="op">=</span> <span class="va">outcome</span><span class="op">)</span>         <span class="co"># make died/survived different colors</span></span>
@@ -384,7 +384,7 @@ Figure 2. <strong>Mean beak length of medium ground finches (<i>Geospiza fortis<
 <code class="sourceCode R"><span><span class="co"># t-test ------------------------------------------------------------------</span></span>
 <span></span>
 <span><span class="co"># perform a two-sample t-test assuming unequal variances</span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/stats/t.test.html">t.test</a></span><span class="op">(</span><span class="va">beak_length</span> <span class="op">~</span> <span class="va">outcome</span>, data <span class="op">=</span> <span class="va">finches</span><span class="op">)</span></span></code></pre></div>
+<span><span class="fu"><a href="https://rdrr.io/r/stats/t.test.html">t.test</a></span><span class="op">(</span><span class="va">beak_length</span> <span class="op">~</span> <span class="va">outcome</span>, data <span class="op">=</span> <span class="va">finches_data</span><span class="op">)</span></span></code></pre></div>
 <pre><code>#&gt; 
 #&gt;  Welch Two Sample t-test
 #&gt; 
@@ -397,7 +397,7 @@ Figure 2. <strong>Mean beak length of medium ground finches (<i>Geospiza fortis<
 #&gt;     mean in group died mean in group survived 
 #&gt;                10.5122                11.0736</code></pre>
 <p>The first part of the code above, <code>beak_length ~ outcome</code>, tells R to compare the mean beak lengths among the two outcomes (died or survived).</p>
-<p>The second part, <code>data = finches</code>, tells R to use the finches dataset.</p>
+<p>The second part, <code>data = finches_data</code>, tells R to use the finches dataset.</p>
 </div>
 <div id="interpret-the-results" class="section level4" number="6.7.3.2">
 <h4>

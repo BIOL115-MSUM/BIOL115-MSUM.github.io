@@ -80,14 +80,14 @@ You must run the `library()` commands each time you start RStudio. That's why it
 
 Now that you have a script and have loaded the necessary packages, you're ready to get coding!
 
-To read the data, you will use a function named `read_excel()`. Here we run that function and assign the results to an object names `finches`.
+To read the data, you will use a function named `read_excel()`. Here we run that function and assign the results to an object names `finches_data`.
 
 
 ```r
 # read data ----------------------------------------------------------------
 
 # read the finches data
-finches <- read_excel("finches-data.xlsx")
+finches_data <- read_excel("finches-data.xlsx")
 ```
 
 
@@ -106,7 +106,7 @@ To solve this error, run the two `library()` commands and then retry reading the
 
 ```r
 # print the results in the console
-finches
+finches_data
 ```
 
 ```
@@ -138,7 +138,7 @@ A quick way of seeing the first few observations for all variables is to use the
 
 ```r
 # take a quick look at all the variables in the dataset
-glimpse(finches)
+glimpse(finches_data)
 ```
 
 ```
@@ -158,7 +158,7 @@ glimpse(finches)
 #> $ beak_width       <dbl> 8.1, 7.5, 7.6, 9.4, 9.5, 8.8, 8.9, 9.1, 8.2, 8.4, 8.5…
 ```
 
-If you want to see the entire dataset, click the name of the data object in the Environment tab, or run `View(finches)`. This will open a handy data viewer window. Once you are done looking at the data, close the window and continue.
+If you want to see the entire dataset, click the name of the data object in the Environment tab, or run `View(finches_data)`. This will open a handy data viewer window. Once you are done looking at the data, close the window and continue.
 
 ## Plot a histogram
 
@@ -178,7 +178,7 @@ To plot a basic histogram of the `beak_length` variable, use the following code.
 
 # histogram of beak length
 ggplot(
-  data = finches,                     # use the finches dataset
+  data = finches_data,                # use the finches dataset
   mapping = aes(x = beak_length)      # put beak length on the x axis
 ) +
   geom_histogram(bins = 14)           # add the histogram, use 14 bins
@@ -198,7 +198,7 @@ Sometimes we want to see how the distribution of a variable varies among differe
 ```r
 # histogram of beak length, grouped by survival
 ggplot(
-  data = finches,                     # use the finches dataset
+  data = finches_data,                # use the finches dataset
   mapping = aes(x = beak_length,      # put beak length on the x axis
                 fill = outcome)       # fill sets the color of the boxes
 ) +
@@ -217,7 +217,7 @@ The last thing you might want to do is spruce up your plot by adding better axis
 ```r
 # histogram of beak length, grouped by survival, with labels
 ggplot(
-  data = finches,                     # use the finches dataset
+  data = finches_data,                # use the finches dataset
   mapping = aes(x = beak_length,      # put beak length on the x axis
                 fill = outcome)       # fill sets the color of the boxes
 ) +
@@ -278,7 +278,7 @@ The `group_by(outcome)` function tells R to give us separate summaries for each 
 
 # summarize the dataset by outcome (survived vs. died)
 beak_length_grouped_summary <- 
-  finches %>% 
+  finches_data %>% 
   group_by(outcome) %>% 
   summarize(
     mean = mean(beak_length),
@@ -310,7 +310,7 @@ To plot these means and confidence intervals, you can use a bar chart with the `
 
 # bar chart of mean beak lengths
 ggplot(
-  data = beak_length_grouped_summary,   # use summary data, not "finches"
+  data = beak_length_grouped_summary,   # use summary data, not "finches_data"
   mapping = aes(x = outcome,            # survival on the x axis
                 y = mean,               # mean beak length on the y axis
                 fill = outcome)         # make died/survived different colors
@@ -364,7 +364,7 @@ The *t*-test function in R is `t.test()` and can be used like this:
 # t-test ------------------------------------------------------------------
 
 # perform a two-sample t-test assuming unequal variances
-t.test(beak_length ~ outcome, data = finches)
+t.test(beak_length ~ outcome, data = finches_data)
 ```
 
 ```
@@ -383,7 +383,7 @@ t.test(beak_length ~ outcome, data = finches)
 
 The first part of the code above, `beak_length ~ outcome`, tells R to compare the mean beak lengths among the two outcomes (died or survived).
 
-The second part, `data = finches`, tells R to use the finches dataset.
+The second part, `data = finches_data`, tells R to use the finches dataset.
 
 #### Interpret the Results
 
