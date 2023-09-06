@@ -30,7 +30,7 @@ Give your project a name by clicking on the words "Untitled Project" at the top 
 
 When you first open a project, you will see a window with three panes, the left pane will be on a tab named **Console**, the upper right pane will be on a tab named **Environment**, and the bottom right pane will be on a tab named **Files**, like this:
 
-```{r rstudio-ide-1-screenshot echo = FALSE, out.width = "75%"}
+```{r rstudio-ide-1-screenshot, echo = FALSE, out.width = "75%"}
 knitr::include_graphics("screenshots/rstudio_ide_1.png")
 ```
 
