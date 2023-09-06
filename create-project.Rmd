@@ -11,9 +11,10 @@ Go to [Posit Cloud](https://posit.cloud/) and sign in.
 
 To create a new project:
 
-1. Go to Your Workspace
-2. Go to the Content tab
-2. Click the button to start a New Project and select "New RStudio Project"
+1. Select **Your Workspace**
+2. Select the Content tab
+3. Click the "New Project" button
+4. Select "New RStudio Project"
 
 ```{r echo = FALSE, out.width = "75%"}
 knitr::include_graphics("screenshots/posit_cloud_new_project.png")
