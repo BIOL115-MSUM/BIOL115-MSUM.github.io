@@ -11,9 +11,10 @@ Go to [Posit Cloud](https://posit.cloud/) and sign in.
 
 To create a new project:
 
-1. Go to Your Workspace
-2. Go to the Content tab
-2. Click the button to start a New Project and select "New RStudio Project"
+1. Select **Your Workspace**
+2. Select the Content tab
+3. Click the "New Project" button
+4. Select "New RStudio Project"
 
 <img src="screenshots/posit_cloud_new_project.png" width="75%" style="display: block; margin: auto;" />
 
@@ -41,17 +42,17 @@ Type a double quote, the words "Hello World!", and another double quote, like th
 
 Now press the enter key to run the code. Under the code you ran will appear the output, which will look like this:
 
-    `[1] "Hello World!"`
+    [1] "Hello World!"
 
 <p class="text-success font-weight-bold">Congratulations, you just wrote your first computer program!</p>
 
 Now try another one. Type this code and press enter:
 
-    `1+1`
+    1+1
 
 The output should look like:
 
-    `[1] 2`
+    [1] 2
 
 Pressing enter is like asking R a question. R will evaluate the code you typed (yes, it's really computer code!) and print the output, which is the answer to your question.
 

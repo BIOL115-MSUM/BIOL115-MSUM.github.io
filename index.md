@@ -2,7 +2,7 @@
 knit: "bookdown::render_book"
 title: "Organismal Biology: Companion Website to BIOL 115 @ MSUM"
 author: "Chris Merkord and Alison Wallace"
-date: "2023-09-05"
+date: "2023-09-06"
 github-repo: BIOL115-MSUM/BIOL115-MSUM.github.io
 description: "A beginners guide to data analysis in R focused on comparing phenotypic variation in biological populations. Developed for the course BIOL 115L Organismal Biology Lab at Minnesota State University by Chris Merkord and Alison Wallace, with contributions from Katie Olson and others."
 site: bookdown::bookdown_site
