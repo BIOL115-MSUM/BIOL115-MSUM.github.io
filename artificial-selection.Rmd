@@ -98,7 +98,7 @@ file.remove("beak_length_bar_chart.png")
 ```{r finch-sex-histogram, fig.width=6, fig.height=3.5, fig.align='center'}
 # histogram of beak length, grouped by survival, colored by sex
 ggplot(
-  data = finches,
+  data = finches_data,
   mapping = aes(x = beak_length,
                 fill = sex)           # color the boxes by gender
 ) +
