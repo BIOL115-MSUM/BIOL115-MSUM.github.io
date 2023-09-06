@@ -42,7 +42,7 @@ To give it a try, place your cursor in the Console window by clicking in it. You
 
 Type a double quote, the words "Hello World!", and another double quote, like this:
 
-    `"Hello World"`
+    "Hello World"
 
 Now press the enter key to run the code. Under the code you ran will appear the output, which will look like this:
 
