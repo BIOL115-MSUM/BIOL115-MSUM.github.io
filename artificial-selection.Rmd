@@ -29,8 +29,8 @@ Follow these directions to get started:
 When your project starts, look at the **Files** tab in the lower right pane.
 
 There are two files you should take note of:
-- [fastplant-data.xlsx](fastplant-data.xlsx) - this is the data file you will use. If it's not in your project folder, download it here and upload to the folder.
-- beak-length.R - this is a copy of the [Beak Length R Script](beak-length-script.html) from the Finch Analysis.
+- **[fastplant-data.xlsx](fastplant-data.xlsx)** : this is the data file you will use. If it's not in your project folder, download it here and upload to the folder.
+- **beak-length.R** : this is a copy of the [Beak Length R Script](beak-length-script.html) from the Finch Analysis.
 
 ## Create a new script
 
